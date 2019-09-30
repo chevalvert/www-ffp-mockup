@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-php-webpack",
+  "name": "www-ffp-mockup",
   "version": "0.0.1",
-  "description": "boilerplate for PHP-based websites",
+  "description": "",
   "scripts": {
     "start": "cross-env NODE_ENV=development node scripts/webpack-serve.js",
     "build": "cross-env NODE_ENV=production npm run test && cross-env NODE_ENV=production node scripts/webpack-build.js",
