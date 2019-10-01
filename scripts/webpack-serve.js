@@ -44,7 +44,9 @@ function phpInit () {
   let args = [
     '-d', 'upload_max_filesize=100M',
     '-d', 'post_max_size=500M',
-    '-d', 'short_open_tag=On'
+    '-d', 'short_open_tag=On',
+
+    path.join(user.paths.www, 'router.php')
   ]
 
   if (user.devServer.logPhpErrors) {

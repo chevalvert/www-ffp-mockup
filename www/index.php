@@ -1,18 +1,19 @@
-<?php require_once 'snippets/webpack.php' ?>
+<?php
+  require_once 'dev/slugify.php';
+  require_once 'dev/snippet.php';
+  require_once 'dev/webpack.php';
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  require_once 'dev/mock-data.php';
 
-  <title></title>
-  <?= liveCSS('assets/bundle.css') ?>
-</head>
-<body>
-  <main>
-    hello <?= isWebpack() ? 'from webpack' : '' ?>
-  </main>
-  <script src="assets/bundle.js"></script>
-</body>
-</html>
+
+  // Strip /index and .php to ensure consistent URI scheme
+  $URI = str_replace(['/index', '.php'], '', $_SERVER['PHP_SELF']);
+
+  // Redirect root to the home template
+  if ($URI === '') $URI = '/home';
+
+  $template = 'templates' . $URI . '.php';
+
+  include file_exists($template)
+    ? $template
+    : 'templates/404.php';

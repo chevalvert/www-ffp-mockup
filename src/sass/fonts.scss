@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap');
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: auto;
+  src: url('fonts/spacegrotesk-regular.woff2') format('woff2'),
+       url('fonts/spacegrotesk-regular.woff') format('woff'),
+       url('fonts/spacegrotesk-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: auto;
+  src: url('fonts/spacegrotesk-bold.woff2') format('woff2'),
+       url('fonts/spacegrotesk-bold.woff') format('woff'),
+       url('fonts/spacegrotesk-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
