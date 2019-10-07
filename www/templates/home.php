@@ -1,12 +1,9 @@
-<?php snippet('header') ?>
+<?php snippet('html.header') ?>
+<?php snippet('components/menu') ?>
 
-<main>
-  <nav>
-    <?php foreach (mock('pages') as $title => $url) : ?>
-      <li><a href="<?= slugify($title) ?>"><?= $title ?></a></li>
-    <?php endforeach ?>
-  </nav>
+<main role="main">
 
-  <?= mock('pages.La FFP.title') ?>
 </main>
-<?php snippet('footer') ?>
+
+<?php snippet('components/footer') ?>
+<?php snippet('html.footer') ?>

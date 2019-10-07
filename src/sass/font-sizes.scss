@@ -1,0 +1,16 @@
+$font-size: (
+  'menu': (1.4rem, 1.6rem)
+);
+
+@function fs-get ($key) {
+  @return nth(map-get($font-size, $key), 1);
+}
+
+@function lh-get ($key) {
+  @return nth(map-get($font-size, $key), 1);
+}
+
+@mixin font-size ($key) {
+  font-size: fs-get($key);
+  line-height: lh-get($key);
+}

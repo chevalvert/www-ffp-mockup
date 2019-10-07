@@ -6,9 +6,10 @@
 
   <title>
     <?php
+      // XXX
       // "site.title" on homepage
       // "page.title | site.title" on subpages
-      mock('site.title', true)
+      mock('site.title')
     ?>
   </title>
 

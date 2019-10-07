@@ -2,25 +2,12 @@
 
 // NOTE: This is for prototyping purpose only : the mock data structure does not
 // need to match the final backend structure.
-static $mocked_data = [
-  'site' => [
-    'title' => 'Fédération Française du Paysage'
-  ],
-  'pages' => [
-    'La FFP' => ['title' => 'hello'],
-    'Actualités' => [],
-    'Annuaire' => [],
-    'Annonces' => [],
-    'Observatoire des projets' => [],
-    'Expériences de paysage' => []
-  ]
-];
+function mock ($key = 'undefined', $return = false) {
+  global $_GLOBALS;
 
-function mock ($key = 'undefined', $echo = false) {
-  global $mocked_data;
-  $data = getValueByKey($key, $mocked_data, $key);
-  if ($echo) echo $data;
-  return $data;
+  $data = getValueByKey($key, (array)$_GLOBALS['__dev.data'], $key);
+  if ($return) return $data;
+  echo $data;
 }
 
 // Allow accessing a nested prop by chaining keys using the dot notation

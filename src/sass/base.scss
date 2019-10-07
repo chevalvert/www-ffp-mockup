@@ -1,6 +1,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 *,
@@ -12,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-family: 'Space Mono', monospace;
   font-size: 2rem;
   line-height: 1.6em;
   text-rendering: optimizeLegibility;
@@ -29,10 +30,20 @@ img {
   vertical-align: bottom; /* Suppress the space beneath the baseline */
 }
 
-a {}
+a {
+  color: inherit;
+  text-decoration: none;
 
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}
+
+a[role=button],
+a[role=button]:hover,
 a:not([href]),
 a:not([href]):hover {
   color: inherit;
   text-decoration: none;
+  border: 0;
 }

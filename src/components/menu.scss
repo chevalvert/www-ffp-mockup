@@ -1,0 +1,53 @@
+.menu {
+  &__regions {
+    padding: $gutter;
+  }
+
+  &__logos {
+    font-size: 0;
+    line-height: 0;
+
+    svg {
+      height: $logo--height;
+      width: auto;
+    }
+
+    svg + svg {
+      padding-left: 10px;
+    }
+  }
+
+
+  &__nav {
+    @include font-size(menu);
+    padding: 0 $gutter;
+    height: $logo--height;
+  }
+
+  &__nav ul {
+    display: flex;
+
+    li {
+      white-space: nowrap;
+      padding: (($logo--height - fs-get(menu)) / 2) 0;
+      margin-top: -1px;
+    }
+
+    li:not(:last-child) {
+      margin-right: $gutter;
+    }
+
+    li.is-active a {
+      border-bottom: 1px solid;
+    }
+  }
+
+  // XXX
+  // TODO: determine how to set specific .menu__link in bold
+  &__link:nth-child(1),
+  &__link:nth-child(2),
+  &__link:nth-child(3),
+  &__link:nth-child(4) {
+    font-weight: bold;
+  }
+}

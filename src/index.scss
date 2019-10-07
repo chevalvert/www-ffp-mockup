@@ -1,8 +1,15 @@
 @import 'sass/reset';
 @import 'sass/fonts';
+@import 'sass/font-sizes';
 @import 'sass/helpers';
 
 $black: #000000;
 $white: #FFFFFF;
 
+$gutter: 2rem;
+$logo--height: 3.5rem;
+
 @import 'sass/base';
+
+@import 'components/menu';
+@import 'components/footer';
