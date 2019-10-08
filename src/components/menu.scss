@@ -1,4 +1,9 @@
 .menu {
+  position: sticky;
+  top: 0;
+
+  background: $white;
+
   &__regions {
     padding: $gutter;
   }
@@ -6,11 +11,7 @@
   &__logos {
     font-size: 0;
     line-height: 0;
-
-    svg {
-      height: $logo--height;
-      width: auto;
-    }
+    height: $logo--height;
 
     svg + svg {
       padding-left: 10px;
@@ -19,17 +20,22 @@
 
 
   &__nav {
-    @include font-size(menu);
-    padding: 0 $gutter;
+    @include font-size(ui);
     height: $logo--height;
+
+    & > .max-width--container {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__nav ul {
     display: flex;
 
     li {
+      height: $logo--height;
       white-space: nowrap;
-      padding: (($logo--height - fs-get(menu)) / 2) 0;
+      padding: (($logo--height - fs-get(ui)) / 2) 0;
       margin-top: -1px;
     }
 

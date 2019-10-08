@@ -1,48 +1,127 @@
 <?php
 
 class FFP {
-  const SWATCHES = [
+  private const SWATCHES = [
     ['rgb(82,253,121)','rgb(178,252,153)','rgb(101,47,81)','rgb(93,93,93)','rgb(101,59,43)','rgb(137,115,101)'],
     ['rgb(118,170,191)','rgb(93,93,93)','rgb(150,125,255)','rgb(157,172,255)','rgb(122,13,102)','rgb(163,31,153)'],
     ['rgb(40,74,0)','rgb(27,95,10)','rgb(142,44,163)','rgb(172,50,193)','rgb(255,96,194)','rgb(255,122,141)']
   ];
 
-  static $current_swatch = NULL;
-  static $previous_base_colors = [];
+  private static $current_swatch = NULL;
+  private static $previous_base_colors = [];
+  private static $previous_base_colors_max_length = 2;
 
-  static function paint () {
-    FFP::computeSwatch();
+  /**
+   * WIP
+   * [paint description]
+   * @return [type] [description]
+   */
+  public static function paint ($return = false) {
+    $backgroundColor = FFP::computeColor();
+    $color = FFPColorHelpers::computeContrast($backgroundColor);
 
-    $color = FFP::computeColor();
-    $contrast = FFPColorHelpers::computeContrast($color);
-    echo "data-color style='background-color:$color; color:$contrast'";
+    if ($return) return compact($backgroundColor, $color);
+    echo "data-color style='background-color:$backgroundColor; color:$color'";
   }
 
-  static function computeSwatch () {
-    // NOTE: one swatch is used for one day
-    $seed = date('d');
-    FFP::$current_swatch = FFP::fisherYatesShuffle(FFP::SWATCHES, $seed);
-  }
-
-  static function computeColor () {
+  /**
+   * Compute the right color based on a specific seeded swatch, a specific seed
+   * for color order, and the previous computed colors
+   * @return rgbString
+   */
+  private static function computeColor () {
     // Ensure a swatch has been computed
-    if (FFP::$current_swatch == NULL) FFP::computeSwatch();
+    if (FFP::$current_swatch == NULL) {
+      // NOTE: One swatch is used for one day
+      $seed = date('d');
 
-    // WIPBUG ???
-    // TODO: seed based on URI
-    $seed = crc32($_SERVER['REQUEST_URI']);
-    $color = FFP::fisherYatesShuffle(FFP::$current_swatch, $seed);
+      // Randomly pick one swatch, based on the specified $seed
+      FFP::$current_swatch = FFP::random_of(FFP::SWATCHES, [], $seed);
 
-    // TODO: ensure this colors is not in previous colors (see GPLA/randomChain)
-    FFP::$previous_base_colors[] = $color;
-    return FFP::hueShift($color);
+      // NOTE: seed used for color picking in FFP::computeColor is set here so
+      // that it won't be reset at each color pick, but at each swatch pick
+      $seed = $_SERVER['REQUEST_URI'];
+      srand(crc32($seed));
+    }
+
+    // NOTE: no seed is specified here when picking a random color from the
+    // swatch because it has already been assigned after computing the swatch
+    $color = FFP::random_of(FFP::$current_swatch, FFP::$previous_base_colors);
+
+    // Keep track of the used colors so that we can exclude them from the next pick
+    FFP::storeColor($color);
+
+    // Shift the color's hue of $hueShift degrees
+    $hueShift = time();
+    return FFPColorHelpers::hueShift($color, $hueShift);
   }
 
-  static function hueShift ($rgbString) {
-    $rgb = FFPColorHelpers::parseRGBString($rgbString);
+  /**
+   * Push the given color to the internal FFP colors history, so that it can
+   * later be excluded from random pick
+   * @param  rgbString
+   */
+  private static function storeColor ($color) {
+    if (!$color) return false;
+
+    array_push(FFP::$previous_base_colors, $color);
+
+    // Constrain history length to a specified value
+    while (count(FFP::$previous_base_colors) > FFP::$previous_base_colors_max_length)
+      array_shift(FFP::$previous_base_colors);
+    FFP::$previous_base_colors = array_values(FFP::$previous_base_colors);
+  }
+
+  /**
+   * Return a seeded random value from an array, with an optionnal exclude list
+   * @param  array
+   * @param  array
+   * @param  string|int
+   * @return mixed
+   */
+  private static function random_of ($array, $exclude = [], $seed = NULL) {
+    if ($seed) {
+      // Make sure $seed is a number
+      if (is_string($seed)) $seed = crc32($seed);
+      srand($seed);
+    }
+
+    $possible_values = array_values(array_diff($array, $exclude));
+    if (count($possible_values) === 1) return $possible_values[0];
+    if (count($possible_values) === 0) return NULL;
+
+    $index = rand(0, count($possible_values) - 1);
+    return $possible_values[$index];
+  }
+}
+
+class FFPColorHelpers {
+  /**
+   * Find the best contrasted color possible
+   * @param  rgbString|RGB $color
+   * @param  string $light
+   * @param  string $dark
+   * @return string
+   */
+  public const CONTRAST_THRESHOLD = 127; // 180
+  public static function computeContrast ($color, $light = 'rgb(255, 255, 255)', $dark = 'rgb(0, 0, 0)') {
+    $rgb = is_array($color) ? $color : FFPColorHelpers::rgbStringToRGB($color);
+    $threshold = FFPColorHelpers::CONTRAST_THRESHOLD;
+    return (round(((intval($rgb[0]) * 299) + (intval($rgb[1]) * 587) + (intval($rgb[2]) * 114)) / 1000) <= $threshold)
+      ? $light
+      : $dark;
+  }
+
+  /**
+   * Shift the hue of a color
+   * @param  rgbString
+   * @param  integer
+   * @return string
+   */
+  public static function hueShift ($rgbString, $shift = 0) {
+    $rgb = FFPColorHelpers::rgbStringToRGB($rgbString);
     list($h, $s, $l) = FFPColorHelpers::rgbToHsl($rgb);
 
-    $shift = time();
     $hsl = [($h + $shift) % 360, $s, $l];
 
     $rgb = FFPColorHelpers::hslToRgb($hsl);
@@ -50,40 +129,32 @@ class FFP {
     return $rgbString;
   }
 
-  // SEE: https://en.wikipedia.org/wiki/Fisher–Yates_shuffle
-  static function fisherYatesShuffle ($items, $seed = 0) {
-    @mt_srand($seed);
-    for ($i = count($items) - 1; $i > 0; $i--) {
-      $j = @mt_rand(0, $i);
-      $tmp = $items[$i];
-      $items[$i] = $items[$j];
-      $items[$j] = $tmp;
-    }
-
-    return $items[0];
-  }
-}
-
-class FFPColorHelpers {
-  static function computeContrast ($color, $light = 'rgb(255, 255, 255)', $dark = 'rgb(0, 0, 0)') {
-    $rgb = is_array($color) ? $color : FFPColorHelpers::parseRGBString($color);
-    $threshold = 127; // 180
-    return (round(((intval($rgb[0]) * 299) + (intval($rgb[1]) * 587) + (intval($rgb[2]) * 114)) / 1000) <= $threshold)
-    ? $light
-    : $dark;
-  }
-
-  static function parseRGBString ($rgbString) {
+  /**
+   * Parse a rgbString to a RGB array
+   * @param  rgbString
+   * @return array
+   */
+  public static function rgbStringToRGB ($rgbString) {
     list($r, $g, $b) = sscanf($rgbString, 'rgb(%d, %d, %d)');
     return [$r, $g, $b];
   }
 
-  static function rgbToRGBString ($rgb) {
+  /**
+   * Merge a RGB array into a rgbString
+   * @param  array
+   * @return rgbString
+   */
+  public static function rgbToRGBString ($rgb) {
     list ($r, $g, $b) = $rgb;
     return "rgb($r, $g, $b)";
   }
 
-  static function rgbToHsl ($rgb) {
+  /**
+   * Convert a RGB array to a HSL array
+   * @param  array
+   * @return array
+   */
+  private static function rgbToHsl ($rgb) {
     list($r, $g, $b) = $rgb;
     $oldR = $r;
     $oldG = $g;
@@ -118,7 +189,12 @@ class FFPColorHelpers {
     return [round($h, 2), round($s, 2), round($l, 2)];
   }
 
-  static function hslToRgb ($hsl) {
+  /**
+   * Convert a HSL array to a RGB array
+   * @param  array
+   * @return array
+   */
+  private static function hslToRgb ($hsl) {
     list($h, $s, $l) = $hsl;
     $r;
     $g;

@@ -1,3 +1,5 @@
 <footer class="footer">
-  <?= mock('site.address') ?>
+  <div class="max-width--container">
+    <?= mock('site.address') ?>
+  </div>
 </footer>

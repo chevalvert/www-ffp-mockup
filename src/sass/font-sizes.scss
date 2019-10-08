@@ -1,5 +1,7 @@
 $font-size: (
-  'menu': (1.4rem, 1.6rem)
+  'ui': (1.4rem, 1.6rem),
+  'h1': (3rem, 3.5rem),
+  'body': (1.8rem, 1.3em)
 );
 
 @function fs-get ($key) {
@@ -7,10 +9,13 @@ $font-size: (
 }
 
 @function lh-get ($key) {
-  @return nth(map-get($font-size, $key), 1);
+  @return nth(map-get($font-size, $key), 2);
 }
 
 @mixin font-size ($key) {
+  @if map-get($font-size, $key) == null {
+    @error "'#{$key}' does not exist.";
+  }
   font-size: fs-get($key);
   line-height: lh-get($key);
 }

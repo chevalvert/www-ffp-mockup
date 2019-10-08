@@ -1,3 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .footer {
-  @include debug;
+  @include font-size(ui);
+  flex-shrink: 0;
+  background: $black;
+  color: $white;
+  padding: 3rem 0;
 }

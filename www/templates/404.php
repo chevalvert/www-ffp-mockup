@@ -2,7 +2,9 @@
 <?php snippet('components/menu') ?>
 
 <main role="main">
-  oups
+  <div class="max-width--container">
+    404
+  </div>
 </main>
 
 <?php snippet('components/footer') ?>
