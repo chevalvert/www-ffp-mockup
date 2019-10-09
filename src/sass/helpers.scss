@@ -18,6 +18,16 @@
 
 @mixin debug ($color: red) {
   outline: 1px solid $color;
+  outline-offset: -1px;
+}
+
+@mixin line-clamp ($length: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $length;
+  -webkit-box-orient: vertical;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @mixin easing ($duration: 100ms, $property: all) {
@@ -104,4 +114,12 @@
 
   content: '';
   pointer-events: none;
+}
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
 }

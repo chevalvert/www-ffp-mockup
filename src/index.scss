@@ -1,7 +1,7 @@
 @import 'sass/reset';
 @import 'sass/fonts';
-@import 'sass/font-sizes';
 @import 'sass/helpers';
+@import 'sass/devices';
 
 $black: #000000;
 $white: #FFFFFF;
@@ -9,7 +9,20 @@ $white: #FFFFFF;
 $gutter: 2rem;
 $logo--height: 3.5rem;
 
+$max-width: 1280px;
+
+@function col ($n) {
+  @return calc(100% / 12 * #{$n});
+}
+
 @import 'sass/base';
 
-@import 'components/menu';
+@import 'components/article';
+@import 'components/article-preview';
+@import 'components/articles';
+@import 'components/cta';
+@import 'components/event-preview';
+@import 'components/events';
 @import 'components/footer';
+@import 'components/header';
+@import 'components/menu';

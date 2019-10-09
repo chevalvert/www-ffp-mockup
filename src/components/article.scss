@@ -1,0 +1,31 @@
+.article {
+  & > .max-width--container {
+    display: flex;
+  }
+
+  &__body  {
+    @include font(article-body);
+    font-family: 'Space Grotesk', serif;
+
+    max-width: col(5);
+
+    ul {
+      list-style-type: square;
+    }
+
+    li, p {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &__sidebar {
+    @include debug;
+    padding-top: $gutter;
+    padding-bottom: $logo--height * 2;
+
+    margin-left: col(2);
+    max-width: col(3);
+  }
+}

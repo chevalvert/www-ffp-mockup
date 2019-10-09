@@ -1,0 +1,18 @@
+.events {
+  &__entries {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Compensate last row of &__entry margin-bottom
+    margin-bottom: -$logo--height;
+  }
+
+  &__entry {
+    width: calc(100% / 4 - #{$gutter * 3 / 4});
+    margin-bottom: $logo--height;
+
+    &:not(:nth-child(4n)) {
+      margin-right: $gutter;
+    }
+  }
+}

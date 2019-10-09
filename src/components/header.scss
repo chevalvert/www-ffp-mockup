@@ -1,0 +1,37 @@
+.header {
+  & > .max-width--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  &__content {
+    padding-top: $gutter;
+    padding-bottom: ($logo--height * 2);
+    max-width: col(5);
+  }
+
+  &__cover {
+    max-width: col(5);
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__content &__date {
+    @include font(body);
+  }
+
+  &__content &__context {
+    @include font(header);
+    font-weight: bold;
+  }
+
+  &__content &__title {
+    @include font(header);
+  }
+
+  &__content &__body {
+    @include font(body);
+  }
+}

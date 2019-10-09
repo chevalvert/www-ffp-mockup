@@ -1,13 +1,18 @@
 <?php
 
 class FFP {
-  private const SWATCHES = [
+  public const SWATCHES = [
     ['rgb(82,253,121)','rgb(178,252,153)','rgb(101,47,81)','rgb(93,93,93)','rgb(101,59,43)','rgb(137,115,101)'],
     ['rgb(118,170,191)','rgb(93,93,93)','rgb(150,125,255)','rgb(157,172,255)','rgb(122,13,102)','rgb(163,31,153)'],
     ['rgb(40,74,0)','rgb(27,95,10)','rgb(142,44,163)','rgb(172,50,193)','rgb(255,96,194)','rgb(255,122,141)']
   ];
 
-  private static $current_swatch = NULL;
+
+  // IMPORTANT: this color is hue shifted, meaning that comparison with
+  // FFP::SWATCHES will result in unexpected behaviors
+  public static $last_computed_color = NULL;
+  public static $current_swatch = NULL;
+
   private static $previous_base_colors = [];
   private static $previous_base_colors_max_length = 2;
 
@@ -16,12 +21,19 @@ class FFP {
    * [paint description]
    * @return [type] [description]
    */
-  public static function paint ($return = false) {
-    $backgroundColor = FFP::computeColor();
+  public static function paint ($recompute = true, $return = false) {
+    $backgroundColor = $recompute
+      ? FFP::computeColor()
+      : FFP::$last_computed_color;
+
     $color = FFPColorHelpers::computeContrast($backgroundColor);
 
     if ($return) return compact($backgroundColor, $color);
-    echo "data-color style='background-color:$backgroundColor; color:$color'";
+
+    if (!$recompute) echo "data-color-no-recompute ";
+    echo 'data-color="' . implode(',', FFPColorHelpers::rgbStringToRGB($backgroundColor)) . '" ';
+    // TODO allow style injection
+    echo "style='background-color:$backgroundColor; color:$color'";
   }
 
   /**
@@ -53,7 +65,8 @@ class FFP {
 
     // Shift the color's hue of $hueShift degrees
     $hueShift = time();
-    return FFPColorHelpers::hueShift($color, $hueShift);
+    FFP::$last_computed_color = FFPColorHelpers::hueShift($color, $hueShift);
+    return FFP::$last_computed_color;
   }
 
   /**

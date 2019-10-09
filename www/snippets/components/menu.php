@@ -12,7 +12,7 @@
     <div class="max-width--container">
       <ul class="menu__links">
         <?php foreach (mock('pages', true) as $title => $item) : ?>
-          <li class="menu__link <?= strpos($_GLOBALS['URI'], slugify($title)) ? 'is-active' : '' ?>">
+          <li class="menu__link <?= strpos($_GLOBALS['URI'], slugify($title)) !== false ? 'is-active' : '' ?>">
             <a href="<?= slugify($title) ?>"><?= $title ?></a>
           </li>
         <?php endforeach ?>
@@ -21,10 +21,10 @@
       <ul class="menu__links--alt">
         <li class="menu__link">
           <a href="rechercher" title="Rechercher…" role="button">
-            <?php snippet('svg/picto-search') ?>
+            <?php snippet('svg/icon-search') ?>
           </a>
         </li>
-        <li class="menu__link <?= strpos($_GLOBALS['URI'], 'profil') ? 'is-active' : '' ?>">
+        <li class="menu__link <?= strpos($_GLOBALS['URI'], 'profil') !== false ? 'is-active' : '' ?>">
           <a href="profil" title="Voir mon profil">Mon profil</a>
         </li>
       </div>

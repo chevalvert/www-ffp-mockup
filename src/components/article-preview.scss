@@ -1,0 +1,13 @@
+.article-preview {
+  &__cover {
+    margin-bottom: $gutter;
+  }
+
+  &__pubdate {
+    @include font(ui);
+  }
+
+  &__context {
+    font-weight: bold;
+  }
+}
