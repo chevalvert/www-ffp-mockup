@@ -4,7 +4,7 @@
 <main role="main">
   <article class="article">
     <?php
-      $prototype_article = mock('pages.Actualités.articles', true)[0];
+      $prototype_article = mock('pages.actualites.articles', true)[0];
       snippet('components/header', [
         'date' => $prototype_article['pubdate'],
         'context' => $prototype_article['context'],
@@ -14,21 +14,24 @@
       ]);
     ?>
 
-    <div class="max-width--container">
-      <section class="article__body">
-        <?php snippet('text', ['text' => $prototype_article['text']]) ?>
-      </section>
+    <section class="article__body">
+      <div class="container">
+        <div class="article__text">
+          <?php snippet('textblock', ['text' => $prototype_article['text']]) ?>
+        </div>
 
-      <aside class="article__sidebar">
-        TODO
-      </aside>
-    </div>
+        <aside class="article__sidebar">
+          TODO
+        </aside>
+      </div>
+    </section>
 
-    <?php snippet('components/articles', [
+    <?php snippet('components/pages--grid', [
       'title' => 'Plus d’actualités',
       'class' => 'article__related',
       // XXX: last 4 articles
-      'articles' => array_slice(mock('pages.Actualités.articles', true), 0, 4)
+      'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+      'renderer' => 'components/preview--article'
     ]) ?>
   </article>
 </main>

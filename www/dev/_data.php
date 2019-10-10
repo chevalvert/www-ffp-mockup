@@ -26,8 +26,9 @@ $_GLOBALS['__dev.data'] = [
   ],
 
   'pages' => [
-    'La FFP' => ['title' => 'La FFP'],
-    'Actualités' => [
+    'la-ffp' => ['title' => 'La FFP'],
+    'actualites' => [
+      'title' => 'Actualités',
       'events' => [
         ['date_start' => 1570622469, 'date_end' => 1571632469, 'context' => 'Arc-et-Senans', 'title' => '19° Festival des jardins Flower Power, Woodstock côté jardin'],
         ['date_start' => 1570622469, 'date_end' => null, 'context' => 'Amiens', 'title' => '5° édition du Grand forum du patrimoine'],
@@ -58,9 +59,11 @@ $_GLOBALS['__dev.data'] = [
         ['pubdate' => 1570622469, 'context' => 'Juridique', 'title' => 'La loi ELAN est promulguée', 'cover_url' => 'https://picsum.photos/id/15/1600/1000'],
       ]
     ],
-    'Annuaire' => [],
-    'Annonces' => [],
-    'Observatoire des projets' => [],
-    'Expériences de paysage' => []
+    'annuaire' => ['title' => 'Annuaire'],
+    'annonces' => ['title' => 'Annonce'],
+    'observatoire-des-projets' => [
+      'title' => 'Observatoire des projets',
+      'text' => "Le principe de l’observatoire est de proposer sur le site web de la FFP, une promotion du savoir-faire des entreprises au travers de projets réalisés ensemble.\nCette promotion est assurée par la publication de reportages sur les chantiers en insistant sur une ou plusieurs spécificités, de nouvelles techniques ...\nChaque écho des chantiers est mis en ligne pour deux \nans dans la partie libre du site Internet de la FFP.\nUne alerte à chacun de nos membres est envoyée \nà chaque nouvelle publication.\n\nSur une même opération les entreprises peuvent se répartir entre elles le financement de cette promotion collective. \nLe concepteur valorise aussi son travail. Progressivement les écho des chantiers vont constituer une riche bibliothèque de projets et un baromètre de l'activité."],
+    'experiences-de-paysage' => ['title' => 'Expériences de paysage']
   ]
 ];

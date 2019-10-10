@@ -1,5 +1,6 @@
-.articles {
+.pages--grid {
   &__title {
+    @include no-select;
     @include font(header);
     margin-bottom: $logo--height;
   }
@@ -19,5 +20,13 @@
     &:not(:nth-child(4n)) {
       margin-right: $gutter;
     }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: $logo--height * 2;
   }
 }

@@ -1,3 +1,5 @@
+$menu--optical-v: -1px;
+
 .menu {
   z-index: 1;
   position: sticky;
@@ -23,7 +25,7 @@
     @include font(ui);
     height: $logo--height;
 
-    & > .max-width--container {
+    .container {
       display: flex;
       justify-content: space-between;
     }
@@ -33,10 +35,13 @@
     display: flex;
 
     li {
-      height: $logo--height;
       white-space: nowrap;
-      padding: (($logo--height - font-size(ui)) / 2) 0;
-      margin-top: -1px;
+      height: $logo--height;
+
+      padding:
+        calc((#{$logo--height} - 1em) / 2 + #{$menu--optical-v})
+        0
+        calc((#{$logo--height} - 1em) / 2 - #{$menu--optical-v});
     }
 
     li:not(:last-child) {

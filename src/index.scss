@@ -17,12 +17,16 @@ $max-width: 1280px;
 
 @import 'sass/base';
 
-@import 'components/article';
-@import 'components/article-preview';
-@import 'components/articles';
+@import 'components/btn';
 @import 'components/cta';
-@import 'components/event-preview';
-@import 'components/events';
 @import 'components/footer';
 @import 'components/header';
 @import 'components/menu';
+@import 'components/pages--grid';
+@import 'components/preview--article';
+@import 'components/preview--event';
+@import 'components/section';
+
+@import 'templates/article';
+@import 'templates/home';
+@import 'templates/search';

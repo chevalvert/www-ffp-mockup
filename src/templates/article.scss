@@ -1,12 +1,13 @@
 .article {
-  & > .max-width--container {
+  &__body {}
+
+  &__body .container  {
     display: flex;
   }
 
-  &__body  {
+  &__body &__text {
     @include font(article-body);
     font-family: 'Space Grotesk', serif;
-
     max-width: col(5);
 
     ul {
@@ -20,10 +21,8 @@
     }
   }
 
-  &__sidebar {
+  &__body &__sidebar {
     @include debug;
-    padding-top: $gutter;
-    padding-bottom: $logo--height * 2;
 
     margin-left: col(2);
     max-width: col(3);

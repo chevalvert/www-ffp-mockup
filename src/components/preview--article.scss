@@ -1,0 +1,19 @@
+.preview--article {
+  &__cover {
+    margin-bottom: $gutter;
+  }
+
+  &__pubdate {
+    @include font(ui);
+  }
+
+  &__context {
+    font-weight: bold;
+
+    // ???: Shouldn't this be user's decision ?
+    text-transform: lowercase;
+    &::first-letter  {
+      text-transform: uppercase;
+    }
+  }
+}

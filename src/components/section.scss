@@ -1,0 +1,40 @@
+.section {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  &__content {
+    max-width: col(5);
+  }
+
+  &__title {
+    @include font(header);
+  }
+
+  &__body {
+    @include font(body);
+  }
+
+  &__columns[data-length='1'] &__column { width: col(12); }
+  &__columns[data-length='2'] &__column { width: col(6); }
+  &__columns[data-length='3'] &__column { width: col(4); }
+  &__columns[data-length='4'] &__column { width: col(3); }
+
+  &__column h3 {
+    font-weight: bold;
+  }
+
+  &__column + &__column {
+    margin-left: $gutter;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: $logo--height * 2;
+  }
+}

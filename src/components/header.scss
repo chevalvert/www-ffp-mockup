@@ -1,5 +1,5 @@
 .header {
-  & > .max-width--container {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -7,12 +7,14 @@
 
   &__content {
     padding-top: $gutter;
-    padding-bottom: ($logo--height * 2);
+    padding-bottom: $logo--height * 2;
+
     max-width: col(5);
   }
 
   &__cover {
     max-width: col(5);
+
     img {
       object-fit: cover;
     }

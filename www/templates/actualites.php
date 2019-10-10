@@ -2,22 +2,28 @@
 <?php snippet('components/menu') ?>
 
 <main role="main">
-  <?php snippet('components/events', [
+  <?php snippet('components/pages--grid', [
     'title' => 'À ne pas manquer',
-    'link' => 'actualites/' . slugify('À ne pas manquer'),
+    'link' => 'actualites/events',
     // XXX: limit to 4 most recent events
-    'events' => mock('pages.Actualités.events', true),
+    'pages' => mock('pages.actualites.events', true),
+    'renderer' => 'components/preview--event',
     'cta' => [
       'icon' => 'icon-add',
       'tooltip' => 'Soumettre un événement',
-      'action' => 'actualites/' . slugify('À ne pas manquer') . '/form-event'
+      'action' => 'actualites/events' . '/form-event'
     ]
   ]) ?>
 
-  <?php snippet('components/articles', [
+  <?php snippet('components/pages--grid', [
     'DO_NOT_PAINT' => true,
     'title' => 'Actualités',
-    'articles' => mock('pages.Actualités.articles', true)
+    'pages' => mock('pages.actualites.articles', true),
+    'renderer' => 'components/preview--article',
+    'btn' => [
+      'label' => 'Voir plus',
+      'action' => '#load-more'
+    ]
   ]) ?>
 
 </main>

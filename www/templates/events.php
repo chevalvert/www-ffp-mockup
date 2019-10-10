@@ -16,7 +16,7 @@
     'cta' => [
       'icon' => 'icon-add',
       'tooltip' => 'Soumettre un événement',
-      'action' => 'actualites/' . slugify('À ne pas manquer') . '/form-event'
+      'action' => 'actualites/events/add'
     ]
   ]) ?>
 
@@ -26,12 +26,15 @@
     foreach (['Octobre', 'Septembre', 'Août', 'Juillet', 'Juin', 'Mai', 'Avril'] as $prototype_month) {
       $prototype_events = [];
       for ($i=0; $i < rand(0, 10); $i++) {
-        $prototype_events[] = mock('pages.Actualités.events', true)[array_rand(mock('pages.Actualités.events', true))];
+        $index = array_rand(mock('pages.actualites.events', true));
+        $prototype_events[] = mock('pages.actualites.events', true)[$index];
       }
 
-      snippet('components/events', [
+      snippet('components/pages--grid', [
         'title' => "$prototype_month 2019",
-        'events' => $prototype_events
+        'pages' => $prototype_events,
+        'renderer' => 'components/preview--event',
+        'empty_placeholder' => '&mdash;'
       ]);
     }
   ?>

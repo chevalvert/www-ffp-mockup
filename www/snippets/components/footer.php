@@ -1,5 +1,5 @@
 <footer class="footer">
-  <div class="max-width--container">
+  <div class="container">
     <div class="footer__contact">
       <?= mock('site.address') ?>&nbsp;&mdash;&nbsp;
       <a href="tel:<?= mock('site.phone', true) ?>"><?= mock('site.phone') ?></a>

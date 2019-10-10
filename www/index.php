@@ -18,7 +18,11 @@
   // Redirect root to the home template
   if ($_GLOBALS['URI'] === '') $_GLOBALS['URI'] = 'home';
 
-  $template = 'templates/' . $_GLOBALS['URI'] . '.php';
+  // Make the mocked datas for the current page globally available
+  $_GLOBALS['page'] = mock('pages.' . $_GLOBALS['URI'], true);
+
+  // Find template based on specfied 'template' key in mocked data, or page URI if none
+  $template = 'templates/' . ($_GLOBALS['page']['template'] ?? $_GLOBALS['URI']) . '.php';
   include file_exists($template)
     ? $template
     : 'templates/404.php';

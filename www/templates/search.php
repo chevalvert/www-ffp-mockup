@@ -2,9 +2,12 @@
 <?php snippet('components/menu') ?>
 
 <main role="main">
-  <section>
-    <div class="max-width--container">
-      TODO
+  <section class="search__form">
+    <div class="container">
+      <?php snippet('components/btn', [
+        'action' => "/search?q=hello",
+        'label' => 'Rechercher'
+      ]) ?>
     </div>
   </section>
 </main>

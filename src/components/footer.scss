@@ -12,7 +12,7 @@ main { flex: 1 0 auto; }
   background: $black;
   color: $white;
 
-  & > .max-width--container {
+  .container {
     display: flex;
     justify-content: space-between;
   }
