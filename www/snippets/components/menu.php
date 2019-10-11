@@ -1,10 +1,22 @@
-<header class="menu">
-  <div class="menu__regions container">
-    <div class="menu__logos">
-      <a href="/" role="button">
-        <?php snippet('svg/logo-main') ?>
-        <?php snippet('svg/logo-baseline') ?>
-      </a>
+<?php
+  $message = ($region ?? false)
+    ? "<a href='region?r=" . slugify($region) . "' role='button'>$region</a>"
+    : ($message ?? false);
+?>
+
+<header class="menu <?= ($region ?? false) ? 'has-region' : '' ?>">
+  <div class="menu__content">
+    <?php snippet('components/menu--regions') ?>
+    <div class="container">
+      <div class="menu__logos">
+        <a href="/" role="button">
+          <?php snippet('svg/logo-main', ['title' => 'FFP']) ?>
+          <?php ($message ?? false) || snippet('svg/logo-baseline', ['title' => 'Fédération Française du Paysage']) ?>
+        </a>
+      </div>
+      <?= ($message ?? false) ? "<div class='menu__message'>$message</div>"  : '' ?>
+
+      <label class="menu__regions-toggler" for="toggleRegionsMenu">Les régions</label>
     </div>
   </div>
 

@@ -13,10 +13,16 @@
   }
 
   &__cover {
-    max-width: col(5);
+    @include ratio(16/10);
+    width: col(5);
 
-    img {
-      object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    @include below--max-width  {
+      width: calc(100% / 12 * 5 + #{$gutter});
+      margin-right: -$gutter;
     }
   }
 

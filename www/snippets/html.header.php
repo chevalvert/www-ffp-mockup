@@ -19,4 +19,4 @@
   </title>
   <?= liveCSS('assets/bundle.css') ?>
 </head>
-<body>
+<body data-swatch-index="<?= FFP::getCurrentSwatchIndex() ?>">

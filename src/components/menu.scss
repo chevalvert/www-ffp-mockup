@@ -7,8 +7,22 @@ $menu--optical-v: -1px;
 
   background: $white;
 
-  &__regions {
-    padding: $gutter;
+  &.has-region {
+    // SEE components/menu--regions
+    color: $white;
+    background: $black;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__content > .container {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: $gutter;
+    padding-bottom: $gutter;
   }
 
   &__logos {
@@ -18,6 +32,34 @@ $menu--optical-v: -1px;
 
     svg + svg {
       padding-left: 10px;
+    }
+  }
+
+  &__message {
+    @include font(header);
+    @include no-select;
+
+    flex: 1;
+    margin-left: $gutter;
+  }
+
+  &__regions-toggler {
+    // SEE components/menu--regions
+    @include font(ui);
+    @include no-select;
+    @include easing(300ms, border-bottom);
+
+    display: inline-block;
+    align-self: center;
+    cursor: pointer;
+
+    line-height: 1.6em;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+
+    &.is-active,
+    &:hover  {
+      border-bottom: 1px solid;
     }
   }
 

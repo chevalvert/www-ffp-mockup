@@ -28,9 +28,7 @@
     </div>
 
     <?php if ($cover ?? null) : ?>
-    <div class="header__cover">
-      <img src="<?= $cover ?>">
-    </div>
+    <div class="header__cover" style="background-image:url(<?= $cover ?>)"></div>
     <?php endif ?>
   </div>
 </header>

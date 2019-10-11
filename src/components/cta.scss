@@ -25,11 +25,10 @@
     pointer-events: none;
 
     position: absolute;
-    bottom: 50%;
+    top: 50%;
     left: 100%;
-    vertical-align: middle;
-
-    transform: translate($gutter / 2, 75%);
+    transform: translateY(-0.35em);
+    padding-left: $gutter / 2;
 
     width: auto;
     white-space: nowrap;
@@ -39,6 +38,7 @@
 
   &:focus &__tooltip,
   &:hover &__tooltip {
+    pointer-events: auto;
     opacity: 1;
   }
 }

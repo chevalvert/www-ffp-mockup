@@ -1,0 +1,57 @@
+$menu--regions__list--padding-left: 7.8rem + $gutter * 2;
+
+#toggleRegionsMenu {
+  display: none;
+}
+
+.menu--regions {
+  @include easing(300ms, clip-path);
+
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $black;
+  color: $white;
+
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
+
+  &__list {
+    padding-top: $gutter;
+    height: calc(100% - #{$logo--height});
+
+    background: $white;
+    color: $black;
+
+    .container {
+      @include invisible-y-scroll;
+      // padding-left: $menu--regions__list--padding-left;
+      max-height: calc(100% - #{$logo--height});
+    }
+
+    li {
+      @include font(header);
+      line-height: line-height(header) * 1.25;
+
+      &:hover,
+      &.is-active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+#toggleRegionsMenu:checked ~ .menu--regions {
+  pointer-events: auto;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}

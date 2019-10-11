@@ -4,7 +4,7 @@
   $show_year = $show_year ?? false;
   $compact_month = $page['date_start'] && $page['date_end'];
   $format = '%e';
-  $format .= $compact_month ? ' %h' : ' %B';
+  $format .= $compact_month ? ' %h.' : ' %B';
   $format .= $show_year ? ' %Y' : '';
 ?>
 

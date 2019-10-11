@@ -3,6 +3,25 @@
   &__form {
     background-color: $black;
     color: $white;
+    padding-bottom: $gutter;
+  }
+
+  &__form > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input[type='search'] {
+    @include reset-button;
+    @include font(header);
+
+    flex: 1;
+    margin-right: $gutter;
+
+    font-style: italic;
+    border-bottom: 1px solid;
+
+    padding-bottom: 2px;
   }
 
 }

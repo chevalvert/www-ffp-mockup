@@ -2,8 +2,8 @@
 <?php snippet('components/menu') ?>
 
 <main role="main">
-  <?php snippet('components/heading', [
-    'title' => 'Observatoire des projets',
+  <?php snippet('components/section', [
+    'title' =>  mock('pages.observatoire-des-projets.title', true),
     'text' => mock('pages.observatoire-des-projets.text', true)
   ]) ?>
 

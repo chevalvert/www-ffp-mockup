@@ -1,5 +1,6 @@
 .preview--article {
   &__cover {
+    overflow: hidden;
     margin-bottom: $gutter;
   }
 
@@ -10,10 +11,30 @@
   &__context {
     font-weight: bold;
 
-    // ???: Shouldn't this be user's decision ?
-    text-transform: lowercase;
     &::first-letter  {
       text-transform: uppercase;
     }
+  }
+
+  &__title {
+    @include line-clamp(5);
+  }
+
+  &__cover img {
+    // ??? [A]
+    @include easing(300ms);
+    will-change: transform filter;
+    transform-origin: center;
+
+    // ??? [B]
+    // @include easing(300ms, filter);
+  }
+
+  &:hover &__cover img {
+    // ??? [A]
+    transform: rotate(1deg) scale(1.1);
+
+    // ??? [B]
+    filter: hue-rotate(-45deg);
   }
 }

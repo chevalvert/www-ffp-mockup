@@ -16,6 +16,18 @@
   }
 }
 
+@mixin invisible-y-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  scrollbar-height: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    height: 0;
+    background: transparent;
+  }
+}
+
 @mixin debug ($color: red) {
   outline: 1px solid $color;
   outline-offset: -1px;

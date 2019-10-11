@@ -1,10 +1,10 @@
-// NOTE: not using a more simple `.btn` selector to increase specifity and make
-// sure that a[role=button] defined in sass/base is overwritten
-
 $btn--optical-v: -1px;
 
-// WIP
+// NOTE: not using a more simple `.btn` selector to increase specifity and make
+// sure that a[role=button] defined in sass/base is overwritten
+button.btn,
 a[role=button].btn {
+  @include reset-button;
   @include font(ui);
 
   position: relative;
@@ -12,6 +12,8 @@ a[role=button].btn {
 
   border: 1px solid;
   width: auto;
+
+  cursor: pointer;
 
   padding:
     calc((#{$logo--height} - 1em) / 2 + #{$btn--optical-v})
