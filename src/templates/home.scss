@@ -1,3 +1,5 @@
-.section--baseline .section__content {
-  max-width: col(7);
+[data-barba-view='home'] {
+  .section--baseline .section__content {
+    max-width: col(7);
+  }
 }

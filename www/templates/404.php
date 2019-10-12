@@ -1,11 +1,11 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<main role="main">
-  <div class="container">
+<div data-barba="wrapper">
+  <main role="main" data-barba="container">
     404
-  </div>
-</main>
+  </main>
+</div>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

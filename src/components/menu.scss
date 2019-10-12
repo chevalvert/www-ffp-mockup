@@ -90,7 +90,7 @@ $menu--optical-v: -1px;
       margin-right: $gutter;
     }
 
-    li.is-active a {
+    li.is-active a:not([role='button']) {
       border-bottom: 1px solid;
     }
   }

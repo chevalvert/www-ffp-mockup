@@ -6,7 +6,6 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 
 .menu--regions {
   @include easing(300ms, clip-path);
-
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -16,6 +15,7 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
   background: $black;
   color: $white;
 
+  will-change: clip-path;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 
   & > .container {

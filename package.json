@@ -12,8 +12,11 @@
     "test": "ava --verbose"
   },
   "aliases": {
+    "abstractions": "src/abstractions",
+    "components": "src/components",
     "controllers": "src/controllers",
-    "utils": "src/utils"
+    "utils": "src/utils",
+    "views": "src/views"
   },
   "author": "Arnaud Juracek",
   "license": "MIT",
@@ -58,6 +61,7 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
+    "@barba/core": "^2.6.0",
     "nodelist-foreach": "^1.0.1"
   },
   "private": true

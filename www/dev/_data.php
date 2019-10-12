@@ -22,7 +22,7 @@ $_GLOBALS['__dev.data'] = [
     'provence-alpes-cote-d-azur-corse' => ['title' => 'Provence-Alpes-Côte d\'Azur, Corse'],
     'occitanie-languedoc-roussillon' => ['title' => 'Occitanie, Languedoc-Roussillon'],
     'occitanie-midi-pyrenees' => ['title' => 'Occitanie, Midi-Pyrénées'],
-    'nouvelle-aquitaine' => ['title' => 'Nouvelle Aquitaine,'],
+    'nouvelle-aquitaine' => ['title' => 'Nouvelle Aquitaine'],
     'bretagne-pays-de-la-loire-centre-val-de-loire' => ['title' => 'Bretagne, Pays de la Loire, Centre Val de Loire'],
     'normandie' => ['title' => 'Normandie'],
     'outre-mer' => ['title' => 'Outre-Mer']

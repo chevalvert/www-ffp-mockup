@@ -1,12 +1,11 @@
-.search {
-
-  &__form {
+[data-barba-view='search'] {
+  .search-form {
     background-color: $black;
     color: $white;
     padding-bottom: $gutter;
   }
 
-  &__form > .container {
+  .search-form > .container {
     display: flex;
     justify-content: space-between;
   }

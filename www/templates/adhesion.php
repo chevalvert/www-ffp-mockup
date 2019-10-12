@@ -1,9 +1,11 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<main role="main">
+<div data-barba="wrapper">
+  <main role="main" data-barba="container">
   TODO
-</main>
+  </main>
+</div>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>
