@@ -16,6 +16,7 @@
     'DO_NOT_PAINT' => true,
     'pages' => mock('pages.annonces.pages', true),
     'sortBy' => ['pubdate', 'ASC'],
+    'sortable' => ['pubdate', 'type'],
     'columns' => [
       'type' => [],
       'pubdate' => ['label' => 'Date', 'transform' => function ($timestamp) {

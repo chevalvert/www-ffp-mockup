@@ -12,6 +12,7 @@
     "test": "ava --verbose"
   },
   "aliases": {
+    "controllers": "src/controllers",
     "utils": "src/utils"
   },
   "author": "Arnaud Juracek",

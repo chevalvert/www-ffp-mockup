@@ -21,10 +21,13 @@
             echo '<thead>';
             foreach ($columns as $key => $column) {
               $label = $column['label'] ?? $key;
-              $sortable = ($sortBy[0] ?? false) == $key;
-              echo $sortable
-                ? "<th data-sort='$sort_order'>$label</th>"
-                : "<th>$label</th>";
+              $is_sortable = in_array($key, ($sortable ?? []));
+              $is_sorted = ($sortBy[0] ?? false) == $key;
+
+              $attributes = '';
+              $attributes .= $is_sortable ? 'data-sortable ' : '';
+              $attributes .= $is_sorted ? "data-sort='$sort_order'" : '';
+              echo "<th $attributes>$label</th>";
             }
             echo '</thead>';
           }

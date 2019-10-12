@@ -16,6 +16,7 @@
     'DO_NOT_PAINT' => true,
     'pages' => mock('pages.annuaire.pages', true),
     'sortBy' => ['name', 'ASC'],
+    'sortable' => ['name', 'agency'],
     'columns' => [
       'name' => ['label' => 'Adhérent'],
       'agency' => ['label' => 'Agence'],
