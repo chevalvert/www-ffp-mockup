@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
+<main role="main" id="main">
+  <div class="barba-container">
     <?php snippet('components/section', [
       'title' =>  mock('pages.observatoire-des-projets.title', true),
       'text' => mock('pages.observatoire-des-projets.text', true)
@@ -13,8 +13,8 @@
       'pages' => mock('pages.actualites.articles', true),
       'renderer' => 'components/preview--article'
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

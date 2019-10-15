@@ -1,32 +1,38 @@
-import barba from 'controllers/barba'
+import Barba from 'barba.js'
 import noop from 'utils/noop'
 
-// NOTE: this is an opinionated wrapper around Barba@2 <view> structure.
-
 export default (namespace, {
-  willMount = noop,
-  didMount = noop,
-  willUnmount = noop,
-  didUnmount = noop
-} = {}) => barba.registerView({
-  namespace,
+  onEnter = noop,
+  onEnterCompleted = noop,
+  onLeave = noop,
+  onLeaveCompleted = noop
+} = {}) => {
+  namespace.split('|').forEach(ns => {
+    Barba.BaseView.extend({
+      namespace: ns,
 
-  beforeEnter () {
-    this.refs = {}
-    willMount(this.refs)
-  },
+      // The new Container is ready and attached to the DOM
+      onEnter () {
+        this.refs = {}
+        onEnter(this.refs)
+      },
 
-  afterEnter () {
-    didMount(this.refs)
-  },
+      // The Transition has just finished
+      onEnterCompleted () {
+        onEnterCompleted(this.refs)
+      },
 
-  beforeLeave () {
-    willUnmount(this.refs)
-    Object.values(this.refs).forEach(ref => ref && ref.destroy && ref.destroy())
-    this.refs = undefined
-  },
+      // A new Transition toward a new page has just started
+      onLeave () {
+        onLeave(this.refs)
+        Object.values(this.refs).forEach(ref => ref && ref.destroy && ref.destroy())
+        this.refs = undefined
+      },
 
-  afterLeave () {
-    didUnmount()
-  }
-})
+      // The Container has just been removed from the DOM
+      onLeaveCompleted () {
+        onLeaveCompleted()
+      }
+    }).init()
+  })
+}

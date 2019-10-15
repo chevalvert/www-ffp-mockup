@@ -1,74 +1,59 @@
-/**
- * This is an opinionated wrapper around Barba@2, mainly dedicated to simplify
- * views handling in different modules. This is basically syntactic sugar around
- * the real Barba@2 API
- */
+import Barba from 'barba.js'
+import ReducerTransition from 'abstractions/barba-transition-reducer'
+import noop from 'utils/noop'
+import cloneAttributes from 'utils/dom-clone-attributes'
 
-import barba from '@barba/core'
+/* global DOMParser */
 
-let initialized
-const transitions = []
-const views = []
+export default ({
+  wrapperId = 'main',
+  containerClass = 'wrapper',
+  excludedExtensions = /.jpg|.png|.pdf|.jpeg|.gif|panel/i,
+  transitionsMap = {},
+  updateOutsideWrapper = [],
+  // SEE http://barbajs.org/v1/events
+  linkClicked = noop,
+  initStateChange = noop,
+  newPageReady = noop,
+  transitionCompleted = noop
+} = {}) => {
+  Barba.Pjax.Dom.wrapperId = wrapperId
+  Barba.Pjax.Dom.containerClass = containerClass
+  Barba.Pjax.Dom.dataNamespace = 'view'
 
-const RESERVED_GLOBAL_HOOKS = ['before', 'after']
-const ERR_MESSAGES = {
-  'cannot_register_view': 'controllers/barba: @barba/core is already initialized.\nMake sure to register all views before calling controllers/barba.init',
-  'cannot_register_transition': 'controllers/barba: @barba/core is already initialized.\nMake sure to register all transitions before calling controllers/barba.init',
-  'already_intialized': 'controllers/barba: @barba/core is already initialized.'
-}
+  Barba.Dispatcher.on('linkClicked', linkClicked)
+  Barba.Dispatcher.on('initStateChange', initStateChange)
+  Barba.Dispatcher.on('newPageReady', newPageReady)
+  Barba.Dispatcher.on('transitionCompleted', transitionCompleted)
 
-export default {
-  get initialized () { return initialized },
+  // SEE: https://github.com/luruke/barba.js/issues/49#issuecomment-237966009
+  const parseResponse = Barba.Pjax.Dom.parseResponse
+  Barba.Pjax.Dom.parseResponse = function (response) {
+    const parser = new DOMParser()
+    const html = parser.parseFromString(response, 'text/html')
+    cloneAttributes(html.documentElement, document.documentElement)
+    cloneAttributes(html.body, document.body)
 
-  registerView: view => {
-    if (initialized) throw new Error(ERR_MESSAGES['cannot_register_view'])
-    views.push(view)
-  },
-
-  registerTransition: transition => {
-    if (initialized) throw new Error(ERR_MESSAGES['cannot_register_transition'])
-    transitions.push(transition)
-  },
-
-  init: ({
-    hooks = {}
-  } = {}) => {
-    if (initialized) throw new Error(ERR_MESSAGES['already_intialized'])
-    initialized = true
-
-    Object.entries(hooks).forEach(([hook, callback]) => {
-      if (RESERVED_GLOBAL_HOOKS.includes(hook)) {
-        throw new Error(`controllers/barba: barba.hooks.${hook} is reserved for internal purpose only.`)
-      }
-      barba.hooks[hook](callback)
+    updateOutsideWrapper.forEach(selector => {
+      const replacement = document.querySelector(selector)
+      const source = html.querySelector(selector)
+      if (!replacement || !source) return
+      replacement.parentNode.replaceChild(source, replacement)
     })
 
-    barba.hooks.before(({ current, next }) => {
-      document.body.classList.add('is-loading')
-
-      // Force hard-reloading when clicking on a link pointing to the current view
-      const currentLocation = current.url.href.replace(/^\/|\/$/g, '')
-      const nextLocation = next.url.href.replace(/^\/|\/$/g, '')
-      if (currentLocation === nextLocation) {
-        window.location.reload()
-      }
-    })
-
-    barba.hooks.after(() => {
-      document.body.classList.remove('is-loading')
-    })
-
-    barba.init({
-      transitions,
-      views,
-      logLevel: 'warning',
-      schema: {
-        prefix: 'data-barba',
-        container: 'container',
-        namespace: 'view',
-        prevent: 'prevent',
-        wrapper: 'wrapper'
-      }
-    })
+    return parseResponse.apply(Barba.Pjax.Dom, arguments)
   }
+
+  Barba.Pjax.originalPreventCheck = Barba.Pjax.preventCheck
+  Barba.Pjax.preventCheck = (e, el) => {
+    if (!Barba.Pjax.originalPreventCheck(e, el)) return false
+    if (excludedExtensions.test(el.href.toLowerCase())) return false
+    return true
+  }
+
+  Barba.Dispatcher.on('linkClicked', el => { Barba.lastClickEl = el })
+  Barba.Pjax.getTransition = () => ReducerTransition(transitionsMap)
+
+  Barba.Pjax.init()
+  Barba.Prefetch.init()
 }

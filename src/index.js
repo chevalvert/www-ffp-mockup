@@ -1,21 +1,32 @@
 import barba from 'controllers/barba'
 
 // TODO: barba lifecycle
-import 'controllers/ffp-hue'
+import FFPHue from 'controllers/ffp-hue'
 import 'controllers/ffp-wall'
 
-import menu from 'components/menu'
-
 import 'views/table'
+import defaultTransition from 'views/transitions/default'
 
-barba.init({
-  hooks: {
-    beforeLeave: () => {},
-    afterLeave: () => window.scrollTo(0, 0),
-    beforeEnter: () => {
-      // TODO: get new menu background-color & color
-      menu.close()
-    },
-    afterEnter: ({ next }) => menu.setActiveLink(next.url.href)
+barba({
+  wrapperId: 'main',
+  containerClass: 'barba-container',
+  updateOutsideWrapper: ['.menu'],
+
+  linkClicked: () => {
+    document.body.classList.add('is-loading')
+    document.body.removeAttribute('no-scroll')
+  },
+
+  newPageReady: () => {
+    FFPHue.rebuild()
+    // lazyloader()
+  },
+
+  transitionCompleted: ({ url }) => {
+    document.body.classList.remove('is-loading')
+  },
+
+  transitionsMap: {
+    default: defaultTransition
   }
 })

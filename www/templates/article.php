@@ -1,11 +1,11 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container" data-barba-view="article">
+<main role="main" id="main">
+  <div class="barba-container">
     <article class="article">
       <?php
-        $prototype_article = mock('pages.actualites.articles', true)[0];
+        $prototype_article = mock('pages.actualites.articles')[0];
         snippet('components/header', [
           'date' => $prototype_article['pubdate'],
           'context' => $prototype_article['context'],
@@ -18,7 +18,7 @@
       <section class="article__body">
         <div class="container">
           <div class="article__text">
-            <?php snippet('textblock', ['text' => $prototype_article['text']]) ?>
+            <?= $prototype_article['text'] ?>
           </div>
 
           <aside class="article__sidebar">
@@ -31,12 +31,12 @@
         'title' => 'Plus d’actualités',
         'class' => 'article__related',
         // XXX: last 4 articles
-        'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+        'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
         'renderer' => 'components/preview--article'
       ]) ?>
     </article>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

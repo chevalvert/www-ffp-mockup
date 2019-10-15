@@ -22,7 +22,7 @@
 
       <?php if ($text ?? null) : ?>
       <div class="header__body">
-        <?php snippet('textblock', compact('text')) ?>
+        <?= $text ?>
       </div>
       <?php endif ?>
     </div>

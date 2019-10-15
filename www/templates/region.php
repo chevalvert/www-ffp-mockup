@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
-<?php snippet('components/menu', ['region' => mock('regions.' . $_GET['r'] . '.title', true)]) ?>
+<?php snippet('components/menu', ['region' => mock('regions.' . $_GET['r'])]) ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
+<main role="main" id="main">
+  <div class="barba-container">
     <?php snippet('components/header', [
       'DO_NOT_PAINT' => true,
       'title' => 'Entre champs et volcans',
@@ -29,7 +29,7 @@
       'title' => 'À ne pas manquer dans la région',
       'link' => 'actualites/events',
       // XXX: limit to 4 most recent events
-      'pages' => mock('pages.actualites.events', true),
+      'pages' => mock('pages.actualites.events'),
       'renderer' => 'components/preview--event',
       'cta' => [
         'icon' => 'icon-add',
@@ -42,7 +42,7 @@
       'title' => 'Actualités de la région',
       'link' => 'actualites',
       // XXX: limit to 4 most recent articles
-      'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+      'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
       'cta' => [
         'icon' => 'icon-add',
@@ -55,7 +55,7 @@
       'title' => 'Projets de l’observatoire de la région',
       'link' => 'observatoire-des-projets',
       // XXX: TODO
-      'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+      'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
     ]) ?>
 
@@ -63,11 +63,11 @@
       'title' => 'Projets des adhérents de la région',
       'link' => 'observatoire-des-projets',
       // XXX: TODO
-      'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+      'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

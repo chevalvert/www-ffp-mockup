@@ -2,12 +2,11 @@
 
 // NOTE: This is for prototyping purpose only : the mock data structure does not
 // need to match the final backend structure.
-function mock ($key = 'undefined', $return = false) {
+function mock ($key = 'undefined') {
   global $_GLOBALS;
 
   $data = getValueByKey($key, (array)$_GLOBALS['__dev.data'], $key);
-  if ($return) return $data;
-  echo $data;
+  return $data;
 }
 
 // Allow accessing a nested prop by chaining keys using the dot notation

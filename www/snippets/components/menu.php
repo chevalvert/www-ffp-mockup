@@ -20,12 +20,12 @@
     </div>
   </div>
 
-  <nav class="menu__nav" role="navigation" <?php FFP::paint() ?>>
+  <nav class="menu__nav" data-test="<?= $_GLOBALS['URI'] ?>" role="navigation" <?php FFP::paint() ?>>
     <div class="container">
       <ul class="menu__links">
-        <?php foreach (mock('pages', true) as $uri => $page) : ?>
+        <?php foreach (mock('menu') as $uri) : ?>
           <li class="menu__link <?= strpos($_GLOBALS['URI'], $uri) !== false ? 'is-active' : '' ?>">
-            <a href="<?= $uri ?>"><?= $page['title'] ?></a>
+            <a href="<?= $uri ?>"><?= mock("pages.$uri.title") ?></a>
           </li>
         <?php endforeach ?>
       </ul>

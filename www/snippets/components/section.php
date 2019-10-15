@@ -9,7 +9,7 @@
 
       <?php if ($text ?? null) : ?>
       <div class="section__body">
-        <?php snippet('textblock', compact('text')) ?>
+        <?= $text ?>
       </div>
       <?php endif ?>
     </div>
@@ -20,7 +20,7 @@
       <?php foreach ($columns as $col) : ?>
         <div class="section__column">
           <?= isset($col['title']) && $col['title'] ? '<h3>' . $col['title'] . '</h3>' : '' ?>
-          <?php snippet('textblock', ['text' => $col['text']]) ?>
+          <?= $col['text'] ?>
         </div>
       <?php endforeach ?>
     </div>

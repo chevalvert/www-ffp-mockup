@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container" data-barba-view="search">
+<main role="main" id="main">
+  <div class="barba-container" data-view="search">
     <section class="search-form">
       <form class="container">
         <input autofocus type="search" placeholder="rechercher une page par titre, mots-clefs, contexte…" name="q" value="<?= $_GET['q'] ?? '' ?>">
@@ -18,7 +18,7 @@
       'HIDE_THEAD' => true,
       'title' => '7 résultats de recherche',
       'sortBy' => ['pubdate', 'DESC'],
-      'pages' => array_slice(mock('pages.annonces.pages', true), 0, 7),
+      'pages' => array_slice(mock('pages.annonces.pages'), 0, 7),
       // XXX
       'columns' => [
         'type' => ['label' => 'Page'],
@@ -37,8 +37,8 @@
         ]
       ]
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

@@ -2,7 +2,7 @@ import view from 'abstractions/barba-view'
 import sortTable from 'controllers/table-sort'
 
 export default view('table', {
-  willMount: refs => {
+  onEnterCompleted: refs => {
     refs.sortTable = sortTable()
   }
 })

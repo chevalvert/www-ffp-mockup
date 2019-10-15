@@ -1,11 +1,11 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu', ['message' => 'Bonjour <b>Dominique Toulemonde</b>']) ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
+<main role="main" id="main">
+  <div class="barba-container">
     TODO
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

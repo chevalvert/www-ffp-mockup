@@ -78,7 +78,7 @@ class FFP {
 
     // NOTE: seed used for color picking in FFP::computeColor is set here so
     // that it won't be reset at each color pick, but at each swatch pick
-    $seed = $_SERVER['PHP_SELF'];
+    $seed = 1; // $_SERVER['PHP_SELF'];
     srand(crc32($seed));
   }
 
@@ -99,7 +99,7 @@ class FFP {
     FFP::storeColor($color);
 
     // Shift the color's hue of $hueShift degrees
-    $hueShift = 0; // time();
+    $hueShift = time();
     FFP::$last_computed_color = FFPColorHelpers::hueShift($color, $hueShift);
     return FFP::$last_computed_color;
   }

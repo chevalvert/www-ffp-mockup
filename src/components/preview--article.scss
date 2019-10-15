@@ -22,9 +22,9 @@
 
   &__cover img {
     // ??? [A]
-    @include easing(300ms);
-    will-change: transform filter;
-    transform-origin: center;
+    // @include easing(300ms);
+    // will-change: transform;
+    // transform-origin: center;
 
     // ??? [B]
     // @include easing(300ms, filter);
@@ -32,9 +32,9 @@
 
   &:hover &__cover img {
     // ??? [A]
-    transform: rotate(1deg) scale(1.1);
+    // transform: scale(1.1);
 
     // ??? [B]
-    filter: hue-rotate(-45deg);
+    // filter: hue-rotate(-45deg);
   }
 }

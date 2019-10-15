@@ -1,11 +1,52 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
-  TODO
-  </main>
-</div>
+<main role="main" id="main">
+  <div class="barba-container">
+    <?php snippet('components/header', [
+      'title' => mock('pages.adhesion.title'),
+      'text' => 'On peut être paysagiste concepteur parce qu’on exerce le métier. On peut aussi être paysagiste concepteur par la conscience d’appartenir à une profession et par une proximité active et solidaire avec ses confrères.'
+    ]) ?>
+
+    <?php snippet('components/section', [
+      'title' => 'Pourquoi adhérer ?',
+      'text' => mock('pages.adhesion.text')
+    ]) ?>
+
+    <?php snippet('components/form', [
+      'action' => 'api/post-adhesion.php',
+      'form' => [
+        'Votre e-mail' => [
+          'email' => ['type' => 'email', 'label' => 'Votre e-mail', 'required' => true]
+        ],
+
+        'Dates de l’événement' => [
+          'date_start' => ['type' => 'date', 'label' => 'Début', 'required' => true],
+          'date_end' => ['type' => 'date', 'label' => 'Fin', 'required' => true]
+        ],
+
+        'Lieu de l’événement' => [
+          'region' => ['type' => 'select', 'label' => 'Région', 'placeholder' => 'Selectionner votre région', 'options' => mock('regions'), 'required' => true],
+          'city' => ['type' => 'text', 'label' => 'Ville', 'placeholder' => 'Nom de la ville', 'required' => true],
+          'address' => ['type' => 'text', 'label' => 'Addresse', 'placeholder' => 'Addresse complète']
+        ],
+
+        'L’événement' => [
+          'title' => ['type' => 'text', 'label' => 'Titre', 'required' => true],
+          'description' => ['type' => 'textarea', 'label' => 'Description', 'rows' => 10, 'required' => true],
+        ],
+
+        'Documents' => [
+          'documents' => ['type' => 'file', 'label' => 'Documents', 'accept' => 'image/*, .pdf'],
+        ]
+      ],
+      'btn' => [
+        'label' => 'Soumettre un événémenent'
+      ]
+    ]) ?>
+
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

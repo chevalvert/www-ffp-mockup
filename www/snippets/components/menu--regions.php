@@ -14,10 +14,10 @@
   <div class="menu--regions__list">
     <ul class="container">
       <?php // XXX ?>
-      <?php foreach (mock('regions', true) as $slug => $region) : ?>
+      <?php foreach (mock('regions') as $slug => $region) : ?>
         <li class="<?= ($_GET['r'] ?? false) === $slug ? 'is-active' : '' ?>">
           <a href="region?r=<?= $slug ?>" role="button">
-            <?= $region['title'] ?>
+            <?= $region ?>
           </a>
         </li>
       <?php endforeach ?>

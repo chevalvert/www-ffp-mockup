@@ -1,13 +1,13 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
+<main role="main" id="main">
+  <div class="barba-container">
     <?php snippet('components/pages--grid', [
       'title' => 'À ne pas manquer',
       'link' => 'actualites/events',
       // XXX: limit to 4 most recent events
-      'pages' => mock('pages.actualites.events', true),
+      'pages' => mock('pages.actualites.events'),
       'renderer' => 'components/preview--event',
       'cta' => [
         'icon' => 'icon-add',
@@ -19,15 +19,15 @@
     <?php snippet('components/pages--grid', [
       'DO_NOT_PAINT' => true,
       'title' => 'Actualités',
-      'pages' => mock('pages.actualites.articles', true),
+      'pages' => mock('pages.actualites.articles'),
       'renderer' => 'components/preview--article',
       'btn' => [
         'label' => 'Voir plus',
         'action' => '#load-more'
       ]
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

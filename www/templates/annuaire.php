@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
+<main role="main" id="main">
+  <div class="barba-container" data-view="table">
     <?php snippet('components/header', [
       'title' => 'Annuaire',
       'text' => 'Se consolidant dans le système de insiding et outsiding, la cosmogonisation par rapport aux diplomaties fait allusion à prévaloir une discipline dans le prémice, je vous en prie.',
@@ -15,7 +15,7 @@
 
     <?php snippet('components/pages--list', [
       'DO_NOT_PAINT' => true,
-      'pages' => mock('pages.annuaire.pages', true),
+      'pages' => mock('pages.annuaire.pages'),
       'sortBy' => ['name', 'ASC'],
       'sortable' => ['name', 'agency'],
       'columns' => [
@@ -25,8 +25,8 @@
         'contact' => ['transform' => function ($v) { return nl2br($v); }]
       ]
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container">
+<main role="main" id="main">
+  <div class="barba-container">
     <?php snippet('components/header', [
       'DO_NOT_PAINT' => true,
       'title' => 'Archive des événements',
@@ -27,8 +27,8 @@
       foreach (['Octobre', 'Septembre', 'Août', 'Juillet', 'Juin', 'Mai', 'Avril'] as $prototype_month) {
         $prototype_events = [];
         for ($i=0; $i < rand(0, 10); $i++) {
-          $index = array_rand(mock('pages.actualites.events', true));
-          $prototype_events[] = mock('pages.actualites.events', true)[$index];
+          $index = array_rand(mock('pages.actualites.events'));
+          $prototype_events[] = mock('pages.actualites.events')[$index];
         }
 
         snippet('components/pages--grid', [
@@ -39,8 +39,8 @@
         ]);
       }
     ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

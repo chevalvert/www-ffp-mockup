@@ -3,12 +3,12 @@ import contrast from 'utils/color-contrast'
 import RGB from 'utils/color-hsl-to-rgb'
 import HSL from 'utils/color-rgb-to-hsl'
 
-// WIP: add a timer based on FFP::paint to update color every minutes without
-// using CSS hue-rotate filter
-const paintedElements = document.querySelectorAll('[data-color]')
+// TODO: barba lifecycle
+let paintedElements = document.querySelectorAll('[data-color]')
 const SHIFT_DURATION = 1000
 const SHIFT_INCREMENT = 1
 const refreshFactor = 1
+
 window.setInterval(() => {
   window.requestAnimationFrame(() => {
     paintedElements.forEach(el => {
@@ -20,3 +20,9 @@ window.setInterval(() => {
     })
   })
 }, (SHIFT_DURATION * refreshFactor))
+
+export default {
+  rebuild: () => {
+    paintedElements = document.querySelectorAll('[data-color]')
+  }
+}

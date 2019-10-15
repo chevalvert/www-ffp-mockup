@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container" data-barba-view="home">
+<main role="main" id="main">
+  <div class="barba-container" data-view="home">
     <?php snippet('components/section', [
       'title' => 'La fédération Française du Paysage regroupe aujourd’hui plus de 800 membres, répartis dans 12 entités régionales, soit près d’1 paysagiste-concepteur sur 3.',
       'class' => 'section--baseline'
@@ -26,7 +26,7 @@
       'title' => 'À ne pas manquer',
       'link' => 'actualites/events',
       // XXX: limit to 4 most recent events
-      'pages' => mock('pages.actualites.events', true),
+      'pages' => mock('pages.actualites.events'),
       'renderer' => 'components/preview--event',
       'cta' => [
         'icon' => 'icon-add',
@@ -39,7 +39,7 @@
       'title' => 'Actualités',
       'link' => 'actualites',
       // XXX: limit to 4 most recent articles
-      'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+      'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
       'cta' => [
         'icon' => 'icon-add',
@@ -52,11 +52,11 @@
       'title' => 'Observatoire des projets',
       'link' => 'observatoire-des-projets',
       // XXX: TODO
-      'pages' => array_slice(mock('pages.actualites.articles', true), 0, 4),
+      'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

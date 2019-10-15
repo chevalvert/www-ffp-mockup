@@ -19,7 +19,7 @@
   if ($_GLOBALS['URI'] === '') $_GLOBALS['URI'] = 'home';
 
   // Make the mocked datas for the current page globally available
-  $_GLOBALS['page'] = mock('pages.' . $_GLOBALS['URI'], true);
+  $_GLOBALS['page'] = mock('pages.' . $_GLOBALS['URI']);
 
   // Find template based on specfied 'template' key in mocked data, or page URI if none
   $template = 'templates/' . ($_GLOBALS['page']['template'] ?? $_GLOBALS['URI']) . '.php';

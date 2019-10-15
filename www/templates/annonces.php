@@ -1,8 +1,8 @@
 <?php snippet('html.header') ?>
 <?php snippet('components/menu') ?>
 
-<div data-barba="wrapper">
-  <main role="main" data-barba="container" data-barba-view="table">
+<main role="main" id="main">
+  <div class="barba-container" data-view="table">
     <?php snippet('components/header', [
       'title' => 'Annuaire',
       'text' => 'Si vous êtes adhérent, <a href="adhesion">identifiez-vous</a> pour avoir accès aux offres d’emploi.',
@@ -15,7 +15,7 @@
 
     <?php snippet('components/pages--list', [
       'DO_NOT_PAINT' => true,
-      'pages' => mock('pages.annonces.pages', true),
+      'pages' => mock('pages.annonces.pages'),
       'sortBy' => ['pubdate', 'ASC'],
       'sortable' => ['pubdate', 'type'],
       'columns' => [
@@ -27,8 +27,8 @@
         'description' => ['label' => 'Poste']
       ]
     ]) ?>
-  </main>
-</div>
+  </div>
+</main>
 
 <?php snippet('components/footer') ?>
 <?php snippet('html.footer') ?>

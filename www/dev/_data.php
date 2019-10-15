@@ -14,23 +14,35 @@ $_GLOBALS['__dev.data'] = [
   ],
 
   'regions' => [
-    'ile-de-france' => ['title' => 'Île-de-France'],
-    'hauts-de-france' => ['title' => 'Hauts-de-France'],
-    'grand-est-champagne-ardenne' => ['title' => 'Grand-Est, Champagne-Ardenne'],
-    'grand-est-alsace-lorraine' => ['title' => 'Grand-Est, Alsace-Lorraine'],
-    'rhone-alpes-auvergne-bourgogne-franche-comte' => ['title' => 'Rhône-Alpes, Auvergne, Bourgogne, Franche-Comté'],
-    'provence-alpes-cote-d-azur-corse' => ['title' => 'Provence-Alpes-Côte d\'Azur, Corse'],
-    'occitanie-languedoc-roussillon' => ['title' => 'Occitanie, Languedoc-Roussillon'],
-    'occitanie-midi-pyrenees' => ['title' => 'Occitanie, Midi-Pyrénées'],
-    'nouvelle-aquitaine' => ['title' => 'Nouvelle Aquitaine'],
-    'bretagne-pays-de-la-loire-centre-val-de-loire' => ['title' => 'Bretagne, Pays de la Loire, Centre Val de Loire'],
-    'normandie' => ['title' => 'Normandie'],
-    'outre-mer' => ['title' => 'Outre-Mer']
+    'ile-de-france' => 'Île-de-France',
+    'hauts-de-france' => 'Hauts-de-France',
+    'grand-est-champagne-ardenne' => 'Grand-Est, Champagne-Ardenne',
+    'grand-est-alsace-lorraine' => 'Grand-Est, Alsace-Lorraine',
+    'rhone-alpes-auvergne-bourgogne-franche-comte' => 'Rhône-Alpes, Auvergne, Bourgogne, Franche-Comté',
+    'provence-alpes-cote-d-azur-corse' => 'Provence-Alpes-Côte d\'Azur, Corse',
+    'occitanie-languedoc-roussillon' => 'Occitanie, Languedoc-Roussillon',
+    'occitanie-midi-pyrenees' => 'Occitanie, Midi-Pyrénées',
+    'nouvelle-aquitaine' => 'Nouvelle Aquitaine',
+    'bretagne-pays-de-la-loire-centre-val-de-loire' => 'Bretagne, Pays de la Loire, Centre Val de Loire',
+    'normandie' => 'Normandie',
+    'outre-mer' => 'Outre-Mer'
   ],
+
+  'menu' => ['la-ffp', 'actualites', 'annuaire', 'annonces', 'observatoire-des-projets', 'experiences-de-paysage'],
 
   'pages' => [
     'la-ffp' => [
-      'title' => 'La FFP'
+      'title' => 'La FFP',
+      'header' => 'La Fédération Française du Paysage (FFP) est la seule organisation représentative de la profession de paysagiste concepteur. Elle regroupe aujourd’hui plus de 800 membres, soit près d’un professionnel sur trois. Les préoccupations de la Fédération concernent autant les débats sur le Paysage que la valorisation de la profession de paysagiste concepteur. C’est une structure d’accueil capable de prendre en compte toutes les évolutions en matière de qualification, de formation, d’éthique et de déontologie, de développement. Elle se structure comme une organisation professionnelle, regroupant les personnes physiques et morales.',
+      'text' => <<<HTML
+        <p>
+          La Fédération fait connaître au niveau national et international la spécificité du paysage et l’intérêt de sa prise en compte pour la collectivité ainsi que les études, projets et pratiques qui contribuent à sa qualité.
+          <br>Elle initie et participe au débat d'idées sur le paysage en éditant brochures, périodiques et ouvrages. Organise des conférences, congrès, expositions et concours, les Rencontres Nationales ou les Assises Européennes du Paysage par exemple.
+        </p>
+        <p>Elle concourt au développement des enseignements du paysage, de la formation continue et de la recherche.</p>
+        <p>Elle contribue à l’élaboration des textes législatifs et réglementaires nationaux et européens relatifs au paysage.</p>
+        <p>Elle recherche une complémentarité et une coopération entre les différentes professions de la filière paysage : producteurs, entrepreneurs.</p>
+      HTML
     ],
 
     'actualites' => [
@@ -48,7 +60,24 @@ $_GLOBALS['__dev.data'] = [
           'context' => 'climat',
           'intro' => false, // 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
           'cover_url' => 'https://picsum.photos/id/11/1600/1000',
-          'text' => "Monsieur le <a href='https://www.novethic.fr/fileadmin/_processed_/csm_Nicolas-Hulot_3642a0156c.jpg'>Ministre</a>,\nMerci d’ouvrir ici une  fenêtre sur le projet de paysage.\nPour ce qui me concerne suis tombée dedans dès le plus jeune âge.\n\nLe monde depuis les champs, les arbres, les fossés,\nles ruisseaux, m’était plus familier que l’école.\n\nComme il fallait avancer, et que la priorité était tournée vers le dehors plutôt que vers le dedans, j’ai puisé dans les Sciences de la Nature et de la Vie, Biologie, Physique Chimie à Louis Pasteur de Strasbourg.\n\nL’horizon depuis une fenêtre de laboratoire se montrait là trop étroit, pour investir le dehors.\n\nJe suis alors entrée à l’Ecole Nationale Supérieure du Paysage de Versailles où Jacques Simon, Michel Corajoud ont posé les préalables aux projets de  paysage en France, et par-delà les frontières.\n\nAu terme des quatre années passées à l’école, s’amorçait le début de\nla fin après des années à déconstruire ce que l’on était censé savoir.\n\nPour se sortir de l’angoisse du vide, on s’est resserré entre nous avec Marc Claramunt, Pascale Jacotot, Vincent Tricaud en créant l’Association Paysage et Diffusion pour produire pages paysages de 1987 à 2002.\n\nOn y a invité tous les acteurs concernés de près ou de loin par le paysage — les entreprises, les maîtres d’ouvrages, les philosophes, les artistes, les architectes bien sûr… afin de bâtir  ensemble les outils, les points de vue critiques sur ce qui était en train de se produire ici et ailleurs. Je puisais en toile de fond dans  l’Ecole des Hautes Etudes en Sciences Sociales ou j’ai eu la chance de côtoyer  Bernard le Petit, Pierre Fedida, Georges Didi Huberman, Odile Marcel… Pascal Convert, Eric Poitevin et bien d’autres encore. Quand on baigne dans ce brassage d’idées et d’exigences tout est possible et accessible.\n\nJe veux rendre hommage ici à :<ul><li>Alain Juppé, Philippe Richard, Michèle Larue Charlus pour le jardin botanique de Bordeaux et le renouveau de cette ville depuis que j’y ai investi un de mes projets fondateur.</li><li>Henri Loyrette, Daniel Percheron et Katia Lamy, sans qui le Louvre Lens n’aurait pu se concrétiser.</li></ul>\nMerci de nous accompagner en ce sens"
+          'text' => <<<HTML
+            <p>Monsieur le <a href='https://www.novethic.fr/fileadmin/_processed_/csm_Nicolas-Hulot_3642a0156c.jpg'>Ministre</a>,</p>
+            <p>Merci d’ouvrir ici une  fenêtre sur le projet de paysage. Pour ce qui me concerne suis tombée dedans dès le plus jeune âge.</p>
+            <p>Le monde depuis les champs, les arbres, les fossés, les ruisseaux, m’était plus familier que l’école.
+            <p>Comme il fallait avancer, et que la priorité était tournée vers le dehors plutôt que vers le dedans, j’ai puisé dans les Sciences de la Nature et de la Vie, Biologie, Physique Chimie à Louis Pasteur de Strasbourg.</p>
+            <p>L’horizon depuis une fenêtre de laboratoire se montrait là trop étroit, pour investir le dehors.</p>
+            <p>Je suis alors entrée à l’Ecole Nationale Supérieure du Paysage de Versailles où Jacques Simon, Michel Corajoud ont posé les préalables aux projets de  paysage en France, et par-delà les frontières.</p>
+            <p>Au terme des quatre années passées à l’école, s’amorçait le début de la fin après des années à déconstruire ce que l’on était censé savoir.</p>
+            <p>Pour se sortir de l’angoisse du vide, on s’est resserré entre nous avec Marc Claramunt, Pascale Jacotot, Vincent Tricaud en créant l’Association Paysage et Diffusion pour produire pages paysages de 1987 à 2002.</p>
+            <p>On y a invité tous les acteurs concernés de près ou de loin par le paysage — les entreprises, les maîtres d’ouvrages, les philosophes, les artistes, les architectes bien sûr… afin de bâtir  ensemble les outils, les points de vue critiques sur ce qui était en train de se produire ici et ailleurs. Je puisais en toile de fond dans  l’Ecole des Hautes Etudes en Sciences Sociales ou j’ai eu la chance de côtoyer  Bernard le Petit, Pierre Fedida, Georges Didi Huberman, Odile Marcel… Pascal Convert, Eric Poitevin et bien d’autres encore. Quand on baigne dans ce brassage d’idées et d’exigences tout est possible et accessible.</p>
+            <p>Je veux rendre hommage ici à :
+              <ul>
+                <li>Alain Juppé, Philippe Richard, Michèle Larue Charlus pour le jardin botanique de Bordeaux et le renouveau de cette ville depuis que j’y ai investi un de mes projets fondateur.</li>
+                <li>Henri Loyrette, Daniel Percheron et Katia Lamy, sans qui le Louvre Lens n’aurait pu se concrétiser.</li>
+              </ul>
+            </p>
+            <p>Merci de nous accompagner en ce sens.</p>
+          HTML
         ],
         ['pubdate' => 1570622469, 'context' => 'note de lecture', 'title' => 'Villes-Jardins, vers une fusion entre le végétal et la ville lorem', 'cover_url' => 'https://picsum.photos/id/11/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'Récompense', 'title' => 'Un grand prix du paysage à l’épreuve du temps', 'cover_url' => 'https://picsum.photos/id/12/1600/1000'],
@@ -116,9 +145,26 @@ $_GLOBALS['__dev.data'] = [
       ]
     ],
 
+    'adhesion' => [
+      'title' => 'Adhérer à la FFP',
+      'text' => <<<HTML
+        <h3>Des échanges avec des paysagistes concepteurs en région</h3>
+        <p>Actuellement, la congolexicomatisation de la technicité informatisée semble faceter l'upensmie possédant la francophonie, bonnes fêtes.</p>
+        <h3>Des événements, rencontres et formations multiples</h3>
+        <p>Imbiber, porter la contextualisation à l'égard de la complexité se résoud à incristaliser une position axisienne vers Lovanium, je vous en prie.</p>
+        <h3>Des événémenents, rencontres et formations multiples</h3>
+        <p>C’est à dire ici, c’est le contraire, au lieu de panacée, l'imbroglio à forciori, continue à rabibocher la quatripartie avec la formule 1+(2x5), mais oui.</p>
+        <p>C’est à dire quand on parle de ces rollers, la politique vers la compromettance pour des saint-bioules nous incite à incristaliser les sens dynamitiels dans la sous-régionalité, Bonne Année.</p>
+      HTML
+    ],
+
     'observatoire-des-projets' => [
       'title' => 'Observatoire des projets',
-      'text' => "Le principe de l’observatoire est de proposer sur le site web de la FFP, une promotion du savoir-faire des entreprises au travers de projets réalisés ensemble.\nCette promotion est assurée par la publication de reportages sur les chantiers en insistant sur une ou plusieurs spécificités, de nouvelles techniques…\nChaque écho des chantiers est mis en ligne pour deux ans dans la partie libre du site Internet de la FFP.\nUne alerte à chacun de nos membres est envoyée à chaque nouvelle publication.\n\nSur une même opération les entreprises peuvent se répartir entre elles le financement de cette promotion collective. \nLe concepteur valorise aussi son travail. Progressivement les écho des chantiers vont constituer une riche bibliothèque de projets et un baromètre de l'activité."],
+      'text' => <<<HTML
+        <p>Le principe de l’observatoire est de proposer sur le site web de la FFP, une promotion du savoir-faire des entreprises au travers de projets réalisés ensemble. Cette promotion est assurée par la publication de reportages sur les chantiers en insistant sur une ou plusieurs spécificités, de nouvelles techniques… Chaque écho des chantiers est mis en ligne pour deux ans dans la partie libre du site Internet de la FFP. Une alerte à chacun de nos membres est envoyée à chaque nouvelle publication.</p>
+        <p>Sur une même opération les entreprises peuvent se répartir entre elles le financement de cette promotion collective. Le concepteur valorise aussi son travail. Progressivement les écho des chantiers vont constituer une riche bibliothèque de projets et un baromètre de l'activité.</p>
+        HTML
+      ],
 
     'experiences-de-paysage' => [
       'title' => 'Expériences de paysage'
