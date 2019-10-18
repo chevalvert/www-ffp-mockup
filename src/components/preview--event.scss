@@ -1,5 +1,6 @@
 .preview--event {
   @include font(body);
+  margin-bottom: $logo--height;
 
   &__header {
     position: relative;
@@ -19,4 +20,9 @@
   &__title {
     @include line-clamp(3);
   }
+
+  // XXX
+  // &:hover &__title {
+  //   border-bottom: 1px solid;
+  // }
 }

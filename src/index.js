@@ -1,7 +1,7 @@
 import barba from 'controllers/barba'
 
 // TODO: barba lifecycle
-import FFPHue from 'controllers/ffp-hue'
+// import FFPHue from 'controllers/ffp-hue'
 import 'controllers/ffp-wall'
 
 import 'views/table'
@@ -18,7 +18,7 @@ barba({
   },
 
   newPageReady: () => {
-    FFPHue.rebuild()
+    // FFPHue.rebuild()
     // lazyloader()
   },
 

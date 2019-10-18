@@ -2,6 +2,7 @@
   form  {}
 
   fieldset {
+    @include clearfix;
     padding: $gutter 0 ($logo--height * 2) 0;
   }
 
@@ -14,8 +15,17 @@
     padding-top: $gutter;
   }
 
-  &__field + &__field {
+  &__field + &__field:not([data-width]) {
     margin-top: $logo--height;
+  }
+
+  &__field[data-width] {
+    @for $i from 2 through 4 {
+      &[data-width='1/#{$i}'] { width: calc(#{col(6 / $i)} - #{$gutter / $i * ($i - 1)}); }
+    }
+
+    float: left;
+    & + & { margin-left: $gutter; }
   }
 
   label {
@@ -77,11 +87,46 @@
     max-width: 100%;
   }
 
-  input[type='email']:valid {
-    background: red;
-  }
-
   select {
     cursor: pointer;
+  }
+
+  &__field.has-error {}
+
+  &__field-error {
+    @include font(ui);
+    $field-error--optical-v: -2px;
+
+    position: relative;
+    height: $logo--height;
+    padding:
+        calc((#{$logo--height} - 1em) / 2 + #{$field-error--optical-v})
+        calc(#{$gutter / 2} + 1px)
+        calc((#{$logo--height} - 1em) / 2 - #{$field-error--optical-v});
+
+    span {
+      filter: invert(100%);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: currentColor;
+    }
+  }
+
+  &__button-container {
+    .container {
+      display: flex;
+      justify-content: space-around;
+
+      width: col(6);
+      padding-top: $logo--height * 2;
+      padding-bottom: $logo--height * 2;
+    }
   }
 }

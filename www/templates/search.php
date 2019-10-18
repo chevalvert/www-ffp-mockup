@@ -2,7 +2,7 @@
 <?php snippet('components/menu') ?>
 
 <main role="main" id="main">
-  <div class="barba-container" data-view="search">
+  <div class="barba-container search" data-view="search">
     <section class="search-form">
       <form class="container">
         <input autofocus type="search" placeholder="rechercher une page par titre, mots-clefs, contexte…" name="q" value="<?= $_GET['q'] ?? '' ?>">

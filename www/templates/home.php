@@ -2,7 +2,7 @@
 <?php snippet('components/menu') ?>
 
 <main role="main" id="main">
-  <div class="barba-container" data-view="home">
+  <div class="barba-container home" data-view="home">
     <?php snippet('components/section', [
       'title' => 'La fédération Française du Paysage regroupe aujourd’hui plus de 800 membres, répartis dans 12 entités régionales, soit près d’1 paysagiste-concepteur sur 3.',
       'class' => 'section--baseline'

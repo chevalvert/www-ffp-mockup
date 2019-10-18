@@ -42,7 +42,33 @@ $_GLOBALS['__dev.data'] = [
         <p>Elle concourt au développement des enseignements du paysage, de la formation continue et de la recherche.</p>
         <p>Elle contribue à l’élaboration des textes législatifs et réglementaires nationaux et européens relatifs au paysage.</p>
         <p>Elle recherche une complémentarité et une coopération entre les différentes professions de la filière paysage : producteurs, entrepreneurs.</p>
-      HTML
+      HTML,
+      'members-office' => [
+        ['name' => 'Aurélien Albert', 'context' => 'Président', 'pp_url' => 'https://randomuser.me/api/portraits/men/75.jpg'],
+        ['name' => 'Michel Audouy', 'context' => 'Secrétaire général', 'pp_url' => 'https://randomuser.me/api/portraits/men/74.jpg'],
+        ['name' => 'Béatrice Julien-Labruyère', 'context' => 'Secrétaire général adjointe', 'pp_url' => 'https://randomuser.me/api/portraits/women/50.jpg'],
+        ['name' => 'Nikola Watté', 'context' => 'Vice-président en charge des relations entre les régions FFP', 'pp_url' => 'https://randomuser.me/api/portraits/men/32.jpg'],
+        ['name' => 'Karin Helms', 'context' => 'Vice-présidente en charge de l’international', 'pp_url' => 'https://randomuser.me/api/portraits/women/12.jpg'],
+        ['name' => 'Jean-Marc Bouillon', 'context' => 'Président d’honneur', 'pp_url' => 'https://randomuser.me/api/portraits/men/10.jpg'],
+        ['name' => 'Claire Gautier', 'context' => 'Vice-présidente en charge des relations avec les institutions', 'pp_url' => 'https://randomuser.me/api/portraits/women/8.jpg'],
+        ['name' => 'Éric Chabot', 'context' => 'Trésorier', 'pp_url' => 'https://randomuser.me/api/portraits/men/21.jpg']
+      ],
+      'members-admin' => [
+        ['name' => 'Jean-Marc Bouillon', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/10.jpg'],
+        ['name' => 'Béatrice Julien-Labruyère', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/women/50.jpg'],
+        ['name' => 'Éric Chabot', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/21.jpg'],
+        ['name' => 'Béatrice Julien-Labruyère', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/women/50.jpg'],
+        ['name' => 'Claire Gautier', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/women/8.jpg'],
+        ['name' => 'Jean-Marc Bouillon', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/10.jpg'],
+        ['name' => 'Aurélien Albert', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/75.jpg'],
+        ['name' => 'Éric Chabot', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/21.jpg'],
+        ['name' => 'Michel Audouy', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/74.jpg'],
+        ['name' => 'Nikola Watté', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/32.jpg'],
+        ['name' => 'Aurélien Albert', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/75.jpg'],
+        ['name' => 'Claire Gautier', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/women/8.jpg'],
+        ['name' => 'Nikola Watté', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/men/32.jpg'],
+        ['name' => 'Karin Helms', 'context' => 'Région', 'pp_url' => 'https://randomuser.me/api/portraits/women/12.jpg']
+      ]
     ],
 
     'actualites' => [

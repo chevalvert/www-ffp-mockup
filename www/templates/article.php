@@ -2,7 +2,7 @@
 <?php snippet('components/menu') ?>
 
 <main role="main" id="main">
-  <div class="barba-container">
+  <div class="barba-container article">
     <article class="article">
       <?php
         $prototype_article = mock('pages.actualites.articles')[0];

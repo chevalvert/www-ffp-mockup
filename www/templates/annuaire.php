@@ -13,6 +13,18 @@
       ]
     ]) ?>
 
+    <div class="annuaire__pagination">
+      <div class="container">
+        <ul class="annuaire__letters">
+          <?php foreach (range('A', 'Z') as $char) : ?>
+            <li class="annuaire__letter <?= $_GET['p'] == $char ? 'is-active' : '' ?> <?= rand(0, 100) > 70 ? 'is-disabled' : '' ?>">
+              <a href="annuaire?p=<?= $char ?>"><?= $char ?></a>
+            </li>
+          <?php endforeach ?>
+        </ul>
+      </div>
+    </div>
+
     <?php snippet('components/pages--list', [
       'DO_NOT_PAINT' => true,
       'pages' => mock('pages.annuaire.pages'),

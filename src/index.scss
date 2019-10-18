@@ -34,8 +34,10 @@ $max-width: 1280px;
 @import 'components/pages--list';
 @import 'components/preview--article';
 @import 'components/preview--event';
+@import 'components/preview--people';
 @import 'components/section';
 
+@import 'templates/annuaire';
 @import 'templates/article';
 @import 'templates/home';
 @import 'templates/search';

@@ -1,20 +1,9 @@
-<div class="form__field" class="<?= ($required ?? false) ? 'is-required' : '' ?>">
-  <?php if ($label ?? null) : ?>
-    <label for="<?= $id ?>">
-      <?= $label ?>
-      <?php if ($required ?? false) : ?>
-        <abbr class="form__field-required" title="Ce champ est obligatoire">*</abbr>
-      <?php endif ?>
-    </label>
-  <?php endif ?>
+<input
+  type="date"
+  placeholder="dd/mm/yyyy"
+  id="<?= $id ?>"
+  name="<?= $id ?>"
+  <?= $value ?? null ? "value='$value'" : '' ?>
+  <?= ($required ?? false) ? 'required' : '' ?>
+>
 
-  <input
-    type="date"
-    id="<?= $id ?>"
-    name="<?= $id ?>"
-    <?= $value ?? null ? "value='$value'" : '' ?>
-    <?= ($required ?? false) ? 'required' : '' ?>
-  >
-
-  <div class="form__field-error"></div>
-</div>

@@ -15,18 +15,24 @@
 
     <?php snippet('components/form', [
       'action' => 'api/post-adhesion.php',
-      'form' => [
-        'Votre e-mail' => [
+      'values' => [
+        'email' => 'arnaud.juracek@gmail.com'
+      ],
+      'errors' => [
+        'email' => 'L’e-mail fourni est invalide'
+      ]
+      ,'form' => [
+        'Contact' => [
           'email' => ['type' => 'email', 'label' => 'Votre e-mail', 'required' => true]
         ],
 
         'Dates de l’événement' => [
-          'date_start' => ['type' => 'date', 'label' => 'Début', 'required' => true],
-          'date_end' => ['type' => 'date', 'label' => 'Fin', 'required' => true]
+          'date_start' => ['type' => 'date', 'label' => 'Début', 'required' => true, 'width' => '1/2'],
+          'date_end' => ['type' => 'date', 'label' => 'Fin', 'required' => true, 'width' => '1/2']
         ],
 
         'Lieu de l’événement' => [
-          'region' => ['type' => 'select', 'label' => 'Région', 'placeholder' => 'Selectionner votre région', 'options' => mock('regions'), 'required' => true],
+          'region' => ['type' => 'select', 'label' => 'Région', 'placeholder' => 'Sélectionner votre région', 'options' => mock('regions'), 'required' => true],
           'city' => ['type' => 'text', 'label' => 'Ville', 'placeholder' => 'Nom de la ville', 'required' => true],
           'address' => ['type' => 'text', 'label' => 'Addresse', 'placeholder' => 'Addresse complète']
         ],
@@ -37,7 +43,8 @@
         ],
 
         'Documents' => [
-          'documents' => ['type' => 'file', 'label' => 'Documents', 'accept' => 'image/*, .pdf'],
+          'images' => ['type' => 'file', 'label' => 'Images (png, jpeg)', 'accept' => 'image/*'],
+          'documents' => ['type' => 'file', 'label' => 'Documents (pdf)', 'accept' => '.pdf'],
         ]
       ],
       'btn' => [

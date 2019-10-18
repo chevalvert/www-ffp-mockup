@@ -15,7 +15,6 @@
 
   &__entry {
     width: calc(100% / 4 - #{$gutter * 3 / 4});
-    margin-bottom: $logo--height;
 
     &:not(:nth-child(4n)) {
       margin-right: $gutter;

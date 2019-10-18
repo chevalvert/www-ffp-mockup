@@ -8,6 +8,18 @@
       'text' => mock('pages.la-ffp.header')
     ]) ?>
 
+    <?php snippet('components/pages--grid', [
+      'title' => 'Les membres du bureau',
+      'pages' => mock('pages.la-ffp.members-office'),
+      'renderer' => 'components/preview--people'
+    ]) ?>
+
+    <?php snippet('components/pages--grid', [
+      'title' => 'Les membres du conseil d’administration',
+      'pages' => mock('pages.la-ffp.members-admin'),
+      'renderer' => 'components/preview--people'
+    ]) ?>
+
     <?php snippet('components/section', [
       'title' => 'Promouvoir et développer le paysage dans le cadre de vie',
       'text' => mock('pages.la-ffp.text')
