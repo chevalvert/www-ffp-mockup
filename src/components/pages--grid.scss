@@ -14,11 +14,9 @@
   }
 
   &__entry {
-    width: calc(100% / 4 - #{$gutter * 3 / 4});
-
-    &:not(:nth-child(4n)) {
-      margin-right: $gutter;
-    }
+    @include desktop { @include grid(4); }
+    @include tablet { @include grid(2); }
+    @include mobile { @include grid(1); }
   }
 
   &__button-container {

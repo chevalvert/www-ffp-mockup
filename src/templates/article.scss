@@ -3,17 +3,17 @@
 
   &__body .container  {
     display: flex;
+    @include devices(mobile, tablet) { display: block; }
   }
 
   &__body &__text {
     @include font(article-body);
     font-family: 'Space Grotesk', serif;
+
     max-width: col(5);
+    @include devices(mobile, tablet) { max-width: col(12); }
 
-    ul {
-      list-style-type: square;
-    }
-
+    ul { list-style-type: square; }
     li, p {
       &:not(:first-child) {
         margin-top: 1em;
@@ -24,11 +24,21 @@
   &__body &__sidebar {
     margin-left: col(2);
     max-width: col(3);
+
+    @include devices(mobile, tablet) {
+      margin-top: $logo--height;
+      margin-left: 0;
+      max-width: col(12);
+    }
   }
 
   &__sidebar > div,
   &__sidebar > ul {
     margin-bottom: $logo--height;
+  }
+
+  &__sidebar .btn {
+    @include mobile { width: 100%; }
   }
 
   &__sidebar &__meta {
@@ -53,10 +63,11 @@
 
   &__gallery-item {
     display: inline-block;
+    float: left;
     margin-bottom: $gutter;
 
-    float: left;
-    width: calc(100% / 3 - #{$gutter * 2 / 3});
-    &:not(:nth-child(3n)) { margin-right: $gutter; }
+    @include desktop { @include grid(3); }
+    @include tablet { @include grid(2); }
+    @include mobile { @include grid(2); }
   }
 }

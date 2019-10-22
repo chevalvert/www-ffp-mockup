@@ -16,9 +16,18 @@
   }
 }
 
-@mixin invisible-y-scroll {
-  overflow-x: hidden;
-  overflow-y: scroll;
+@mixin invisible-scroll ($direction: x) {
+  @if $direction == x {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  } @else if $direction == y {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  } @else {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+
   scrollbar-width: none;
   scrollbar-height: none;
   -ms-overflow-style: none;

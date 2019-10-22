@@ -13,14 +13,19 @@ main { flex: 1 0 auto; }
   color: $white;
 
   .container {
-    display: flex;
-    justify-content: space-between;
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__links {
-    display: flex;
-    li {
-      margin-left: $gutter;
+    margin-top: $gutter;
+
+    @include desktop {
+      display: flex;
+      margin-top: unset;
+      li { margin-left: $gutter; }
     }
   }
 }

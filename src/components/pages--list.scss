@@ -17,6 +17,10 @@
     font-weight: normal;
     text-transform: lowercase;
 
+    @include devices(mobile, tablet) {
+      display: none;
+    }
+
     th::first-letter {
       text-transform: uppercase;
     }
@@ -45,6 +49,18 @@
 
   td, th {
     padding: $gutter 0 $gutter $gutter;
+
+    @include devices(tablet, mobile) {
+      display: block;
+      padding: 0;
+      padding-bottom: 0.5em;
+      &:first-child {
+        padding-top: $gutter;
+        padding-bottom: 0;
+      }
+      &:last-child { padding-bottom: $gutter; }
+    }
+
     &:first-of-type {
       padding-left: 0;
     }

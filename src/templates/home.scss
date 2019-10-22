@@ -1,5 +1,7 @@
 .home {
   .section--baseline .section__content {
     max-width: col(7);
+    @include tablet { max-width: col(12); }
+    @include mobile { max-width: col(12); }
   }
 }

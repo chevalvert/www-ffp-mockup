@@ -27,6 +27,11 @@ $max-width: 1280px;
   }
 }
 
+@mixin grid ($col-length: 4) {
+  width: calc(100% / #{$col-length} - #{$gutter * ($col-length - 1) / $col-length});
+  &:not(:nth-child(#{$col-length}n)) { margin-right: $gutter; }
+}
+
 @function col ($n) {
   @return calc(100% / 12 * #{$n});
 }

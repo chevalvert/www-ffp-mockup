@@ -12,6 +12,7 @@ button.btn, a.btn {
 
   cursor: pointer;
 
+  text-align: center;
   padding:
     calc((#{$logo--height} - 1em) / 2 + #{$btn--optical-v})
     $gutter

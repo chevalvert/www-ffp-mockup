@@ -7,6 +7,8 @@
 
   &__content {
     max-width: col(5);
+    @include tablet { max-width: col(12); }
+    @include mobile { max-width: col(12); }
   }
 
   &__title {
@@ -22,12 +24,19 @@
   &__columns[data-length='3'] &__column { width: col(4); }
   &__columns[data-length='4'] &__column { width: col(3); }
 
-  h3 {
-    font-weight: bold;
-  }
+  &__columns { @include devices(tablet, mobile) { display: block !important; } }
+  &__column { @include devices(tablet, mobile) { min-width: col(12); } }
 
   &__column + &__column {
     margin-left: $gutter;
+    @include devices(tablet, mobile) {
+      margin-left: 0;
+      margin-top: $gutter;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
   }
 
   &__button-container {

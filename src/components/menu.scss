@@ -67,6 +67,7 @@ $menu--optical-v: -1px;
 
   &__nav {
     @include font(ui);
+    @include invisible-scroll(x);
     height: $logo--height;
 
     .container {
@@ -75,26 +76,26 @@ $menu--optical-v: -1px;
     }
   }
 
-  &__nav ul {
+  &__links,
+  &__links--alt {
     display: flex;
+  }
 
-    li {
-      white-space: nowrap;
-      height: $logo--height;
+  &__links--alt {
+    margin-left: $gutter;
+  }
 
-      padding:
-        calc((#{$logo--height} - 1em) / 2 + #{$menu--optical-v})
-        0
-        calc((#{$logo--height} - 1em) / 2 - #{$menu--optical-v});
-    }
+  &__link {
+    white-space: nowrap;
+    height: $logo--height;
 
-    li:not(:last-child) {
-      margin-right: $gutter;
-    }
+    padding:
+      calc((#{$logo--height} - 1em) / 2 + #{$menu--optical-v})
+      0
+      calc((#{$logo--height} - 1em) / 2 - #{$menu--optical-v});
 
-    li.is-active a:not([role='button']) {
-      border-bottom: 1px solid;
-    }
+    &:not(:last-child) { margin-right: $gutter; }
+    &.is-active a:not([role='button']) { border-bottom: 1px solid; }
   }
 
   // XXXTODO: determine how to set specific .menu__link in bold

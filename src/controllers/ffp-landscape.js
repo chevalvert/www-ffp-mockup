@@ -46,6 +46,7 @@ function buildLandscape (container) {
   // NOTE: landscape.generate is quite performance heavy, but cannot (yet) be
   // delegated to a worker: using requestIdleCallback in the meantime, to avoid
   // blocking the main thread
+  // TODO: add web worker support to `ffp-generate`
   window.requestIdleCallback(() => {
     prng.reset()
     container.landscape = generate(options).render()

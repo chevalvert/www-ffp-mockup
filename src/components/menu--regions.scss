@@ -26,13 +26,14 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 
   &__list {
     padding-top: $gutter;
+    padding-bottom: $gutter;
     height: calc(100% - #{$logo--height});
 
     background: $white;
     color: $black;
 
     .container {
-      @include invisible-y-scroll;
+      @include invisible-scroll(y);
       max-height: calc(100% - #{$logo--height});
     }
 
