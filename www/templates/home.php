@@ -9,7 +9,7 @@
     ]) ?>
 
     <?php snippet('components/section', [
-      'title' => 'Pourquoi adhérer ?',
+      'title' => 'Pourquoi adhérer&nbsp;?',
       'class' => 'section--cta',
       'columns' => [
         ['title' => 'Une assistance juridique', 'text' => 'C’est à dire ici, c’est le contraire, au lieu de panacée, l’ensemble des 5 sens vers ce qu’on appelle la dynamique des sports tarde à partager une certaine compétitivité propre(s) aux congolais, tu sais ça.'],

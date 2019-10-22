@@ -9,7 +9,7 @@
     ]) ?>
 
     <?php snippet('components/section', [
-      'title' => 'Pourquoi adhérer ?',
+      'title' => 'Pourquoi adhérer&nbsp;?',
       'text' => mock('pages.adhesion.text')
     ]) ?>
 

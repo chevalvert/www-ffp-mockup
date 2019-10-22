@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
   <?php if (isWebpack()) : // XXX: This whole if block can be safely deleted on production ?>
-    <base href="http://localhost:8080/">
+    <base href="/">
     <script type="text/javascript">window.env = 'development'</script>
   <?php endif ?>
 

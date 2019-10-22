@@ -13,7 +13,12 @@ import defaultTransition from 'views/transitions/default'
 // FFPHue.timer.start()
 // FFPHue.timer.add(FFPLandscape.update)
 
-window.addEventListener('resize', debounce(FFPLandscape.update, 100))
+let pwidth = window.innerWidth
+window.addEventListener('resize', debounce(() => {
+  if (window.innerWidth === pwidth) return
+  FFPLandscape.update()
+  pwidth = window.innerWidth
+}, 100))
 
 barba({
   wrapperId: 'main',
