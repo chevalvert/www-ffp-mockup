@@ -17,12 +17,14 @@
     font-weight: bold;
   }
 
-  &__title {
-    @include line-clamp(3);
+  &__title {}
+
+  &__title span {
+    @include easing(300ms, border-color);
+    border-bottom: 1px solid transparent;
   }
 
-  // XXX
-  // &:hover &__title {
-  //   border-bottom: 1px solid;
-  // }
+  &:hover &__title span {
+    border-color: inherit;
+  }
 }

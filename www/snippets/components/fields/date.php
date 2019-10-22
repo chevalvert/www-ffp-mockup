@@ -1,9 +1,8 @@
 <input
-  type="text"
+  type="date"
+  placeholder="dd/mm/yyyy"
   id="<?= $id ?>"
   name="<?= $id ?>"
-  placeholder="<?= $placeholder ?? $label ?>"
   <?= $value ?? null ? "value='$value'" : '' ?>
   <?= ($required ?? false) ? 'required' : '' ?>
 >
-

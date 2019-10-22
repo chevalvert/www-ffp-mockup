@@ -62,7 +62,11 @@
   },
   "dependencies": {
     "barba.js": "1.0.0",
-    "nodelist-foreach": "^1.0.1"
+    "intersection-observer": "^0.7.0",
+    "lozad": "^1.14.0",
+    "nodelist-foreach": "^1.0.1",
+    "tasktimer": "^3.0.0",
+    "tiny-throttle": "^1.0.1"
   },
   "private": true
 }

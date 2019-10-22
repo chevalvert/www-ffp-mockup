@@ -28,11 +28,16 @@ body {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border: 0;
   -ms-interpolation-mode: bicubic;
   vertical-align: bottom; /* Suppress the space beneath the baseline */
+}
+
+[data-lazyload] {
+  opacity: 0;
+  &[data-loaded='true'] { @include fade-in; }
 }
 
 svg {
@@ -54,8 +59,10 @@ a {
   }
 }
 
-a[role=button],
-a[role=button]:hover,
+a.icon,
+a.btn,
+a.icon:hover
+a.btn:hover,
 a:not([href]),
 a:not([href]):hover {
   @include no-select;
@@ -64,6 +71,7 @@ a:not([href]):hover {
   border: 0;
 }
 
+article a,
 table a,
 p a {
   border-bottom: 1px solid;
@@ -87,6 +95,23 @@ section {
   h1, h2 {
     @include font(header);
     margin-bottom: $logo--height;
+  }
+}
+
+@for $i from 0 through 20 {
+  .barba-container > *:nth-child(#{$i}) > *:not([data-no-fade-in]) {
+    @include fade-in;
+    animation-delay: #{$i * 100}ms;
+  }
+}
+
+.js-landscape {
+  padding-bottom: 0;
+  overflow-x: hidden;
+  canvas {
+    margin-top: $logo--height * 2;
+    vertical-align: bottom;
+    &[data-rendered] { @include fade-in; }
   }
 }
 

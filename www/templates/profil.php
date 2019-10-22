@@ -3,7 +3,9 @@
 
 <main role="main" id="main">
   <div class="barba-container">
-    TODO
+    <div class="container">
+      todo
+    </div>
   </div>
 </main>
 

@@ -18,25 +18,14 @@
     }
   }
 
-  &__title {
-    @include line-clamp(5);
+  &__title {}
+
+  &__title span {
+    @include easing(300ms, border-color);
+    border-bottom: 1px solid transparent;
   }
 
-  &__cover img {
-    // ??? [A]
-    // @include easing(300ms);
-    // will-change: transform;
-    // transform-origin: center;
-
-    // ??? [B]
-    // @include easing(300ms, filter);
-  }
-
-  &:hover &__cover img {
-    // ??? [A]
-    // transform: scale(1.1);
-
-    // ??? [B]
-    // filter: hue-rotate(-45deg);
+  &:hover &__title span {
+    border-color: inherit;
   }
 }

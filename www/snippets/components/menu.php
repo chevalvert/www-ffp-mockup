@@ -1,6 +1,6 @@
 <?php
   $message = ($region ?? false)
-    ? "<a href='region?r=" . slugify($region) . "' role='button'>$region</a>"
+    ? "<a href='region?r=" . slugify($region) . "' class='icon'>$region</a>"
     : ($message ?? false);
 ?>
 
@@ -9,7 +9,7 @@
     <?php snippet('components/menu--regions') ?>
     <div class="container">
       <div class="menu__logos">
-        <a href="/" role="button">
+        <a href="/" class="icon">
           <?php snippet('svg/logo-main', ['title' => 'FFP']) ?>
           <?php ($message ?? false) || snippet('svg/logo-baseline', ['title' => 'Fédération Française du Paysage']) ?>
         </a>
@@ -32,7 +32,7 @@
 
       <ul class="menu__links--alt">
         <li class="menu__link">
-          <a href="search" title="Rechercher…" role="button">
+          <a href="search" title="Rechercher…" class="icon">
             <?php snippet('svg/icon-search') ?>
           </a>
         </li>

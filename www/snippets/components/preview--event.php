@@ -9,7 +9,7 @@
 ?>
 
 <article class="preview--event">
-  <a href="article">
+  <a href="article" class="icon">
     <header class="preview--event__header">
       <?php snippet('date', ['timestamp' => $page['date_start'], 'format' => $format]) ?>
       <?php snippet('date', ['timestamp' => $page['date_end'], 'format' => $format]) ?>
@@ -18,7 +18,7 @@
       <?= $page['context'] ?>
     </div>
     <h3 class="preview--event__title">
-      <?= $page['title'] ?>
+      <span><?= $page['title'] ?></span>
     </h3>
   </a>
 </article>

@@ -1,6 +1,6 @@
 <?php if (count($pages ?? []) || !($HIDE_EMPTY ?? false)) : ?>
 
-<section class="pages--grid" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
+<section class="pages--grid <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
   <div class="container">
 
     <?php if (isset($title) && $title) : ?>

@@ -103,7 +103,30 @@ $_GLOBALS['__dev.data'] = [
               </ul>
             </p>
             <p>Merci de nous accompagner en ce sens.</p>
-          HTML
+          HTML,
+          'metas' => [
+            'Maître d’ouvrage' => 'Nantes Métropole',
+            'Maître d’œuvre' => 'Reichen & Robert et Associés (mandataire), Phytolab, MAGEO',
+            'Entreprises' => 'IDVERDE',
+            'Coût' => '1 967 342,19€ (Lot espaces verts, maçonnerie, passerelles métalliques et fontainerie)',
+            'Calendrier' => 'Septembre 2018 – Juin 2019',
+            'Lieu' => '<a href="#">Carrière Misery, Nantes</a>'
+          ],
+          'sponsors' => [
+            ['name' => 'IDVERDE', 'url' => 'https://idverde.com/', 'logo_url' => 'https://idverde.com/content/themes/idverdeFR/app/assets/images/logo.png']
+          ],
+          'gallery' => [
+            ['url' =>'https://picsum.photos/id/11/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/12/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/19/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/18/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/15/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/16/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/17/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/12/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/18/1600/1000', 'width' => 1600, 'height' => 1000],
+            ['url' =>'https://picsum.photos/id/15/1600/1000', 'width' => 1600, 'height' => 1000],
+          ]
         ],
         ['pubdate' => 1570622469, 'context' => 'note de lecture', 'title' => 'Villes-Jardins, vers une fusion entre le végétal et la ville lorem', 'cover_url' => 'https://picsum.photos/id/11/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'Récompense', 'title' => 'Un grand prix du paysage à l’épreuve du temps', 'cover_url' => 'https://picsum.photos/id/12/1600/1000'],
@@ -194,6 +217,26 @@ $_GLOBALS['__dev.data'] = [
 
     'experiences-de-paysage' => [
       'title' => 'Expériences de paysage'
+    ],
+
+    'region' => [
+      'title' => 'Entre champs et volcans',
+      'intro' => 'Actuellement, l’activisme de la technicité informatisée nous incite à catapulter le trabajo, le travail, la machinale, la robotisation belvédère, Bonne Année. Vous avez le système de check-up vers les anti-valeurs, vous avez le curuna, or la société civile autour de l’ergonométrie vise à se baser sur cet environnement de 2 345 410 km² comparé la rénaque, tu sais ça. Lorsque l’on parle des végétaliens, du végétalisme, l’activisme de l’orthodoxisation doit se baser sur les encadrés propres aux congolais, Bonne Année. Parallèlement, la compétence vers la compromettance pour des saint-bioules se résoud à aider la nucléarité axée sur la réalité du terrain, je vous en prie.',
+      'contact' => <<<HTML
+        <ul>
+          <li><b>Séverine Clédat</b> présidente</li>
+          <li><b>Fanny Cassani</b> vice-présidente, déléguée régionale de Bourgogne-Franche-Compté</li>
+          <li><b>David Schulz</b> vice-président</li>
+          <li><b>Samuel Bonnefoi</b> secrétaire</li>
+          <li><b>Pricilla Tétaz</b> vice-secrétaire</li>
+          <li><b>Christelle David</b> trésorière</li>
+          <li><b>Clément Forest</b> vice trésorière</li>
+          <br>
+          <li><b>Permanence</b> 9 rue Danielle Faynel-Duclos 69003&nbsp;Lyon</li>
+          <li><b>Tél</b> 04 78 93 55 19</li>
+        </ul>
+      HTML,
+      'test' => ''
     ]
   ]
 ];

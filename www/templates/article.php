@@ -22,8 +22,45 @@
           </div>
 
           <aside class="article__sidebar">
-            TODO
+            <div class="article__buttons">
+              <?php snippet('components/btn', [
+                'label' => 'Partager sur Facebook',
+                'url' => 'https://www.facebook.com/sharer/sharer.php?u=link'
+              ]) ?>
+            </div>
+
+            <?php if ($prototype_article['metas'] ?? false) : ?>
+              <ul class="article__metas">
+                <?php foreach ($prototype_article['metas'] as $meta_label => $meta_value) : ?>
+                  <li class="article__meta" data-label="<?= $meta_label ?>"><?= $meta_value ?></li>
+                <?php endforeach ?>
+              </ul>
+            <?php endif ?>
+
+            <?php if ($prototype_article['sponsors'] ?? false) : ?>
+              <ul class="article__sponsors">
+                <?php foreach ($prototype_article['sponsors'] as $sponsor) : ?>
+                  <li class="article__sponsor">
+                    <a href="<?= $sponsor['url'] ?>" target="_blank" class="icon">
+                      <img src="<?= $sponsor['logo_url'] ?>" alt="<?= $sponsor['name'] ?>">
+                    </a>
+                  </li>
+                <?php endforeach ?>
+              </ul>
+            <?php endif ?>
           </aside>
+        </div>
+
+        <div class="container">
+          <?php if ($prototype_article['gallery'] ?? false) : ?>
+            <ul class="article__gallery">
+              <?php foreach ($prototype_article['gallery'] as $image) : ?>
+                <li class="article__gallery-item">
+                  <?php snippet('image', $image) ?>
+                </li>
+              <?php endforeach ?>
+            </ul>
+          <?php endif ?>
         </div>
       </section>
 

@@ -5,7 +5,6 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 }
 
 .menu--regions {
-  @include easing(300ms, clip-path);
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -15,8 +14,7 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
   background: $black;
   color: $white;
 
-  will-change: clip-path;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  opacity: 0;
 
   & > .container {
     display: flex;
@@ -35,7 +33,6 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 
     .container {
       @include invisible-y-scroll;
-      // padding-left: $menu--regions__list--padding-left;
       max-height: calc(100% - #{$logo--height});
     }
 
@@ -47,11 +44,13 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
       &.is-active {
         font-weight: bold;
       }
+
+      a { border-bottom: 0; }
     }
   }
 }
 
 #toggleRegionsMenu:checked ~ .menu--regions {
+  @include fade-in;
   pointer-events: auto;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }

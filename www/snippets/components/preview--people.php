@@ -2,7 +2,7 @@
 
 <article class="preview--people">
   <a href="article">
-    <div class="preview--people__cover" style="background-image: url(<?= $page['pp_url'] ?>)"></div>
+    <div class="preview--people__cover" data-lazyload data-background-image="<?= $page['pp_url'] ?>"></div>
 
     <div class="preview--people__content">
       <div class="preview--people__context">
@@ -10,7 +10,7 @@
       </div>
 
       <h3 class="preview--people__name">
-        <?= $page['name'] ?>
+        <span><?= $page['name'] ?></span>
       </h3>
     </div>
   </a>

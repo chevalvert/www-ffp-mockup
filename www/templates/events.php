@@ -17,7 +17,7 @@
       'cta' => [
         'icon' => 'icon-add',
         'tooltip' => 'Soumettre un événement',
-        'action' => 'actualites/events/add'
+        'url' => 'actualites/events/add'
       ]
     ]) ?>
 

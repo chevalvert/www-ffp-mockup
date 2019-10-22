@@ -12,7 +12,7 @@
       'cta' => [
         'icon' => 'icon-add',
         'tooltip' => 'Soumettre un événement',
-        'action' => 'actualites/events' . '/form-event'
+        'url' => 'actualites/events' . '/form-event'
       ]
     ]) ?>
 
@@ -23,7 +23,7 @@
       'renderer' => 'components/preview--article',
       'btn' => [
         'label' => 'Voir plus',
-        'action' => '#load-more'
+        'url' => '#load-more'
       ]
     ]) ?>
   </div>

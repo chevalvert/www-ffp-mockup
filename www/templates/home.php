@@ -5,7 +5,7 @@
   <div class="barba-container home" data-view="home">
     <?php snippet('components/section', [
       'title' => 'La fédération Française du Paysage regroupe aujourd’hui plus de 800 membres, répartis dans 12 entités régionales, soit près d’1 paysagiste-concepteur sur 3.',
-      'class' => 'section--baseline'
+      'class' => 'section--baseline js-landscape'
     ]) ?>
 
     <?php snippet('components/section', [
@@ -18,7 +18,7 @@
       ],
       'btn' => [
         'label' => 'Adhérer',
-        'action' => '/adhesion'
+        'url' => '/adhesion'
       ]
     ]) ?>
 
@@ -31,7 +31,7 @@
       'cta' => [
         'icon' => 'icon-add',
         'tooltip' => 'Soumettre un événement',
-        'action' => 'actualites/events/add'
+        'url' => 'actualites/events/add'
       ]
     ]) ?>
 
@@ -44,14 +44,14 @@
       'cta' => [
         'icon' => 'icon-add',
         'tooltip' => 'Soumettre une actualité',
-        'action' => 'actualites/form-article'
+        'url' => 'actualites/form-article'
       ]
     ]) ?>
 
     <?php snippet('components/pages--grid', [
       'title' => 'Observatoire des projets',
       'link' => 'observatoire-des-projets',
-      // XXX: TODO
+      // XXX: limit to 4 most recent articles
       'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
     ]) ?>

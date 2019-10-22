@@ -3394,6 +3394,11 @@ eventemitter3@1.x.x:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
   integrity sha1-HIaZHYFq0eUEdQ5zh0Ik7PO+xQg=
 
+eventemitter3@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.0.tgz#d65176163887ee59f386d64c82610b696a4a74eb"
+  integrity sha512-qerSRB0p+UDEssxTtm6EDKcE7W4OaoisfIMl4CngyEhjpYglocpNg6UEqCvemdGhosAsg4sO2dXJOdyBifPGCg==
+
 events@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.0.0.tgz#9a0a0dfaf62893d92b875b8f2698ca4114973e88"
@@ -4465,6 +4470,11 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
+intersection-observer@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
+  integrity sha512-Id0Fij0HsB/vKWGeBe9PxeY45ttRiBmhFyyt/geBdDHBYNctMRTE3dC1U3ujzz3lap+hVXlEcVaB56kZP/eEUg==
+
 invariant@^2.2.2:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -5420,6 +5430,11 @@ lowercase-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz#2603e78b7b4b0006cbca2fbcc8a3202558ac9479"
   integrity sha512-tqNXrS78oMOE73NMxK4EMLQsQowWf8jKooH9g7xPavRT706R6bkQJ6DY2Te7QukaZsulxa30wQ7bk0pm4XiHmA==
+
+lozad@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/lozad/-/lozad-1.14.0.tgz#91d51d57e53187e95c5b7f4029d7a28a0e940e10"
+  integrity sha512-uMGxpXBW15JDGVly3p121Y4jlb/OwmXpnMQR5vnb4GxMeK45NGcmlMrRr47fmLxtSdnGRFm0YdJaVXuudPKDaA==
 
 lru-cache@^4.0.1:
   version "4.1.5"
@@ -8706,6 +8721,13 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
+tasktimer@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/tasktimer/-/tasktimer-3.0.0.tgz#bede9a1edde30317b5b38eb6392eb7eb42560c97"
+  integrity sha512-Fx2Zw4FFM/gc9cY4Iodo9UwC9yFl7fIU3ay/wqq0+E5WT587aZlmjCW2yLCHRVIwzcSig4tMqIh4vqxOcyXr9A==
+  dependencies:
+    eventemitter3 "^4.0.0"
+
 term-size@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
@@ -8774,6 +8796,11 @@ timers-browserify@^2.0.4:
   integrity sha512-60aV6sgJ5YEbzUdn9c8kYGIqOubPoUdqQCul3SBAsRCZ40s6Y5cMcrW4dt3/k/EsbLVJNl9n6Vz3fTc+k2GeKQ==
   dependencies:
     setimmediate "^1.0.4"
+
+tiny-throttle@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tiny-throttle/-/tiny-throttle-1.0.1.tgz#0854719e77d59b66d87e95b7d48a0f890479da57"
+  integrity sha1-CFRxnnfVm2bYfpW31IoPiQR52lc=
 
 tmp@^0.0.33:
   version "0.0.33"

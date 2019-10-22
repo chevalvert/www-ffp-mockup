@@ -2,7 +2,7 @@
 <div class="menu--regions">
   <div class="container">
     <div class="menu__logos">
-      <a href="/" role="button">
+      <a href="/" class="icon">
         <?php snippet('svg/logo-main', ['title' => 'FFP']) ?>
         <?php snippet('svg/logo-baseline', ['title' => 'Fédération Française du Paysage']) ?>
       </a>
@@ -16,7 +16,7 @@
       <?php // XXX ?>
       <?php foreach (mock('regions') as $slug => $region) : ?>
         <li class="<?= ($_GET['r'] ?? false) === $slug ? 'is-active' : '' ?>">
-          <a href="region?r=<?= $slug ?>" role="button">
+          <a href="region?r=<?= $slug ?>">
             <?= $region ?>
           </a>
         </li>

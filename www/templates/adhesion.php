@@ -20,8 +20,8 @@
       ],
       'errors' => [
         'email' => 'L’e-mail fourni est invalide'
-      ]
-      ,'form' => [
+      ],
+      'form' => [
         'Contact' => [
           'email' => ['type' => 'email', 'label' => 'Votre e-mail', 'required' => true]
         ],

@@ -2,14 +2,16 @@
   &__pagination {
     $annuaire__pagination--optical-v: -3px;
 
+    z-index: 1;
+    position: sticky;
+    top: calc(#{$logo--height * 3} + 4px);
+
     height: $logo--height;
     padding:
       calc((#{$logo--height} - 1em) / 2 + #{$annuaire__pagination--optical-v})
       0
       calc((#{$logo--height} - 1em) / 2 - #{$annuaire__pagination--optical-v});
 
-    background: $black;
-    color: $white;
     text-transform: uppercase;
   }
 

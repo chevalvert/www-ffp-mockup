@@ -1,7 +1,5 @@
 <?php if (count($pages ?? []) || !($HIDE_EMPTY ?? false)) : ?>
 
-<?php // TODO: re-sort via JavaScript ?>
-
 <section class="pages--list" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
   <div class="container">
 

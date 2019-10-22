@@ -4,7 +4,7 @@
 <main role="main" id="main">
   <div class="barba-container search" data-view="search">
     <section class="search-form">
-      <form class="container">
+      <form class="container" <?= ($_GET['q'] ?? false) ? 'data-no-fade-in' : '' ?>>
         <input autofocus type="search" placeholder="rechercher une page par titre, mots-clefs, contexte…" name="q" value="<?= $_GET['q'] ?? '' ?>">
         <?php snippet('components/btn', [
           'label' => 'Rechercher',

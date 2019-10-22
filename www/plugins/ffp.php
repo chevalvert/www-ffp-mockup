@@ -1,6 +1,8 @@
 <?php
 
 class FFP {
+  // BUG
+  public const HUE_SHIFT_FACTOR = 1; // Shift one degree every 60 seconds
   public const SWATCHES = [
     59 => ['rgb(198,17,52)','rgb(223,20,42)','rgb(255,96,192)','rgb(255,122,141)','rgb(255,170,69)','rgb(255,199,148)'],
     60 => ['rgb(202,47,203)','rgb(254,68,255)','rgb(181,73,255)','rgb(191,107,255)','rgb(255,244,155)','rgb(254,254,218)'],
@@ -18,7 +20,6 @@ class FFP {
     82 => ['rgb(82,25,102)','rgb(111,37,132)','rgb(0,119,89)','rgb(43,121,107)','rgb(255,253,0)','rgb(255,248,87)'],
     83 => ['rgb(76,129,160)','rgb(98,160,181)','rgb(255,166,166)','rgb(255,216,235)','rgb(0,6,92)','rgb(1,19,163)'],
     84 => ['rgb(181,73,255)','rgb(191,107,255)','rgb(227,116,0)','rgb(255,140,1)','rgb(221,200,179)','rgb(235,220,199)'],
-    85 => ['rgb(114,244,208)','rgb(179,254,224)','rgb(141,114,1)','rgb(181,140,0)','rgb(255,24,24)','rgb(254,65,61)'],
     86 => ['rgb(177,145,130)','rgb(211,180,159)','rgb(180,206,255)','rgb(193,236,255)','rgb(202,47,203)','rgb(254,68,255)'],
     87 => ['rgb(255,244,155)','rgb(254,254,218)','rgb(91,3,41)','rgb(152,11,63)','rgb(45,186,255)','rgb(0,220,255)'],
     88 => ['rgb(170,200,210)','rgb(200,220,231)','rgb(38,74,0)','rgb(28,94,7)','rgb(183,76,40)','rgb(202,91,12)'],
@@ -31,21 +32,16 @@ class FFP {
     95 => ['rgb(118,170,191)','rgb(93,93,93)','rgb(150,125,255)','rgb(157,172,255)','rgb(122,13,102)','rgb(163,31,153)'],
   ];
 
-  // IMPORTANT: this color is hue shifted, meaning that comparison with
-  // FFP::SWATCHES will result in unexpected behaviors
-  public static $last_computed_color = NULL;
   public static $current_swatch = NULL;
+  public static $current_shifted_swatch = NULL;
 
-  private static $previous_base_colors = [];
-  private static $previous_base_colors_max_length = 2;
+  private static $previous_color = [];
+  private static $previous_color_max_length = 2;
 
-  /**
-   * Apply FPP color scheme to an HTML element by applying all attributes needed
-   */
   public static function paint ($recompute = true, $return = false) {
     $backgroundColor = $recompute
-      ? FFP::computeColor()
-      : FFP::$last_computed_color;
+      ? FFP::nextColor()
+      : end(FFP::$previous_color);
 
     $color = FFPColorHelpers::computeContrast($backgroundColor);
 
@@ -53,80 +49,57 @@ class FFP {
 
     if (!$recompute) echo "data-color-no-recompute ";
     echo 'data-color="' . implode(',', FFPColorHelpers::rgbStringToRGB($backgroundColor)) . '" ';
-    // TODO allow style injection
     echo "style='background-color:$backgroundColor; color:$color'";
   }
 
-  /**
-   * Get the key of the current swatch, computing one if none computed yet
-   * @return int
-   */
   public static function getCurrentSwatchIndex () {
     if (FFP::$current_swatch == NULL) FFP::computeSwatch();
     return array_search(FFP::$current_swatch, FFP::SWATCHES, true);
   }
 
-  /**
-   * Compute a swatch based on a daily seed
-   */
   public static function computeSwatch () {
     // NOTE: One swatch is used for one day
     $seed = date('d');
 
     // Randomly pick one swatch, based on the specified $seed
     FFP::$current_swatch = FFP::random_of(FFP::SWATCHES, [], $seed);
+    FFP::$current_shifted_swatch = array_map(function ($rgbString) {
+      // Shift the color's hue of $hueShift degrees
+      $hueShift = ceil(time() * FFP::HUE_SHIFT_FACTOR);
+      return FFPColorHelpers::hueShift($rgbString, $hueShift);
+    }, FFP::$current_swatch);
 
-    // NOTE: seed used for color picking in FFP::computeColor is set here so
+    // NOTE: seed used for color picking in FFP::nextColor is set here so
     // that it won't be reset at each color pick, but at each swatch pick
     $seed = 1; // $_SERVER['PHP_SELF'];
     srand(crc32($seed));
   }
 
-  /**
-   * Compute the right color based on a specific seeded swatch, a specific seed
-   * for color order, and the previous computed colors
-   * @return rgbString
-   */
-  private static function computeColor () {
+  private static function nextColor () {
     // Ensure a swatch has been computed
     if (FFP::$current_swatch == NULL) FFP::computeSwatch();
 
     // NOTE: no seed is specified here when picking a random color from the
     // swatch because it has already been assigned after computing the swatch
-    $color = FFP::random_of(FFP::$current_swatch, FFP::$previous_base_colors);
+    $color = FFP::random_of(FFP::$current_shifted_swatch, FFP::$previous_color);
 
     // Keep track of the used colors so that we can exclude them from the next pick
-    FFP::storeColor($color);
-
-    // Shift the color's hue of $hueShift degrees
-    $hueShift = time();
-    FFP::$last_computed_color = FFPColorHelpers::hueShift($color, $hueShift);
-    return FFP::$last_computed_color;
+    return FFP::storeColor($color);
   }
 
-  /**
-   * Push the given color to the internal FFP colors history, so that it can
-   * later be excluded from random pick
-   * @param  rgbString
-   */
   private static function storeColor ($color) {
     if (!$color) return false;
 
-    array_push(FFP::$previous_base_colors, $color);
+    array_push(FFP::$previous_color, $color);
 
     // Constrain history length to a specified value
-    while (count(FFP::$previous_base_colors) > FFP::$previous_base_colors_max_length)
-      array_shift(FFP::$previous_base_colors);
-    FFP::$previous_base_colors = array_values(FFP::$previous_base_colors);
+    while (count(FFP::$previous_color) > FFP::$previous_color_max_length)
+      array_shift(FFP::$previous_color);
+    FFP::$previous_color = array_values(FFP::$previous_color);
+
+    return $color;
   }
 
-  /**
-   * Return a seeded random value from an array, with an optionnal exclude list
-   * @param  array
-   * @param  array
-   * @param  string|int
-   * @return mixed
-   */
   private static function random_of ($array, $exclude = [], $seed = NULL) {
     if ($seed) {
       // Make sure $seed is a number

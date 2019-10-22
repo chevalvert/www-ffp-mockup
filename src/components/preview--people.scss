@@ -16,9 +16,7 @@
   }
 
 
-  &__content {
-
-  }
+  &__content {}
 
   &__context {
     @include font(ui);
@@ -33,6 +31,12 @@
     @include font(ui);
   }
 
-  &:hover &__name {
+  &__name span {
+    @include easing(300ms, border-color);
+    border-bottom: 1px solid transparent;
+  }
+
+  &:hover &__name span {
+    border-color: inherit;
   }
 }

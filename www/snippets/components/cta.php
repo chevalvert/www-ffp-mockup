@@ -1,4 +1,4 @@
-<a href="<?= $action ?>" role="button" class="cta">
+<a href="<?= $url ?>" class="icon cta">
   <?php snippet("svg/$icon") ?>
 
   <?php if ($tooltip ?? null) : ?>

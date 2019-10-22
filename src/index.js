@@ -1,11 +1,19 @@
-import barba from 'controllers/barba'
+import { debounce } from 'tiny-throttle'
 
-// TODO: barba lifecycle
+import barba from 'controllers/barba'
+import lazyload from 'controllers/lazyload'
+
 // import FFPHue from 'controllers/ffp-hue'
-import 'controllers/ffp-wall'
+import FFPLandscape from 'controllers/ffp-landscape'
 
 import 'views/table'
 import defaultTransition from 'views/transitions/default'
+
+// ???
+// FFPHue.timer.start()
+// FFPHue.timer.add(FFPLandscape.update)
+
+window.addEventListener('resize', debounce(FFPLandscape.update, 100))
 
 barba({
   wrapperId: 'main',
@@ -18,11 +26,12 @@ barba({
   },
 
   newPageReady: () => {
-    // FFPHue.rebuild()
-    // lazyloader()
+    FFPLandscape.build()
+    // FFPHue.rebuild() // ???
+    lazyload()
   },
 
-  transitionCompleted: ({ url }) => {
+  transitionCompleted: () => {
     document.body.classList.remove('is-loading')
   },
 

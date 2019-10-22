@@ -5,15 +5,39 @@
   <div class="barba-container" data-view="table">
     <?php snippet('components/header', [
       'title' => 'Annuaire',
-      'text' => 'Se consolidant dans le système de insiding et outsiding, la cosmogonisation par rapport aux diplomaties fait allusion à prévaloir une discipline dans le prémice, je vous en prie.',
+      'text' => <<<HTML
+        <p>Se consolidant dans le système de insiding et outsiding, la cosmogonisation par rapport aux diplomaties fait allusion à prévaloir une discipline dans le prémice, je vous en prie.</p>
+      HTML,
       'cta' => [
         'icon' => 'icon-add',
         'tooltip' => 'S’inscrire dans l’annuaire',
-        'action' => 'adhesion'
+        'url' => 'adhesion'
       ]
     ]) ?>
 
-    <div class="annuaire__pagination">
+    <div <?php FFP::paint() ?>>
+      <?php snippet('components/form', [
+        'DO_NOT_PAINT' => true,
+        'class' => 'form--filter',
+        'action' => 'annonces?filtrer',
+        'method' => 'GET',
+        'values' => [
+          'filter' => $_GET['filter'] ?? '',
+          'regions' => $_GET['regions'] ?? null,
+          'type' => $_GET['type'] ?? null
+        ],
+        'form' => [
+          [
+            'filter' => ['type' => 'text', 'placeholder' => 'Rechercher par nom de, agence, lieu…', 'width' => '1/2'],
+            'regions' => ['type' => 'select', 'options' => mock('regions'), 'placeholder' => 'Toutes les régions', 'width' => '1/2']
+          ]
+        ],
+        'btn' => ['label' => 'Filtrer'],
+        'reset' => ['label' => 'Effacer']
+      ]) ?>
+    </div>
+
+    <div class="annuaire__pagination" <?php FFP::paint() ?>>
       <div class="container">
         <ul class="annuaire__letters">
           <?php foreach (range('A', 'Z') as $char) : ?>
