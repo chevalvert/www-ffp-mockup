@@ -10,16 +10,18 @@
 
     <?php snippet('components/section', [
       'title' => 'Pourquoi adhérer&nbsp;?',
-      'text' => mock('pages.adhesion.text')
+      'text' => mock('pages.adhesion.text'),
+      'class' => 'js-landscape'
     ]) ?>
 
     <?php snippet('components/form', [
       'action' => 'api/post-adhesion.php',
       'values' => [
-        'email' => 'arnaud.juracek@gmail.com'
+        'email' => 'mail-invalide@example.com'
       ],
       'errors' => [
-        'email' => 'L’e-mail fourni est invalide'
+        'email' => 'l’e-mail fourni est invalide',
+        'region' => 'champ obligatoire'
       ],
       'form' => [
         'Contact' => [

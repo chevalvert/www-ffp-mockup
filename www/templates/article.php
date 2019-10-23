@@ -27,6 +27,16 @@
                 'label' => 'Partager sur Facebook',
                 'url' => 'https://www.facebook.com/sharer/sharer.php?u=link'
               ]) ?>
+
+              <?php snippet('components/btn', [
+                'label' => 'Télécharger',
+                'url' => 'https://www.facebook.com/sharer/sharer.php?u=link'
+              ]) ?>
+
+              <?php snippet('components/btn', [
+                'label' => 'Acheter la brochure',
+                'url' => 'https://www.facebook.com/sharer/sharer.php?u=link'
+              ]) ?>
             </div>
 
             <?php if ($prototype_article['metas'] ?? false) : ?>

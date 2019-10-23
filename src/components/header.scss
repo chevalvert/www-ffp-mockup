@@ -16,12 +16,12 @@
   }
 
   &__cover {
-    @include ratio(16/10);
-    width: col(5);
-
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    width: calc((100% / 12 * 5) + (100vw - #{$max-width}) / 2 + #{$gutter});
+    margin-right: calc(((100vw - #{$max-width}) / 2 + #{$gutter}) * -1);
 
     // NOTE: this allow overflowing the cover on the right of its container to
     // remove the padding right

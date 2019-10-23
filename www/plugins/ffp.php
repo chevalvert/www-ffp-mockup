@@ -71,6 +71,7 @@ class FFP {
 
     // NOTE: seed used for color picking in FFP::nextColor is set here so
     // that it won't be reset at each color pick, but at each swatch pick
+    // ???
     $seed = 1; // $_SERVER['PHP_SELF'];
     srand(crc32($seed));
   }

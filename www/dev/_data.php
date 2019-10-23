@@ -198,7 +198,7 @@ $_GLOBALS['__dev.data'] = [
       'title' => 'Adhérer à la FFP',
       'text' => <<<HTML
         <h3>Des échanges avec des paysagistes concepteurs en région</h3>
-        <p>Actuellement, la congolexicomatisation de la technicité informatisée semble faceter l'upensmie possédant la francophonie, bonnes fêtes.</p>
+        <p>Actuellement, la lexicomatisation de la technicité informatisée semble faceter l'upensmie possédant la francophonie, bonnes fêtes.</p>
         <h3>Des événements, rencontres et formations multiples</h3>
         <p>Imbiber, porter la contextualisation à l'égard de la complexité se résoud à incristaliser une position axisienne vers Lovanium, je vous en prie.</p>
         <h3>Des événémenents, rencontres et formations multiples</h3>
@@ -212,16 +212,29 @@ $_GLOBALS['__dev.data'] = [
       'text' => <<<HTML
         <p>Le principe de l’observatoire est de proposer sur le site web de la FFP, une promotion du savoir-faire des entreprises au travers de projets réalisés ensemble. Cette promotion est assurée par la publication de reportages sur les chantiers en insistant sur une ou plusieurs spécificités, de nouvelles techniques… Chaque écho des chantiers est mis en ligne pour deux ans dans la partie libre du site Internet de la FFP. Une alerte à chacun de nos membres est envoyée à chaque nouvelle publication.</p>
         <p>Sur une même opération les entreprises peuvent se répartir entre elles le financement de cette promotion collective. Le concepteur valorise aussi son travail. Progressivement les écho des chantiers vont constituer une riche bibliothèque de projets et un baromètre de l'activité.</p>
-        HTML
-      ],
+      HTML
+    ],
 
     'experiences-de-paysage' => [
-      'title' => 'Expériences de paysage'
+      'title' => 'Expériences de paysage',
+      'text' => <<<HTML
+        <p>Imbiber, porter la lexicomatisation indispensable(s) en science et culture nous incite à établir cette climatologie axé(e)(s) sur la réalité du terrain, bonnes fêtes.</p>
+      HTML,
+      'articles' => [
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'La terre donne', 'cover_url' => 'https://picsum.photos/id/101/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'De la marge au paysage', 'cover_url' => 'https://picsum.photos/id/103/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Mutatis Mutandis 1, une approche sensible du projet', 'cover_url' => 'https://picsum.photos/id/104/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Les carnets du paysage : une revue à la croisée du projet et de la culture', 'cover_url' => 'https://picsum.photos/id/100/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Sainte-Baume, «paysage en projet»', 'cover_url' => 'https://picsum.photos/id/106/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Paysages de garrigue, une inspiration pour les jardins du futur', 'cover_url' => 'https://picsum.photos/id/107/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Explorer le Grand Paris de la Marche au Paysage', 'cover_url' => 'https://picsum.photos/id/110/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Projets de campagne', 'cover_url' => 'https://picsum.photos/id/111/1600/1000'],
+      ]
     ],
 
     'region' => [
       'title' => 'Entre champs et volcans',
-      'intro' => 'Actuellement, l’activisme de la technicité informatisée nous incite à catapulter le trabajo, le travail, la machinale, la robotisation belvédère, Bonne Année. Vous avez le système de check-up vers les anti-valeurs, vous avez le curuna, or la société civile autour de l’ergonométrie vise à se baser sur cet environnement de 2 345 410 km² comparé la rénaque, tu sais ça. Lorsque l’on parle des végétaliens, du végétalisme, l’activisme de l’orthodoxisation doit se baser sur les encadrés propres aux congolais, Bonne Année. Parallèlement, la compétence vers la compromettance pour des saint-bioules se résoud à aider la nucléarité axée sur la réalité du terrain, je vous en prie.',
+      'intro' => 'Actuellement, l’activisme de la technicité informatisée nous incite à catapulter le trabajo, le travail, la machinale, la robotisation belvédère, Bonne Année. Vous avez le système de check-up vers les anti-valeurs, vous avez le curuna, or la société civile autour de l’ergonométrie vise à se baser sur cet environnement de 2 345 410 km² comparé la rénaque, tu sais ça. Lorsque l’on parle des végétaliens, du végétalisme, l’activisme de l’orthodoxisation doit se baser sur les encadrés propres aux Français, Bonne Année. Parallèlement, la compétence vers la compromettance pour des saint-bioules se résoud à aider la nucléarité axée sur la réalité du terrain, je vous en prie.',
       'contact' => <<<HTML
         <ul>
           <li><b>Séverine Clédat</b> présidente</li>
@@ -235,8 +248,36 @@ $_GLOBALS['__dev.data'] = [
           <li><b>Permanence</b> 9 rue Danielle Faynel-Duclos 69003&nbsp;Lyon</li>
           <li><b>Tél</b> 04 78 93 55 19</li>
         </ul>
+      HTML
+    ],
+
+    'login' => [
+      'signup-text' => <<<HTML
+        <p>Vous n’avez pas encore de compte ? Sa création est indispensable pour voir les dernières <a href="annonces">annonces</a>, avoir accès à l’<a href="annuaire">annuaire</a> professionnel et centraliser vos documents.</p>
+      HTML
+    ],
+
+    'profil' => [
+      'fiche-presentation-text' => <<<HTML
+        <p>Parallèlement, la lexicomatisation de l'orthodoxisation nous pousse à porter d'avis sur ce qu'on appelle une discipline vers Lovanium, je vous en prie.</p>
+        <ul>
+          <li><b>Statut</b> Libéral</li>
+          <li><b>Agence</b> Dupont</li>
+          <li><b>Adresse</b> 12, rue des azalés, 75001 Paris</li>
+          <li><b>Tél</b> 00 38 54 35 81 91</li>
+          <li><b>Fax</b> 00 38 54 35 81 91</li>
+          <li><b>Courriel</b> martine.dupont@gmail.com</li>
+          <li><b>Site</b> <a href="#">dupont.fr</a></li>
+          <li><b>Diplôme</b> Diplôme d’architecte paysagiste</li>
+        </ul>
       HTML,
-      'test' => ''
+      'reference-text' => <<<HTML
+        <p>
+          Quand on prend les triangles rectangles, la réflexologie inter-continentaliste continue à défendre les revenus axé sur la réalité du terrain, mais oui.
+          <br>Nous n’allons pas seulement danser ou jouer au football, la compétence purement technique oblige à prévaloir les sens dynamitiels dans les camps militaires non-voyants, c’est clair.
+        </p>
+        <p>Lorsqu’on parle de tous ces points de vues, la cosmogonisation purement technique paraît régler cet environnement de 2 345 410 km² vers Lovanium, Bonne Année. Une semaine passée sans parler du peuple c’est errer sans abri, autrement dit la politique purement technique vise à partager la nucléarité autour des dialogues intercommunautaires, tu sais ça.
+      HTML
     ]
   ]
 ];

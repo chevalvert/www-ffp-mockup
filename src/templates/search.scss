@@ -17,10 +17,12 @@
     flex: 1;
     margin-right: $gutter;
 
-    font-style: italic;
     border-bottom: 1px solid;
-
     padding-bottom: 2px;
+
+    &::placeholder {
+      font-style: italic;
+    }
   }
 
 }

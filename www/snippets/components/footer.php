@@ -1,8 +1,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__contact">
-      <?= mock('site.address') ?>&nbsp;&mdash;&nbsp;
-      <a href="tel:<?= mock('site.phone') ?>"><?= mock('site.phone') ?></a>
+      <?= mock('site.address') ?>&nbsp;&mdash;&nbsp;<a href="tel:<?= mock('site.phone') ?>"><?= mock('site.phone') ?></a>
     </div>
     <ul class="footer__links">
       <li><a href="feed">RSS</a></li>

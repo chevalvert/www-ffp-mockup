@@ -1,6 +1,7 @@
 <select id="<?= $id ?>" name="<?= $id ?>" <?= ($required ?? false) ? 'required' : '' ?>>
   <?php if ($placeholder) : ?>
     <option value=""><?= $placeholder ?></option>
+    <option disabled>─</option>
   <?php endif ?>
 
   <?php foreach ($options as $option_value => $option_label) : ?>

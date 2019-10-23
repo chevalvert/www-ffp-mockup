@@ -41,8 +41,8 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
       @include font(header);
       line-height: line-height(header) * 1.25;
 
-      &:hover,
-      &.is-active {
+      a:hover,
+      &.is-active a {
         font-weight: bold;
       }
 

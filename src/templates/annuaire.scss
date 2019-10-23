@@ -21,7 +21,8 @@
   }
 
   &__letter.is-active a {
-    border-bottom: 1px solid;
+    font-weight: bold;
+    // border-bottom: 1px solid;
   }
 
   &__letter.is-disabled {

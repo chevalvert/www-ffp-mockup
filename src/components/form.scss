@@ -50,6 +50,7 @@
   select,
   textarea,
   input[type='text'],
+  input[type='password'],
   input[type='email'],
   input[type='file'],
   input[type='date'] {
@@ -147,6 +148,12 @@
     text-transform: uppercase;
   }
 
+  .password__forgot {
+    @include font(ui);
+    text-align: right;
+    margin-top: 1em;
+  }
+
   textarea  {
     padding-top: $gutter / 2;
     padding-bottom: $gutter / 2;
@@ -172,8 +179,15 @@
         calc(#{$gutter / 2} + 1px)
         calc((#{$logo--height} - 1em) / 2 - #{$field-error--optical-v});
 
+    width: fit-content;
+    float: right;
     span {
       filter: invert(100%);
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &::before { content: 'Erreur : '; }
     }
 
     &::before {
