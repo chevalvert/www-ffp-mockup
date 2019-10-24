@@ -2,7 +2,7 @@
 
 class FFP {
   // BUG
-  public const HUE_SHIFT_FACTOR = 1; // Shift one degree every 60 seconds
+  public const HUE_SHIFT_FACTOR = 1/60; // Shift one degree every 60 seconds
   public const SWATCHES = [
     59 => ['rgb(198,17,52)','rgb(223,20,42)','rgb(255,96,192)','rgb(255,122,141)','rgb(255,170,69)','rgb(255,199,148)'],
     60 => ['rgb(202,47,203)','rgb(254,68,255)','rgb(181,73,255)','rgb(191,107,255)','rgb(255,244,155)','rgb(254,254,218)'],
@@ -58,22 +58,16 @@ class FFP {
   }
 
   public static function computeSwatch () {
+    // Randomly pick one swatch, based on the specified $seed
     // NOTE: One swatch is used for one day
     $seed = date('d');
-
-    // Randomly pick one swatch, based on the specified $seed
     FFP::$current_swatch = FFP::random_of(FFP::SWATCHES, [], $seed);
+
+    // Shift the color's hue of $hueShift degrees
     FFP::$current_shifted_swatch = array_map(function ($rgbString) {
-      // Shift the color's hue of $hueShift degrees
       $hueShift = ceil(time() * FFP::HUE_SHIFT_FACTOR);
       return FFPColorHelpers::hueShift($rgbString, $hueShift);
     }, FFP::$current_swatch);
-
-    // NOTE: seed used for color picking in FFP::nextColor is set here so
-    // that it won't be reset at each color pick, but at each swatch pick
-    // ???
-    $seed = 1; // $_SERVER['PHP_SELF'];
-    srand(crc32($seed));
   }
 
   private static function nextColor () {

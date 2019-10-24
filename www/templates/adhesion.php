@@ -2,7 +2,7 @@
 <?php snippet('components/menu') ?>
 
 <main role="main" id="main">
-  <div class="barba-container">
+  <div class="barba-container" data-view="form">
     <?php snippet('components/header', [
       'title' => mock('pages.adhesion.title'),
       'text' => 'On peut être paysagiste concepteur parce qu’on exerce le métier. On peut aussi être paysagiste concepteur par la conscience d’appartenir à une profession et par une proximité active et solidaire avec ses confrères.'
@@ -21,7 +21,8 @@
       ],
       'errors' => [
         'email' => 'l’e-mail fourni est invalide',
-        'region' => 'champ obligatoire'
+        'region' => 'champ obligatoire',
+        'documents' => 'un diplôme est obligatoire',
       ],
       'form' => [
         'Contact' => [

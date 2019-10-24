@@ -7,3 +7,6 @@
   <?= $value ?? null ? "value='$value'" : '' ?>
   <?= ($required ?? false) ? 'required' : '' ?>
 >
+<label class="better-input-file" for="<?= $id ?>" data-files=''>
+  <?= $multiple ?? true ? 'Sélectionner un ou plusieurs fichiers…' : 'Sélectionner un fichier…'?>
+</label>

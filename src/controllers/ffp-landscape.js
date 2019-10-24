@@ -1,4 +1,5 @@
 import 'nodelist-foreach'
+import 'requestidlecallback-polyfill'
 import { generate, prng } from 'ffp-generate'
 import createCanvas from 'utils/dom-create-canvas'
 
@@ -48,7 +49,6 @@ function buildLandscape (container) {
   // blocking the main thread
   // TODO: add web worker support to `ffp-generate`
   window.requestIdleCallback(() => {
-    prng.reset()
     container.landscape = generate(options).render()
     canvas.setAttribute('data-rendered', true)
   })
@@ -65,5 +65,6 @@ export function build () {
 }
 
 export function update () {
+  prng.reset()
   document.querySelectorAll('.js-landscape').forEach(buildLandscape)
 }

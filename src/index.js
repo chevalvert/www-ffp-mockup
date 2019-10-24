@@ -3,15 +3,11 @@ import { debounce } from 'tiny-throttle'
 import barba from 'controllers/barba'
 import lazyload from 'controllers/lazyload'
 
-// import FFPHue from 'controllers/ffp-hue'
 import FFPLandscape from 'controllers/ffp-landscape'
 
 import 'views/table'
+import 'views/form'
 import defaultTransition from 'views/transitions/default'
-
-// ???
-// FFPHue.timer.start()
-// FFPHue.timer.add(FFPLandscape.update)
 
 let pwidth = window.innerWidth
 window.addEventListener('resize', debounce(() => {
@@ -32,7 +28,6 @@ barba({
 
   newPageReady: () => {
     FFPLandscape.build()
-    // FFPHue.rebuild() // ???
     lazyload()
   },
 

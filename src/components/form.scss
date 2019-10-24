@@ -58,7 +58,6 @@
     @include reset-button;
     width: 100%;
     height: $logo--height;
-
     padding: 0 ($gutter / 2) 1px;
     border: 1px solid;
 
@@ -154,6 +153,37 @@
     margin-top: 1em;
   }
 
+  input[type='file'] { display: none; }
+  label.better-input-file {
+    @include font(ui);
+    position: relative;
+    font-weight: normal;
+    border: 1px solid;
+    min-height: $logo--height;
+    padding:
+      calc((#{$logo--height} - 1em) / 2 - 1px)
+      $gutter / 2
+      calc((#{$logo--height} - 1em) / 2 + 1px);
+    margin-bottom: 0;
+
+    &[data-files]:not([data-files=''])::before {
+      content: '';
+      position: absolute;
+      top: $logo--height + 0.1rem;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid;
+    }
+
+    &[data-files]:not([data-files=''])::after {
+      content: attr(data-files);
+      display: block;
+      margin-top: $gutter;
+      white-space: pre;
+      font-weight: bold;
+    }
+  }
+
   textarea  {
     padding-top: $gutter / 2;
     padding-bottom: $gutter / 2;
@@ -170,7 +200,7 @@
 
   &__field-error {
     @include font(ui);
-    $field-error--optical-v: -2px;
+    $field-error--optical-v: -3px;
 
     position: relative;
     height: $logo--height;
@@ -179,7 +209,6 @@
         calc(#{$gutter / 2} + 1px)
         calc((#{$logo--height} - 1em) / 2 - #{$field-error--optical-v});
 
-    width: fit-content;
     float: right;
     span {
       filter: invert(100%);

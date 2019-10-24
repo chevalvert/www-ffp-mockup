@@ -12,11 +12,10 @@
   setlocale(LC_ALL, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
 
   // Get last part of url
-  $_GLOBALS['URI'] = basename($_SERVER['PHP_SELF']);
-  // Strip index.php and .php to ensure consistent URI scheme
-  $_GLOBALS['URI'] = str_replace(['.php', 'index'], '', $_GLOBALS['URI']);
+  $_GLOBALS['URI'] = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
   // Redirect root to the home template
-  if ($_GLOBALS['URI'] === '') $_GLOBALS['URI'] = 'home';
+  if ($_GLOBALS['URI'] == '') $_GLOBALS['URI'] = 'home';
 
   // Make the mocked datas for the current page globally available
   $_GLOBALS['page'] = mock('pages.' . $_GLOBALS['URI']);
