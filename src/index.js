@@ -5,10 +5,13 @@ import lazyload from 'controllers/lazyload'
 
 import FFPLandscape from 'controllers/ffp-landscape'
 
+import 'views/article'
 import 'views/table'
 import 'views/form'
+
 import defaultTransition from 'views/transitions/default'
 
+// TODO: move inside FFPLandscape
 let pwidth = window.innerWidth
 window.addEventListener('resize', debounce(() => {
   if (window.innerWidth === pwidth) return
@@ -19,7 +22,7 @@ window.addEventListener('resize', debounce(() => {
 barba({
   wrapperId: 'main',
   containerClass: 'barba-container',
-  updateOutsideWrapper: ['.menu'],
+  updateOutsideWrapper: ['.menu', '.menu--mobile'],
 
   linkClicked: () => {
     document.body.classList.add('is-loading')

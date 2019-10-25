@@ -1,4 +1,4 @@
-<header class="header <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
+<header class="header <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint(!($NO_NEW_COLOR ?? false)) ?> <?= ($NO_NEW_COLOR ?? false) ? 'data-same-color="true"' : ''?>>
   <div class="container">
     <div class="header__content">
       <?php if ($date ?? null) : ?>

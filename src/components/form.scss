@@ -21,17 +21,19 @@
   }
 
   &__field[data-width] {
-    @for $i from 2 through 4 {
-      &[data-width='1/#{$i}'] {
-        width: calc(#{col(6 / $i)} - #{$gutter / $i * ($i - 1)});
-        @include devices(mobile, tablet) {
-          width: calc(#{col(12 / $i)} - #{$gutter / $i * ($i - 1)});
+    @include desktop {
+      @for $i from 2 through 4 {
+        &[data-width='1/#{$i}'] {
+          width: calc(#{col(6 / $i)} - #{$gutter / $i * ($i - 1)});
+          @include devices(mobile, tablet) {
+            width: calc(#{col(12 / $i)} - #{$gutter / $i * ($i - 1)});
+          }
         }
       }
-    }
 
-    float: left;
-    & + & { margin-left: $gutter; }
+      float: left;
+      & + & { margin-left: $gutter; }
+    }
   }
 
   label {
@@ -92,9 +94,6 @@
 
     background: $white;
     color: $black;
-    // ???
-    // background: currentColor;
-    // filter: invert(100%);
 
     &::after {
       @include easing(300ms, opacity);
@@ -107,8 +106,6 @@
       transform: translate(-50%, -50%);
       font-size: 3rem;
       opacity: 0;
-      // ???
-      // filter: invert(100%);
     }
 
     &[type='checkbox']::after {

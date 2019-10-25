@@ -7,7 +7,7 @@ export default view('table', {
     refs.sortTable = sortTable()
 
     const form = document.querySelector('form')
-    const resetButton = form.querySelector('button[type="reset"]')
+    const resetButton = form && form.querySelector('button[type="reset"]')
     if (!resetButton) return
     resetButton.addEventListener('click', e => {
       e.preventDefault()

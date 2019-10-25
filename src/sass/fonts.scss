@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap');
-
 $fonts: (
   'ui': (1.4rem, 1.7rem, normal, normal),
   'header': (3rem, 3.6rem, normal, normal),
@@ -50,6 +48,26 @@ $fonts: (
   src: url('fonts/spacegrotesk-bold.woff2') format('woff2'),
        url('fonts/spacegrotesk-bold.woff') format('woff'),
        url('fonts/spacegrotesk-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-display: auto;
+  src: url('fonts/spacemono-regular.woff2') format('woff2'),
+       url('fonts/spacemono-regular.woff') format('woff'),
+       url('fonts/spacemono-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-display: auto;
+  src: url('fonts/spacemono-bold.woff2') format('woff2'),
+       url('fonts/spacemono-bold.woff') format('woff'),
+       url('fonts/spacemono-bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }

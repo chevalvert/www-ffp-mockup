@@ -13,11 +13,12 @@
       </form>
     </section>
 
-    <?php ($_GET['q'] ?? false) && snippet('components/pages--list', [
+    <?php snippet('components/pages--list', [
       'DO_NOT_PAINT' => true,
       'HIDE_THEAD' => true,
       'title' => '7 résultats de recherche',
       'sortBy' => ['pubdate', 'DESC'],
+      'class' => 'js-landscape',
       'pages' => array_slice(mock('pages.annonces.pages'), 0, 7),
       // XXX
       'columns' => [

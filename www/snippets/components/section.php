@@ -1,9 +1,10 @@
-<section class="section <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
+<section class="section <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint(!($NO_NEW_COLOR ?? false)) ?> <?= ($NO_NEW_COLOR ?? false) ? 'data-same-color="true"' : ''?>>
   <div class="container">
     <div class="section__content">
       <?php if ($title ?? null) : ?>
       <h2 class="section__title">
         <?= ($link ?? null) ? "<a href='$link' title='Voir plus'>$title</a>" : $title ?>
+        <?php isset($cta) && snippet('components/cta', $cta) ?>
       </h2>
       <?php endif ?>
 

@@ -9,6 +9,7 @@
     ]) ?>
 
     <?php snippet('components/pages--grid', [
+      'DO_NOT_PAINT' => true,
       'title' => 'Projets de l’observatoire',
       'pages' => mock('pages.actualites.articles'),
       'renderer' => 'components/preview--article'

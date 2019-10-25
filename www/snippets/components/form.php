@@ -1,6 +1,6 @@
-<form action="<?= $action ?>" method="<?= $method ?? 'post' ?>" class="form <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
+<form action="<?= $action ?>" method="<?= $method ?? 'post' ?>" class="form <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint(!($NO_NEW_COLOR ?? false)) ?> <?= ($NO_NEW_COLOR ?? false) ? 'data-same-color="true"' : ''?>>
   <?php foreach ($form as $fieldset => $fields) : ?>
-    <fieldset <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
+    <fieldset <?php ($DO_NOT_PAINT ?? false) || FFP::paint(!($NO_NEW_COLOR ?? false)) ?> <?= ($NO_NEW_COLOR ?? false) ? 'data-same-color="true"' : ''?>>
       <div class="container">
         <?php if (!is_numeric($fieldset)) : // Support indexed and associative arrays ?>
           <legend><?= $fieldset ?></legend>

@@ -9,7 +9,7 @@
         <p>Si vous êtes adhérent, <a href="adhesion">identifiez-vous</a> pour avoir accès aux offres d’emploi.</p>
       HTML,
       'cta' => [
-        'icon' => 'icon-add',
+        'icon' => 'add',
         'tooltip' => 'S’inscrire dans l’annuaire',
         'url' => 'adhesion'
       ]

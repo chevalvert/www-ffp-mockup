@@ -10,7 +10,7 @@
       'pages' => mock('pages.actualites.events'),
       'renderer' => 'components/preview--event',
       'cta' => [
-        'icon' => 'icon-add',
+        'icon' => 'add',
         'tooltip' => 'Soumettre un événement',
         'url' => 'actualites/events' . '/form-event'
       ]

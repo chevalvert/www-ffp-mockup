@@ -1,9 +1,5 @@
 $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 
-#toggleRegionsMenu {
-  display: none;
-}
-
 .menu--regions {
   @include easing(300ms, clip-path);
   pointer-events: none;
@@ -82,7 +78,30 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
   }
 }
 
+@keyframes menu--open-2 {
+  0% {
+    display: none;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 0%,
+      0% 0%
+    );
+  }
+  100% {
+    display: block;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+
+#toggleRegionsMenu { display: none; }
 #toggleRegionsMenu:checked ~ .menu--regions {
   pointer-events: auto;
-  animation: menu--open 600ms cubic-bezier(0.5, 0.19, 0.32, 1) forwards;
+  animation: menu--open-2 600ms cubic-bezier(0.5, 0.19, 0.32, 1) forwards;
 }

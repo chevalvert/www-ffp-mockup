@@ -38,6 +38,9 @@ $max-width: 1280px;
 
 @import 'sass/base';
 
+@import 'sass/vendors/photoswipe';
+@import 'sass/vendors/photoswipe/default-skin';
+
 @import 'components/btn';
 @import 'components/cta';
 @import 'components/footer';
@@ -45,13 +48,16 @@ $max-width: 1280px;
 @import 'components/form--filter';
 @import 'components/header';
 @import 'components/menu';
+@import 'components/menu--mobile';
 @import 'components/menu--regions';
 @import 'components/pages--grid';
 @import 'components/pages--list';
+@import 'components/photoswipe';
 @import 'components/preview--article';
 @import 'components/preview--event';
 @import 'components/preview--people';
 @import 'components/section';
+@import 'components/sponsor';
 
 @import 'templates/annuaire';
 @import 'templates/article';

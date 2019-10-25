@@ -1,6 +1,6 @@
 <?php if (count($pages ?? []) || !($HIDE_EMPTY ?? false)) : ?>
 
-<section class="pages--list" <?php ($DO_NOT_PAINT ?? false) || FFP::paint() ?>>
+<section class="pages--list <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint(!($NO_NEW_COLOR ?? false)) ?> <?= ($NO_NEW_COLOR ?? false) ? 'data-same-color="true"' : ''?>>
   <div class="container">
 
     <?php if (isset($title) && $title) : ?>

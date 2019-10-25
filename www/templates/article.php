@@ -2,7 +2,7 @@
 <?php snippet('components/menu') ?>
 
 <main role="main" id="main">
-  <div class="barba-container article">
+  <div class="barba-container article" data-view="article">
     <article class="article">
       <?php
         $prototype_article = mock('pages.actualites.articles')[0];
@@ -66,7 +66,9 @@
             <ul class="article__gallery">
               <?php foreach ($prototype_article['gallery'] as $image) : ?>
                 <li class="article__gallery-item">
-                  <?php snippet('image', $image) ?>
+                  <a href="<?= $image['url'] ?>" target="_blank">
+                    <?php snippet('image', $image) ?>
+                  </a>
                 </li>
               <?php endforeach ?>
             </ul>

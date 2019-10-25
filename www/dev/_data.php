@@ -10,7 +10,7 @@ $_GLOBALS['__dev.data'] = [
   'site' => [
     'title' => 'Fédération Française du Paysage',
     'address' => '4 rue Hardy 78000 Versailles',
-    'phone' => '01 30 21 47 45'
+    'phone' => '01&nbsp;30&nbsp;21&nbsp;47&nbsp;45'
   ],
 
   'regions' => [
@@ -210,8 +210,7 @@ $_GLOBALS['__dev.data'] = [
     'observatoire-des-projets' => [
       'title' => 'Observatoire des projets',
       'text' => <<<HTML
-        <p>Le principe de l’observatoire est de proposer sur le site web de la FFP, une promotion du savoir-faire des entreprises au travers de projets réalisés ensemble. Cette promotion est assurée par la publication de reportages sur les chantiers en insistant sur une ou plusieurs spécificités, de nouvelles techniques… Chaque écho des chantiers est mis en ligne pour deux ans dans la partie libre du site Internet de la FFP. Une alerte à chacun de nos membres est envoyée à chaque nouvelle publication.</p>
-        <p>Sur une même opération les entreprises peuvent se répartir entre elles le financement de cette promotion collective. Le concepteur valorise aussi son travail. Progressivement les écho des chantiers vont constituer une riche bibliothèque de projets et un baromètre de l'activité.</p>
+        <p>Le principe de l’observatoire est de proposer sur le site web de la FFP, une promotion du savoir-faire des entreprises au travers de projets réalisés ensemble. Cette promotion est assurée par la publication de reportages sur les chantiers en insistant sur une ou plusieurs spécificités, de nouvelles techniques.</p>
       HTML
     ],
 
@@ -223,10 +222,10 @@ $_GLOBALS['__dev.data'] = [
       'articles' => [
         ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'La terre donne', 'cover_url' => 'https://picsum.photos/id/101/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'De la marge au paysage', 'cover_url' => 'https://picsum.photos/id/103/1600/1000'],
-        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Mutatis Mutandis 1, une approche sensible du projet', 'cover_url' => 'https://picsum.photos/id/104/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Mutatis Mutandis 1, une approche sensible du projet', 'cover_url' => 'https://picsum.photos/id/94/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Les carnets du paysage : une revue à la croisée du projet et de la culture', 'cover_url' => 'https://picsum.photos/id/100/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Sainte-Baume, «paysage en projet»', 'cover_url' => 'https://picsum.photos/id/106/1600/1000'],
-        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Paysages de garrigue, une inspiration pour les jardins du futur', 'cover_url' => 'https://picsum.photos/id/107/1600/1000'],
+        ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Paysages de garrigue, une inspiration pour les jardins du futur', 'cover_url' => 'https://picsum.photos/id/117/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Explorer le Grand Paris de la Marche au Paysage', 'cover_url' => 'https://picsum.photos/id/110/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'thème', 'title' => 'Projets de campagne', 'cover_url' => 'https://picsum.photos/id/111/1600/1000'],
       ]

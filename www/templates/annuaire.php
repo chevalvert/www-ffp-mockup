@@ -9,7 +9,7 @@
         <p>Se consolidant dans le système de insiding et outsiding, la cosmogonisation par rapport aux diplomaties fait allusion à prévaloir une discipline dans le prémice, je vous en prie.</p>
       HTML,
       'cta' => [
-        'icon' => 'icon-add',
+        'icon' => 'add',
         'tooltip' => 'S’inscrire dans l’annuaire',
         'url' => 'adhesion'
       ]

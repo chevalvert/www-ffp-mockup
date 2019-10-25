@@ -22,7 +22,7 @@
       'pages' => mock('pages.actualites.events'),
       'renderer' => 'components/preview--event',
       'cta' => [
-        'icon' => 'icon-add',
+        'icon' => 'add',
         'tooltip' => 'Soumettre un événement',
         'url' => 'actualites/events/add'
       ]
@@ -35,7 +35,7 @@
       'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
       'cta' => [
-        'icon' => 'icon-add',
+        'icon' => 'add',
         'tooltip' => 'Soumettre une actualité',
         'url' => 'actualites/form-article'
       ]

@@ -1,0 +1,60 @@
+.sponsor {
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include devices (mobile, tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__logo {
+    flex: none;
+    width: calc(100% / 12 * 3 - #{$gutter});
+    margin-right: $gutter;
+
+    @include devices (mobile, tablet) {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: $logo--height * 2;
+      object-fit: contain;
+
+      @include devices (mobile, tablet) {
+        min-width: 100%;
+        height: auto;
+      }
+
+    }
+  }
+
+  &__baseline {
+    flex: none;
+    width: calc(100% / 12 * 6 - 1.5rem);
+    margin-right: $gutter;
+
+    @include devices (mobile, tablet) { display: none; }
+  }
+
+  &__label {
+    @include font(ui);
+    @include no-select;
+    text-align: right;
+    flex: none;
+    width: calc(100% / 12 * 3 - 1.5rem);
+    font-weight: bold;
+
+    @include devices (mobile, tablet) {
+      width: 100%;
+      margin-bottom: $gutter;
+    }
+  }
+}

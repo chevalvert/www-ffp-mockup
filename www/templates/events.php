@@ -15,7 +15,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       'cta' => [
-        'icon' => 'icon-add',
+        'icon' => 'add',
         'tooltip' => 'Soumettre un événement',
         'url' => 'actualites/events/add'
       ]

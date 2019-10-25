@@ -97,6 +97,9 @@ p a {
 
 section {
   padding: $gutter 0 ($logo--height * 2) 0;
+
+  &[data-same-color] { padding-top: 0; }
+
   h1, h2 {
     @include font(header);
     margin-bottom: $logo--height;

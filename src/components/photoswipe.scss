@@ -1,0 +1,19 @@
+.pswp {
+  z-index: 9;
+
+  &__bg { background-color: $white; }
+  &__caption { visibility: hidden; }
+
+  &__button {
+    filter: invert(1);
+    &--close { margin: $gutter / 2; }
+    &--arrow--left,
+    &--arrow--right { margin: 0 $gutter / 2; }
+  }
+
+  &__top-bar {
+    background: none !important;
+    opacity: 0.8 !important;
+    display: table !important;
+  }
+}

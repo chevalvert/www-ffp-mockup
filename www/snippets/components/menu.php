@@ -1,8 +1,10 @@
 <?php
-  $message = ($region ?? false)
+  $message = ($region ?? null)
     ? "<a href='region?r=" . slugify($region) . "' class='icon'>$region</a>"
     : ($message ?? false);
 ?>
+
+<?php snippet('components/menu--mobile', ['message' => ($message ?? null), 'region' => ($region ?? null)]) ?>
 
 <header class="menu <?= ($region ?? false) ? 'has-region' : '' ?>">
   <div class="menu__content">
@@ -32,9 +34,7 @@
 
       <ul class="menu__links--alt">
         <li class="menu__link">
-          <a href="search" title="Rechercher…" class="icon">
-            <?php snippet('svg/icon-search') ?>
-          </a>
+          <a href="search" title="Rechercher…" class="icon menu__search-icon">&#x2669;</a>
         </li>
         <li class="menu__link <?= strpos($_GLOBALS['URI'], 'profil') !== false ? 'is-active' : '' ?>">
           <a href="profil" title="Voir mon profil">Mon profil</a>

@@ -36,7 +36,6 @@
       visibility: hidden;
     }
 
-    // ???
     // Only sortable columns show an arrow
     th[data-sortable][data-sort]::after { visibility: visible; }
     th[data-sortable][data-sort='ASC']::after { content: '\2191'; }

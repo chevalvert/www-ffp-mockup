@@ -1,7 +1,6 @@
 <?php
 
 class FFP {
-  // BUG
   public const HUE_SHIFT_FACTOR = 1/60; // Shift one degree every 60 seconds
   public const SWATCHES = [
     59 => ['rgb(198,17,52)','rgb(223,20,42)','rgb(255,96,192)','rgb(255,122,141)','rgb(255,170,69)','rgb(255,199,148)'],
@@ -35,14 +34,16 @@ class FFP {
   public static $current_swatch = NULL;
   public static $current_shifted_swatch = NULL;
 
-  private static $previous_color = [];
-  private static $previous_color_max_length = 2;
+  private static $last_applied_color = NULL;
+  private static $previous_colors = [];
+  private static $previous_colors_max_length = 2;
 
   public static function paint ($recompute = true, $return = false) {
     $backgroundColor = $recompute
       ? FFP::nextColor()
-      : end(FFP::$previous_color);
+      : (FFP::$last_applied_color ?? FFP::nextColor());
 
+    FFP::$last_applied_color = $backgroundColor;
     $color = FFPColorHelpers::computeContrast($backgroundColor);
 
     if ($return) return compact('backgroundColor', 'color');
@@ -76,7 +77,7 @@ class FFP {
 
     // NOTE: no seed is specified here when picking a random color from the
     // swatch because it has already been assigned after computing the swatch
-    $color = FFP::random_of(FFP::$current_shifted_swatch, FFP::$previous_color);
+    $color = FFP::random_of(FFP::$current_shifted_swatch, FFP::$previous_colors);
 
     // Keep track of the used colors so that we can exclude them from the next pick
     return FFP::storeColor($color);
@@ -85,12 +86,12 @@ class FFP {
   private static function storeColor ($color) {
     if (!$color) return false;
 
-    array_push(FFP::$previous_color, $color);
+    array_push(FFP::$previous_colors, $color);
 
     // Constrain history length to a specified value
-    while (count(FFP::$previous_color) > FFP::$previous_color_max_length)
-      array_shift(FFP::$previous_color);
-    FFP::$previous_color = array_values(FFP::$previous_color);
+    while (count(FFP::$previous_colors) > FFP::$previous_colors_max_length)
+      array_shift(FFP::$previous_colors);
+    FFP::$previous_colors = array_values(FFP::$previous_colors);
 
     return $color;
   }

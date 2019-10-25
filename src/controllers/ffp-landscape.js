@@ -30,14 +30,11 @@ function buildLandscape (container) {
   // NOTE: appending the canvas to its container before rendering to avoid
   // layout shift
   if (!container.landscape) container.appendChild(canvas)
-  else {
-    canvas.width = window.innerWidth
-    canvas.style.width = canvas.width + 'px'
-  }
+  else canvas.style.width = canvas.width + 'px'
 
   const backgroundColor = container.style['backgroundColor'] || 'rgb(255, 255, 255)'
   const options = Object.assign({}, LANDSCAPE_RENDERING_OPTIONS, {
-    width: canvas.width,
+    width: window.innerWidth,
     height: canvas.height,
     swatch: window.FFP_SWATCH_SHIFTED.filter(c => c !== backgroundColor),
     backgroundColor,
