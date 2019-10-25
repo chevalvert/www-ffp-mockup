@@ -35,6 +35,7 @@
   }
 
   &__toggler {
+    @include easing(300ms, transform);
     $hamburger-weight: 3px;
 
     z-index: 2;
@@ -69,6 +70,7 @@
   }
 
   &__link {
+    @include no-select;
     width: 100%;
     margin-bottom: $gutter;
     text-overflow: hidden;
@@ -93,8 +95,7 @@
 
 #toggleMenuMobile { display: none; }
 #toggleMenuMobile:checked ~ .menu--mobile__toggler {
-  // TODO
-  @include debug;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><path stroke='black' stroke-width='3' d='M0 0 L30 30 M30 0 L0 30'/></svg>");
 }
 
 #toggleMenuMobile:checked ~ .menu--mobile__nav {

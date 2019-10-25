@@ -7,7 +7,7 @@
       'DO_NOT_PAINT' => true,
       'title' => mock('pages.region.title'),
       'text' => mock('pages.region.intro'),
-      'cover' => 'https://picsum.photos/id/11/1600/1000'
+      'cover' => 'https://picsum.photos/id/15/1600/1000'
     ]) ?>
 
     <?php snippet('components/section', [

@@ -85,7 +85,7 @@ $_GLOBALS['__dev.data'] = [
           'title' => 'Mener la transition avec la nature en ville, lorsqu’on parle de tous ces points de vues.',
           'context' => 'climat',
           'intro' => false, // 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-          'cover_url' => 'https://picsum.photos/id/11/1600/1000',
+          'cover_url' => 'https://picsum.photos/id/14/1600/1000',
           'text' => <<<HTML
             <p>Monsieur le <a href='https://www.novethic.fr/fileadmin/_processed_/csm_Nicolas-Hulot_3642a0156c.jpg'>Ministre</a>,</p>
             <p>Merci d’ouvrir ici une  fenêtre sur le projet de paysage. Pour ce qui me concerne suis tombée dedans dès le plus jeune âge.</p>

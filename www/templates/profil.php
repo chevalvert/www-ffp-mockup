@@ -68,11 +68,6 @@
         }],
         'location' => ['label' => 'Lieu'],
         'description' => ['label' => 'Poste']
-      ],
-      'cta' => [
-        'icon' => 'add',
-        'tooltip' => 'Poster une nouvelle annonce',
-        'url' => 'annonces/add'
       ]
     ]) ?>
   </div>

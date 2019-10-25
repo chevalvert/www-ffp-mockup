@@ -4,7 +4,7 @@
 <main role="main" id="main">
   <div class="barba-container" data-view="table">
     <?php snippet('components/header', [
-      'title' => 'Annuaire',
+      'title' => 'Annonces',
       'text' => <<<HTML
         <p>Si vous êtes adhérent, <a href="adhesion">identifiez-vous</a> pour avoir accès aux offres d’emploi.</p>
       HTML,

@@ -19,7 +19,7 @@
       <?php snippet('components/form', [
         'DO_NOT_PAINT' => true,
         'class' => 'form--filter',
-        'action' => 'annonces?filtrer',
+        'action' => 'annuaire?filtrer',
         'method' => 'GET',
         'values' => [
           'filter' => $_GET['filter'] ?? '',
