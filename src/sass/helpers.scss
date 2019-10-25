@@ -16,8 +16,39 @@
   }
 }
 
+@mixin invisible-scroll ($direction: x) {
+  @if $direction == x {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  } @else if $direction == y {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  } @else {
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+
+  scrollbar-width: none;
+  scrollbar-height: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    height: 0;
+    background: transparent;
+  }
+}
+
 @mixin debug ($color: red) {
   outline: 1px solid $color;
+  outline-offset: -1px;
+}
+
+@mixin line-clamp ($length: 1) {
+  display: -webkit-box;
+  -webkit-line-clamp: $length;
+  -webkit-box-orient: vertical;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @mixin easing ($duration: 100ms, $property: all) {
@@ -56,6 +87,7 @@
 
   background: transparent;
   border: none;
+  border-radius: 0;
 
   appearance: none;
 
@@ -104,4 +136,12 @@
 
   content: '';
   pointer-events: none;
+}
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
 }

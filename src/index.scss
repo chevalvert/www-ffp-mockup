@@ -1,8 +1,66 @@
 @import 'sass/reset';
 @import 'sass/fonts';
 @import 'sass/helpers';
+@import 'sass/devices';
 
 $black: #000000;
 $white: #FFFFFF;
 
+$gutter: 2rem;
+$logo--height: 3.5rem;
+
+$max-width: 1280px;
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@mixin fade-in ($duration: 1000ms) {
+  opacity: 0;
+  animation: fade-in $duration cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@mixin below--max-width {
+  @media only screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin grid ($col-length: 4) {
+  width: calc(100% / #{$col-length} - #{$gutter * ($col-length - 1) / $col-length});
+  &:not(:nth-child(#{$col-length}n)) { margin-right: $gutter; }
+}
+
+@function col ($n) {
+  @return calc(100% / 12 * #{$n});
+}
+
 @import 'sass/base';
+
+@import 'sass/vendors/photoswipe';
+@import 'sass/vendors/photoswipe/default-skin';
+
+@import 'components/btn';
+@import 'components/cta';
+@import 'components/footer';
+@import 'components/form';
+@import 'components/form--filter';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/menu--mobile';
+@import 'components/menu--regions';
+@import 'components/pages--grid';
+@import 'components/pages--list';
+@import 'components/photoswipe';
+@import 'components/preview--article';
+@import 'components/preview--event';
+@import 'components/preview--people';
+@import 'components/section';
+@import 'components/sponsor';
+
+@import 'templates/annuaire';
+@import 'templates/article';
+@import 'templates/home';
+@import 'templates/login';
+@import 'templates/search';

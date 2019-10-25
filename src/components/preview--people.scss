@@ -1,0 +1,42 @@
+.preview--people {
+  @include clearfix;
+  margin-bottom: $gutter;
+
+  &__cover {
+    @include ratio(3/4);
+
+    float: left;
+    margin-right: $gutter;
+    filter: grayscale(100%);
+    overflow: hidden;
+    width: 8rem;
+
+    background-size: auto 100%;
+    background-position: center;
+  }
+
+
+  &__content {}
+
+  &__context {
+    @include font(ui);
+    font-weight: bold;
+
+    &::first-letter  {
+      text-transform: uppercase;
+    }
+  }
+
+  &__name {
+    @include font(ui);
+  }
+
+  &__name span {
+    @include easing(300ms, border-color);
+    border-bottom: 1px solid transparent;
+  }
+
+  &:hover &__name span {
+    border-color: inherit;
+  }
+}

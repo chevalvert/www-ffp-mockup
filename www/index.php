@@ -1,18 +1,27 @@
-<?php require_once 'snippets/webpack.php' ?>
+<?php
+  require_once 'dev/_data.php';
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  require_once 'dev/mock.php';
+  require_once 'dev/slugify.php';
+  require_once 'dev/snippet.php';
+  require_once 'dev/webpack.php';
 
-  <title></title>
-  <?= liveCSS('assets/bundle.css') ?>
-</head>
-<body>
-  <main>
-    hello <?= isWebpack() ? 'from webpack' : '' ?>
-  </main>
-  <script src="assets/bundle.js"></script>
-</body>
-</html>
+  $plugins = glob(__DIR__ . '/plugins/*.php');
+  foreach ($plugins as $plugin) require_once($plugin);
+
+  setlocale(LC_ALL, 'fr_FR.UTF8', 'fr.UTF8', 'fr_FR.UTF-8', 'fr.UTF-8');
+
+  // Get last part of url
+  $_GLOBALS['URI'] = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+  // Redirect root to the home template
+  if ($_GLOBALS['URI'] == '') $_GLOBALS['URI'] = 'home';
+
+  // Make the mocked datas for the current page globally available
+  $_GLOBALS['page'] = mock('pages.' . $_GLOBALS['URI']);
+
+  // Find template based on specfied 'template' key in mocked data, or page URI if none
+  $template = 'templates/' . ($_GLOBALS['page']['template'] ?? $_GLOBALS['URI']) . '.php';
+  include file_exists($template)
+    ? $template
+    : 'templates/404.php';

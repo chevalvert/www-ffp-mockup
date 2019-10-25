@@ -1,0 +1,29 @@
+.pages--grid {
+  &__title {
+    @include no-select;
+    @include font(header);
+    margin-bottom: $logo--height;
+  }
+
+  &__entries {
+    display: flex;
+    flex-wrap: wrap;
+
+    // Compensate last row of &__entry margin-bottom
+    margin-bottom: -$logo--height;
+  }
+
+  &__entry {
+    @include desktop { @include grid(4); }
+    @include tablet { @include grid(2); }
+    @include mobile { @include grid(1); }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    margin-top: $logo--height * 2;
+  }
+}

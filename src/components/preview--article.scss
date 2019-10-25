@@ -1,0 +1,31 @@
+.preview--article {
+  margin-bottom: $logo--height;
+
+  &__cover {
+    overflow: hidden;
+    margin-bottom: $gutter;
+  }
+
+  &__pubdate {
+    @include font(ui);
+  }
+
+  &__context {
+    font-weight: bold;
+
+    &::first-letter  {
+      text-transform: uppercase;
+    }
+  }
+
+  &__title {}
+
+  &__title span {
+    @include easing(300ms, border-color);
+    border-bottom: 1px solid transparent;
+  }
+
+  &:hover &__title span {
+    border-color: inherit;
+  }
+}

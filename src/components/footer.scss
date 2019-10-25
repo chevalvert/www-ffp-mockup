@@ -1,0 +1,31 @@
+// Make sure the footer is always sticked to the bottom of the page no matter of
+// the document's height
+body { display: flex; flex-direction: column; }
+main { flex: 1 0 auto; }
+
+.footer {
+  @include font(ui);
+
+  flex-shrink: 0;
+  padding: 3rem 0;
+
+  background: $black;
+  color: $white;
+
+  .container {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__links {
+    margin-top: $gutter;
+
+    @include desktop {
+      display: flex;
+      margin-top: unset;
+      li { margin-left: $gutter; }
+    }
+  }
+}

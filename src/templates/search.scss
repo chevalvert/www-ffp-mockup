@@ -1,0 +1,28 @@
+.search {
+  .search-form {
+    background-color: $black;
+    color: $white;
+    padding-bottom: $gutter;
+  }
+
+  .search-form > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input[type='search'] {
+    @include reset-button;
+    @include font(header);
+
+    flex: 1;
+    margin-right: $gutter;
+
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+
+}

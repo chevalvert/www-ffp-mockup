@@ -1,0 +1,242 @@
+.form {
+  form  {}
+
+  fieldset {
+    @include clearfix;
+    padding: $gutter 0 ($logo--height * 2) 0;
+  }
+
+  legend {
+    @include font(header);
+  }
+
+  &__field {
+    width: col(6);
+    padding-top: $gutter;
+    @include devices(mobile, tablet) { width: col(12); }
+  }
+
+  &__field + &__field:not([data-width]) {
+    margin-top: $logo--height;
+  }
+
+  &__field[data-width] {
+    @include desktop {
+      @for $i from 2 through 4 {
+        &[data-width='1/#{$i}'] {
+          width: calc(#{col(6 / $i)} - #{$gutter / $i * ($i - 1)});
+          @include devices(mobile, tablet) {
+            width: calc(#{col(12 / $i)} - #{$gutter / $i * ($i - 1)});
+          }
+        }
+      }
+
+      float: left;
+      & + & { margin-left: $gutter; }
+    }
+  }
+
+  label {
+    @include no-select;
+    cursor: pointer;
+    font-weight: bold;
+    display: block;
+    margin-bottom: $gutter;
+  }
+
+  abbr {
+    cursor: help;
+    text-decoration: none;
+  }
+
+  select,
+  textarea,
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='file'],
+  input[type='date'] {
+    @include easing(300ms, background-color);
+    @include reset-button;
+    width: 100%;
+    height: $logo--height;
+    padding: 0 ($gutter / 2) 1px;
+    border: 1px solid;
+
+    &:focus {
+      background: $white;
+      color: $black;
+
+      border-color: transparent;
+    }
+
+    &::placeholder {
+      @include easing(300ms, opacity);
+      font-style: italic;
+      color: currentColor;
+      opacity: 0.5;
+    }
+
+    &:hover::placeholder { opacity: 0.8; }
+    &:focus::placeholder {
+      transition: none;
+      opacity: 0.3;
+    }
+  }
+
+  input[type='checkbox'],
+  input[type='radio']  {
+    @include reset-button;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    background: $white;
+    color: $black;
+
+    &::after {
+      @include easing(300ms, opacity);
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-weight: bold;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      opacity: 0;
+    }
+
+    &[type='checkbox']::after {
+      content: '\00d7';
+      transform: translate(-9px, -12px);
+    }
+
+    &[type='radio']::after {
+      background-color: $black;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+    }
+
+    &:hover::after { opacity: 0.1; }
+    &:checked::after { opacity: 1; }
+
+    & + label {
+      display: inline-block;
+      vertical-align: 4px;
+      font-weight: normal;
+      border-bottom: 1px solid transparent;
+    }
+
+    &:focus + label,
+    &:hover + label {
+      border-color: inherit;
+    }
+  }
+
+  input[type='radio'] {
+    border-radius: 100%;
+  }
+
+  input[type='date'] {
+    text-transform: uppercase;
+  }
+
+  .password__forgot {
+    @include font(ui);
+    text-align: right;
+    margin-top: 1em;
+  }
+
+  input[type='file'] { display: none; }
+  label.better-input-file {
+    @include font(ui);
+    position: relative;
+    font-weight: normal;
+    border: 1px solid;
+    min-height: $logo--height;
+    padding:
+      calc((#{$logo--height} - 1em) / 2 - 1px)
+      $gutter / 2
+      calc((#{$logo--height} - 1em) / 2 + 1px);
+    margin-bottom: 0;
+
+    &[data-files]:not([data-files=''])::before {
+      content: '';
+      position: absolute;
+      top: $logo--height + 0.1rem;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid;
+    }
+
+    &[data-files]:not([data-files=''])::after {
+      content: attr(data-files);
+      display: block;
+      margin-top: $gutter;
+      white-space: pre;
+      font-weight: bold;
+    }
+  }
+
+  textarea  {
+    padding-top: $gutter / 2;
+    padding-bottom: $gutter / 2;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  &__field.has-error {}
+
+  &__field-error {
+    @include font(ui);
+    $field-error--optical-v: -3px;
+
+    position: relative;
+    height: $logo--height;
+    padding:
+        calc((#{$logo--height} - 1em) / 2 + #{$field-error--optical-v})
+        calc(#{$gutter / 2} + 1px)
+        calc((#{$logo--height} - 1em) / 2 - #{$field-error--optical-v});
+
+    float: right;
+    span {
+      filter: invert(100%);
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &::before { content: 'Erreur : '; }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: currentColor;
+    }
+  }
+
+  &__button-container {
+    .container {
+      text-align: center;
+      width: col(12);
+      padding-top: $logo--height * 2;
+      padding-bottom: $logo--height * 2;
+
+      @include mobile {
+        .btn { width: 100%; }
+      }
+    }
+  }
+}

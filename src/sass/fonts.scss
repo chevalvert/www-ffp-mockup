@@ -1,0 +1,73 @@
+$fonts: (
+  'ui': (1.4rem, 1.7rem, normal, normal),
+  'header': (3rem, 3.6rem, normal, normal),
+  'body': (1.8rem, 1.4em, normal, normal),
+  'article-body': (1.8rem, 1.3em, normal, normal)
+);
+
+@function font-size ($key) {
+  @return nth(map-get($fonts, $key), 1);
+}
+
+@function line-height ($key) {
+  @return nth(map-get($fonts, $key), 2);
+}
+
+@function font-weight ($key) {
+  @return nth(map-get($fonts, $key), 3);
+}
+
+@function font-style ($key) {
+  @return nth(map-get($fonts, $key), 4);
+}
+
+@mixin font ($key) {
+  @if map-get($fonts, $key) == null {
+    @error "'#{$key}' does not exist.";
+  }
+
+  font-size: font-size($key);
+  line-height: line-height($key);
+  font-weight: font-weight($key);
+  font-style: font-style($key);
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: auto;
+  src: url('fonts/spacegrotesk-regular.woff2') format('woff2'),
+       url('fonts/spacegrotesk-regular.woff') format('woff'),
+       url('fonts/spacegrotesk-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-display: auto;
+  src: url('fonts/spacegrotesk-bold.woff2') format('woff2'),
+       url('fonts/spacegrotesk-bold.woff') format('woff'),
+       url('fonts/spacegrotesk-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-display: auto;
+  src: url('fonts/spacemono-regular.woff2') format('woff2'),
+       url('fonts/spacemono-regular.woff') format('woff'),
+       url('fonts/spacemono-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  font-display: auto;
+  src: url('fonts/spacemono-bold.woff2') format('woff2'),
+       url('fonts/spacemono-bold.woff') format('woff'),
+       url('fonts/spacemono-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}

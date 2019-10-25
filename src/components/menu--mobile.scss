@@ -1,0 +1,103 @@
+.menu--mobile {
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  background: $white;
+
+  @include desktop {
+    display: none;
+  }
+
+  &__content {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
+
+  &__logos {
+    font-size: 0;
+    line-height: 0;
+    height: $logo--height;
+
+    svg + svg {
+      padding-left: 10px;
+    }
+  }
+
+  &__message {
+    @include font(ui);
+    background: $black;
+    color: $white;
+    padding: ($gutter / 2) $gutter;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__toggler {
+    @include easing(300ms, transform);
+    $hamburger-weight: 3px;
+
+    z-index: 2;
+    position: fixed;
+    top: $logo--height / 2 + $gutter;
+    right: $gutter;
+    width: $gutter;
+    height: $gutter;
+    cursor: pointer;
+
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='#{$hamburger-weight}'/><rect y='24' width='30' height='#{$hamburger-weight}'/><rect y='12' width='30' height='#{$hamburger-weight}'/></svg>");
+    background-size: contain;
+    transform: translateY(-50%);
+  }
+
+  &__nav {
+    @include invisible-scroll(y);
+    @include font(body);
+
+    display: none; // TODO
+    position: fixed;
+    top: $logo--height + ($gutter * 2);
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: $black;
+    color: $white;
+
+    padding-top: $gutter / 2;
+    padding-bottom: $gutter / 2;
+  }
+
+  &__link {
+    @include no-select;
+    width: 100%;
+    margin-bottom: $gutter;
+    text-overflow: hidden;
+
+    &.has-borders {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      margin: ($gutter) (-$gutter);
+      padding: ($gutter / 2) $gutter;
+      min-width: calc(100% + #{$gutter * 2});
+    }
+  }
+
+  // XXXTODO: determine how to set specific .menu__link in bold
+  &__link:nth-child(1),
+  &__link:nth-child(2),
+  &__link:nth-child(3),
+  &__link:nth-child(4) {
+    font-weight: bold;
+  }
+}
+
+#toggleMenuMobile { display: none; }
+#toggleMenuMobile:checked ~ .menu--mobile__toggler {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><path stroke='black' stroke-width='3' d='M0 0 L30 30 M30 0 L0 30'/></svg>");
+}
+
+#toggleMenuMobile:checked ~ .menu--mobile__nav {
+  display: block;
+}

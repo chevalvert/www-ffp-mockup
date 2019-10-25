@@ -1,0 +1,113 @@
+$menu--optical-v: -2px;
+
+.menu {
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  background: $white;
+
+  @include devices (mobile, tablet) {
+    display: none;
+  }
+
+  &.has-region {
+    // SEE components/menu--regions
+    color: $white;
+    background: $black;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__content > .container {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+  }
+
+  &__logos {
+    font-size: 0;
+    line-height: 0;
+    height: $logo--height;
+
+    svg + svg {
+      padding-left: 10px;
+    }
+  }
+
+  &__message {
+    @include font(header);
+    @include no-select;
+
+    flex: 1;
+    margin-left: $gutter;
+  }
+
+  &__regions-toggler {
+    // SEE components/menu--regions
+    @include font(ui);
+    @include no-select;
+    @include easing(300ms, border-bottom);
+
+    display: inline-block;
+    align-self: center;
+    cursor: pointer;
+
+    line-height: 1.6em;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+
+    &.is-active,
+    &:hover  {
+      border-bottom: 1px solid;
+    }
+  }
+
+  &__nav {
+    @include font(ui);
+    @include invisible-scroll(x);
+    height: $logo--height;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__links,
+  &__links--alt {
+    display: flex;
+  }
+
+  &__links--alt {
+    margin-left: $gutter;
+  }
+
+  &__link {
+    white-space: nowrap;
+    height: $logo--height;
+
+    padding:
+      calc((#{$logo--height} - 1em) / 2 + #{$menu--optical-v})
+      0
+      calc((#{$logo--height} - 1em) / 2 - #{$menu--optical-v});
+
+    &:not(:last-child) { margin-right: $gutter; }
+    &.is-active a:not([role='button']) { border-bottom: 1px solid; }
+  }
+
+  &__search-icon {
+    font-size: 1.2em;
+  }
+
+  // XXXTODO: determine how to set specific .menu__link in bold
+  &__link:nth-child(1),
+  &__link:nth-child(2),
+  &__link:nth-child(3),
+  &__link:nth-child(4) {
+    font-weight: bold;
+  }
+}

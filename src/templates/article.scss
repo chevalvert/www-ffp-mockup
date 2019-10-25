@@ -1,0 +1,71 @@
+.article {
+  &__body {}
+
+  &__body .container  {
+    display: flex;
+    @include devices(mobile, tablet) { display: block; }
+  }
+
+  &__body &__text {
+    @include font(article-body);
+    font-family: 'Space Grotesk', serif;
+
+    max-width: col(5);
+    @include devices(mobile, tablet) { max-width: col(12); }
+
+    ul { list-style-type: square; }
+    li, p {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &__body &__sidebar {
+    margin-left: col(2);
+    max-width: col(3);
+
+    @include devices(mobile, tablet) {
+      margin-top: $logo--height;
+      margin-left: 0;
+      max-width: col(12);
+    }
+  }
+
+  &__sidebar > div,
+  &__sidebar > ul {
+    margin-bottom: $logo--height;
+  }
+
+  .btn + .btn { margin-top: -1px; }
+
+  &__sidebar &__meta {
+    @include font(ui);
+    margin-bottom: 1em;
+
+    &::before {
+      content: attr(data-label);
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  &__sidebar &__sponsor {
+    width: 50%;
+  }
+
+  &__gallery {
+    @include clearfix;
+    margin-top: $logo--height * 2;
+  }
+
+  &__gallery-item {
+    display: inline-block;
+    float: left;
+    margin-bottom: $gutter;
+
+    @include desktop { @include grid(3); }
+    @include tablet { @include grid(2); }
+    @include mobile { @include grid(2); }
+  }
+}

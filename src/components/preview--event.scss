@@ -1,0 +1,30 @@
+.preview--event {
+  @include font(body);
+  margin-bottom: $logo--height;
+
+  &__header {
+    position: relative;
+    border-bottom: 1px solid;
+    padding-bottom: 0.666em;
+    margin-bottom: 1em;
+  }
+
+  time + time::before {
+    content: '–';
+  }
+
+  &__context {
+    font-weight: bold;
+  }
+
+  &__title {}
+
+  &__title span {
+    @include easing(300ms, border-color);
+    border-bottom: 1px solid transparent;
+  }
+
+  &:hover &__title span {
+    border-color: inherit;
+  }
+}

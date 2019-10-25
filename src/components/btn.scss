@@ -1,0 +1,43 @@
+$btn--optical-v: -1px;
+
+button.btn, a.btn {
+  @include reset-button;
+  @include font(ui);
+
+  position: relative;
+  display: inline-block;
+
+  border: 1px solid;
+  width: auto;
+
+  cursor: pointer;
+
+  text-align: center;
+  padding:
+    calc((#{$logo--height} - 1em) / 2 + #{$btn--optical-v})
+    $gutter
+    calc((#{$logo--height} - 1em) / 2 - #{$btn--optical-v});
+
+  &::before {
+    @include easing(300ms, opacity);
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: currentColor;
+    opacity: 0;
+  }
+
+  &:hover::before { opacity: 1; }
+
+  .btn__label  {
+    @include easing(300ms, filter);
+  }
+
+  &:hover .btn__label {
+    filter: invert(100%);
+  }
+}

@@ -1,0 +1,57 @@
+.header {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    @include devices(mobile, tablet) { display: block; }
+  }
+
+  &__content {
+    padding-top: $gutter;
+    padding-bottom: $logo--height * 2;
+
+    max-width: col(5);
+    @include devices(mobile, tablet) { max-width: col(12); }
+  }
+
+  &__cover {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width: calc((100% / 12 * 5) + (100vw - #{$max-width}) / 2 + #{$gutter});
+    margin-right: calc(((100vw - #{$max-width}) / 2 + #{$gutter}) * -1);
+
+    // NOTE: this allow overflowing the cover on the right of its container to
+    // remove the padding right
+    @include below--max-width  {
+      width: calc(100% / 12 * 5 + #{$gutter});
+      margin-right: -$gutter;
+    }
+
+    @include devices(mobile, tablet) {
+      min-height: 50vh;
+      width: calc(100% + #{$gutter * 2});
+      margin-left: -$gutter;
+      margin-right: -$gutter;
+    }
+  }
+
+  &__content &__date {
+    @include font(body);
+  }
+
+  &__content &__context {
+    @include font(header);
+    font-weight: bold;
+  }
+
+  &__content &__title {
+    @include font(header);
+  }
+
+  &__content &__body {
+    @include font(body);
+  }
+}

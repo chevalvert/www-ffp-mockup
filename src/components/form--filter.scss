@@ -1,0 +1,21 @@
+.form--filter {
+  // NOTE: this overrides col(6) in components/form.scss
+  .form__field { width: col(12); }
+  .form__field[data-width] {
+    @for $i from 2 through 4 {
+      &[data-width='1/#{$i}'] { width: calc(#{col(12 / $i)} - #{$gutter / $i * ($i - 1)}); }
+    }
+  }
+
+  fieldset { padding: 0; }
+  fieldset legend {
+    margin-top: $gutter;
+  }
+
+  .form__button-container .container {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+    width: col(12);
+    text-align: right;
+  }
+}
