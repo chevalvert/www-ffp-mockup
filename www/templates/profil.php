@@ -1,5 +1,5 @@
 <?php snippet('html.header') ?>
-<?php snippet('components/menu', ['message' => 'Bonjour <b>Dominique Toulemonde</b>']) ?>
+<?php snippet('components/menu', ['message' => 'Bonjour <b>Martine Dupont</b>']) ?>
 
 <main role="main" id="main">
   <div class="barba-container" data-view="table">
