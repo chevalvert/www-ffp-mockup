@@ -1,0 +1,52 @@
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes menu-show {
+  0% { display: none; }
+  1% {
+    display: block;
+    clip-path: polygon(100% 0%, 100% 0%, 100% $logo--height + $gutter * 2, 100% $logo--height + $gutter * 2);
+  }
+  40% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% $logo--height + $gutter * 2, 0% $logo--height + $gutter * 2);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 110%);
+  }
+}
+
+@keyframes menu-show-2 {
+  0% { display: none; }
+  1% {
+    display: block;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes cta-show {
+  from {
+    transform: translateX(-50%) rotate(-90deg);
+    opacity: 0;
+  } to {
+    transform: rotate(0.001deg);
+    opacity: 1;
+  }
+}
+
+@mixin animation--fade-in ($duration: 1000ms) {
+  opacity: 0;
+  animation: fade-in $duration cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@mixin animation--menu-show ($duration: 600ms) {
+  animation: menu-show-2 $duration cubic-bezier(0.5, 0.19, 0.32, 1) forwards;
+}
+
+@mixin animation--cta-show ($duration: 300ms) {
+  animation: cta-show $duration cubic-bezier(0.5, 0.19, 0.32, 1.58) forwards;
+}

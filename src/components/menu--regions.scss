@@ -49,59 +49,8 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
   }
 }
 
-@keyframes menu--open {
-  0% {
-    display: none;
-    clip-path: polygon(
-      100% 0%,
-      100% 0%,
-      100% $logo--height + $gutter * 2,
-      100% $logo--height + $gutter * 2
-    );
-  }
-  40% {
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% $logo--height + $gutter * 2,
-      0% $logo--height + $gutter * 2
-    );
-  }
-  100% {
-    display: block;
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 110%
-    );
-  }
-}
-
-@keyframes menu--open-2 {
-  0% {
-    display: none;
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 0%,
-      0% 0%
-    );
-  }
-  100% {
-    display: block;
-    clip-path: polygon(
-      0% 0%,
-      100% 0%,
-      100% 100%,
-      0% 100%
-    );
-  }
-}
-
-
 #toggleRegionsMenu { display: none; }
 #toggleRegionsMenu:checked ~ .menu--regions {
+  @include animation--menu-show;
   pointer-events: auto;
-  animation: menu--open-2 600ms cubic-bezier(0.5, 0.19, 0.32, 1) forwards;
 }

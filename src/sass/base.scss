@@ -42,7 +42,7 @@ img {
 
 [data-lazyload] {
   opacity: 0;
-  &[data-loaded='true'] { @include fade-in; }
+  &[data-loaded='true'] { @include animation--fade-in; }
 }
 
 svg {
@@ -108,7 +108,7 @@ section {
 
 @for $i from 0 through 20 {
   .barba-container > *:nth-child(#{$i}) > *:not([data-no-fade-in]) {
-    @include fade-in;
+    @include animation--fade-in;
     animation-delay: #{$i * 100}ms;
   }
 }
@@ -119,7 +119,7 @@ section {
   canvas {
     margin-top: $logo--height * 2;
     vertical-align: bottom;
-    &[data-rendered] { @include fade-in; }
+    &[data-rendered] { @include animation--fade-in; }
   }
 }
 

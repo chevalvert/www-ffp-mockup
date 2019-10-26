@@ -17,7 +17,7 @@
     font-weight: normal;
     text-transform: lowercase;
 
-    @include devices(mobile, tablet) {
+    @include devices (mobile, tablet) {
       display: none;
     }
 
@@ -49,7 +49,7 @@
   td, th {
     padding: $gutter 0 $gutter $gutter;
 
-    @include devices(tablet, mobile) {
+    @include devices (mobile, tablet) {
       display: block;
       padding: 0;
       padding-bottom: 0.5em;

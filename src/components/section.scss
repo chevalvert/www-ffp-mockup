@@ -24,12 +24,12 @@
   &__columns[data-length='3'] &__column { width: col(4); }
   &__columns[data-length='4'] &__column { width: col(3); }
 
-  &__columns { @include devices(tablet, mobile) { display: block !important; } }
-  &__column { @include devices(tablet, mobile) { min-width: col(12); } }
+  &__columns { @include devices (mobile, tablet) { display: block !important; } }
+  &__column { @include devices (mobile, tablet) { min-width: col(12); } }
 
   &__column + &__column {
     margin-left: $gutter;
-    @include devices(tablet, mobile) {
+    @include devices (mobile, tablet) {
       margin-left: 0;
       margin-top: $gutter;
     }

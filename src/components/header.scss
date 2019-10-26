@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: stretch;
 
-    @include devices(mobile, tablet) { display: block; }
+    @include devices (mobile, tablet) { display: block; }
   }
 
   &__content {
@@ -12,7 +12,7 @@
     padding-bottom: $logo--height * 2;
 
     max-width: col(5);
-    @include devices(mobile, tablet) { max-width: col(12); }
+    @include devices (mobile, tablet) { max-width: col(12); }
   }
 
   &__cover {
@@ -30,7 +30,7 @@
       margin-right: -$gutter;
     }
 
-    @include devices(mobile, tablet) {
+    @include devices (mobile, tablet) {
       min-height: 50vh;
       width: calc(100% + #{$gutter * 2});
       margin-left: -$gutter;
