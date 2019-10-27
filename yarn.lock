@@ -1540,6 +1540,11 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
   integrity sha512-ItfYfPLkWHUjckQCk8xC+LwxgK8NYcXywGigJgSwOP8Y2iyWT4f2vsZnoOXTTbo+o5yXmIUJ4gn5538SO5S3gA==
 
+bowser@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.7.0.tgz#96eab1fa07fab08c1ec4c75977a7c8ddf8e0fe1f"
+  integrity sha512-aIlMvstvu8x+34KEiOHD3AsBgdrzg6sxALYiukOWhFvGMbQI6TRP/iY0LMhUrHs56aD6P1G0Z7h45PUJaa5m9w==
+
 boxen@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-3.2.0.tgz#fbdff0de93636ab4450886b6ff45b92d098f45eb"
@@ -4199,6 +4204,11 @@ hasha@^5.0.0:
   dependencies:
     is-stream "^2.0.0"
     type-fest "^0.8.0"
+
+headroom.js@^0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.10.3.tgz#2fb37ce94bb2f43471070c854d68511ae07db6e7"
+  integrity sha512-gMLqEtViTt4GI2G2+XnqRr9OIxxrgKmywHuCY2XtjKnQc2UcdDKbocvkL7Ohi1K5v3sU7BZmzqbQakAjDG/WZQ==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"

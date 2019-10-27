@@ -95,19 +95,19 @@ $menu--optical-v: -2px;
       0
       calc((#{$logo--height} - 1em) / 2 - #{$menu--optical-v});
 
+    a {
+      font-weight: bold;
+      // stylelint-disable order/order
+      @each $uri in $menu--nobold-items {
+       &[href*='#{$uri}'] { font-weight: normal; }
+      }
+    }
+
     &:not(:last-child) { margin-right: $gutter; }
     &.is-active a:not([role='button']) { border-bottom: 1px solid; }
   }
 
   &__search-icon {
     font-size: 1.2em;
-  }
-
-  // XXXTODO: determine how to set specific .menu__link in bold
-  &__link:nth-child(1),
-  &__link:nth-child(2),
-  &__link:nth-child(3),
-  &__link:nth-child(4) {
-    font-weight: bold;
   }
 }

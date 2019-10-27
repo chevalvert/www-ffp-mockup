@@ -9,7 +9,6 @@ export default view('form', {
       const input = document.getElementById(id)
       input.addEventListener('change', e => {
         const filenames = Array.from(input.files).map(f => f.name)
-        // WIP
         label.setAttribute('data-files', filenames.join('\r\n'))
       })
     })

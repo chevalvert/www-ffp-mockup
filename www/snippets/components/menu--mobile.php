@@ -5,6 +5,8 @@
 ?>
 
 <header class="menu--mobile <?= ($region ?? false) ? 'has-region' : '' ?>">
+  <input type="checkbox" id="toggleMenuMobile">
+
   <div class="menu--mobile__content">
     <div class="container">
       <div class="menu--mobile__logos">
@@ -22,7 +24,6 @@
     </div>
   <?php endif ?>
 
-  <input type="checkbox" id="toggleMenuMobile">
   <label class="menu--mobile__toggler" for="toggleMenuMobile"></label>
 
   <nav class="menu--mobile__nav">

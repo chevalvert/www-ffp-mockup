@@ -55,12 +55,11 @@
     @include invisible-scroll(y);
     @include font(body);
 
-    display: none; // TODO
+    display: none;
     position: fixed;
     top: $logo--height + ($gutter * 2);
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: calc(100vh - #{$logo--height + ($gutter * 2)});
 
     background: $black;
     color: $white;
@@ -84,14 +83,21 @@
     }
   }
 
-  // XXXTODO: determine how to set specific .menu__link in bold
-  &__link:nth-child(1),
-  &__link:nth-child(2),
-  &__link:nth-child(3),
-  &__link:nth-child(4) {
+  a {
     font-weight: bold;
+    // stylelint-disable order/order
+    @each $uri in $menu--nobold-items {
+     &[href*='#{$uri}'] { font-weight: normal; }
+    }
   }
 }
+
+.menu--mobile.headroom {
+  @include easing(300ms, transform);
+  will-change: transform;
+}
+.menu--mobile.headroom--pinned { transform: none; }
+.menu--mobile.headroom--unpinned { transform: translateY(-($logo--height + $gutter * 2)); }
 
 #toggleMenuMobile { display: none; }
 #toggleMenuMobile:checked ~ .menu--mobile__toggler {

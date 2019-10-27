@@ -1,5 +1,6 @@
 import 'nodelist-foreach'
 import 'requestidlecallback-polyfill'
+import { debounce } from 'tiny-throttle'
 import { generate, prng } from 'ffp-generate'
 import createCanvas from 'utils/dom-create-canvas'
 
@@ -51,10 +52,16 @@ function buildLandscape (container) {
   })
 }
 
-export default {
-  build,
-  update
-}
+// NOTE: to improve performances, landscapes can be updated only when window
+// width changes
+let pwidth = window.innerWidth
+window.addEventListener('resize', debounce(() => {
+  if (window.innerWidth === pwidth) return
+  update()
+  pwidth = window.innerWidth
+}, 100))
+
+export default build
 
 export function build () {
   prng.seed = Date.now()
