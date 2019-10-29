@@ -119,6 +119,7 @@ section {
   canvas {
     margin-top: $logo--height * 2;
     vertical-align: bottom;
+    cursor: pointer;
     &[data-rendered] { @include animation--fade-in; }
   }
 }
