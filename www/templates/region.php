@@ -43,7 +43,7 @@
 
     <?php snippet('components/pages--grid', [
       'title' => 'Projets de l’observatoire de la région',
-      'link' => 'observatoire-des-projets',
+      'link' => 'projets-et-actions/observatoire-des-projets',
       // XXX: limit to 4 most recent articles filtered by this region
       'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',
@@ -51,7 +51,7 @@
 
     <?php snippet('components/pages--grid', [
       'title' => 'Projets des adhérents de la région',
-      'link' => 'observatoire-des-projets',
+      'link' => 'annuaire',
       // XXX: limit to 4 most random user projects filtered by this region
       'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',

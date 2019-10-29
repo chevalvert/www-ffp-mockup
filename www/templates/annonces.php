@@ -10,8 +10,8 @@
       HTML,
       'cta' => [
         'icon' => 'add',
-        'tooltip' => 'S’inscrire dans l’annuaire',
-        'url' => 'adhesion'
+        'tooltip' => 'Poster une annonce',
+        'url' => 'annonces/add'
       ]
     ]) ?>
 

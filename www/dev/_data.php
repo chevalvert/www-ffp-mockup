@@ -146,7 +146,10 @@ $_GLOBALS['__dev.data'] = [
     ],
 
     'projets-et-actions' => [
-      'title' => 'Projets &amp; actions'
+      'title' => 'Projets &amp; actions',
+      'header' => <<<HTML
+        <p>Lorsque l'on parle des végétaliens, du végétalisme, la lexicomatisation autour de phylogomènes généralisés pousse à uniformiser les revenus dans ces prestances, mais oui.</p>
+      HTML
     ],
 
     'annuaire' => [
