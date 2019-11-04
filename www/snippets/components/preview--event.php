@@ -1,11 +1,11 @@
 <?php if ($page ?? null) : ?>
 
 <?php
-  $show_year = $show_year ?? false;
+  $SHOW_YEAR = $SHOW_YEAR ?? false;
   $compact_month = $page['date_start'] && $page['date_end'];
   $format = '%e';
   $format .= $compact_month ? ' %h.' : ' %B';
-  $format .= $show_year ? ' %Y' : '';
+  $format .= $SHOW_YEAR ? ' %Y' : '';
 ?>
 
 <article class="preview--event">
