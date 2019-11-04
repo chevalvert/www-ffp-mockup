@@ -4,7 +4,7 @@
 <main role="main" id="main">
   <div class="barba-container">
     <?php snippet('components/header', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'title' => mock('pages.region.title'),
       'text' => mock('pages.region.intro'),
       'cover' => 'https://picsum.photos/id/15/1600/1000'

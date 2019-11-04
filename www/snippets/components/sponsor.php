@@ -1,4 +1,4 @@
-<section class="sponsor <?= $class ?? '' ?>" <?php ($DO_NOT_PAINT ?? false) || FFP::paint(!($NO_NEW_COLOR ?? false)) ?> <?= ($NO_NEW_COLOR ?? false) ? 'data-same-color="true"' : ''?>>
+<section class="sponsor <?= $class ?? '' ?>" <?php ($PAINT ?? true) &&  FFP::paint(($PAINT ?? false) !== 'same') ?> <?= (($PAINT ?? false) === 'same') ? 'data-same-color="true"' : ''?>>
   <div class="container">
       <div class="sponsor__logo">
         <a href="<?= $url ?>" target="_blank" class="icon">

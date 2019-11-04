@@ -14,7 +14,7 @@
     </section>
 
     <?php ($_GET['q'] ?? null) && snippet('components/pages--list', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'HIDE_THEAD' => true,
       'title' => '7 résultats de recherche',
       'sortBy' => ['pubdate', 'DESC'],

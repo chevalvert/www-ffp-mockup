@@ -29,8 +29,8 @@ snippet('components/footer')
 ## [`form`](../www/snippets/components/form.php)
 ```php
 snippet('components/form', [
-  'DO_NOT_PAINT' => false
-  'NO_NEW_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true
+  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
 
   'action' => // required
   'method' => 'post'
@@ -62,8 +62,8 @@ snippet('components/form', [
 ## [`header`](../www/snippets/components/header.php)
 ```php
 snippet('components/header',  [
-  'DO_NOT_PAINT' => false
-  'NO_NEW_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true
+  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
 
   'class' => ''
   
@@ -103,8 +103,8 @@ snippet('components/menu',  [
 ## [`pages--grid`](../www/snippets/components/pages--grid.php)
 ```php
 snippet('components/pages--grid',  [
-  'DO_NOT_PAINT' => false
-  'NO_NEW_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true
+  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
 
   'class' => ''
 
@@ -125,8 +125,8 @@ snippet('components/pages--grid',  [
 ## [`pages--list`](../www/snippets/components/pages--list.php)
 ```php
 snippet('components/pages--list',  [
-  'DO_NOT_PAINT' => false
-  'NO_NEW_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true
+  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
 
   'class' => ''
 
@@ -197,8 +197,8 @@ snippet('components/preview--people',  [
 ## [`section`](../www/snippets/components/section.php)
 ```php
 snippet('components/section',  [
-  'DO_NOT_PAINT' => false
-  'NO_NEW_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true
+  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
 
   'class' => ''
 
@@ -219,8 +219,8 @@ snippet('components/section',  [
 ## [`sponsor`](../www/snippets/components/sponsor.php)
 ```php
 snippet('components/sponsor',  [
-  'DO_NOT_PAINT' => false
-  'NO_NEW_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true
+  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
 
   'class' => ''
 

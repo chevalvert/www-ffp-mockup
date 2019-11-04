@@ -23,7 +23,7 @@
     ]) ?>
 
     <?php snippet('components/sponsor', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'name' => 'ID Verde',
       'url' => 'https://idverde.com/',
       'logo_url' => 'https://idverde.com/content/themes/idverdeFR/app/assets/images/logo.png',

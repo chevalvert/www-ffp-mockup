@@ -1,9 +1,11 @@
 .form--filter {
   // NOTE: this overrides col(6) in components/form.scss
-  .form__field { width: col(12); }
-  .form__field[data-width] {
-    @for $i from 2 through 4 {
-      &[data-width='1/#{$i}'] { width: calc(#{col(12 / $i)} - #{$gutter / $i * ($i - 1)}); }
+  @include desktop {
+    .form__field { width: col(12); }
+    .form__field[data-width] {
+      @for $i from 2 through 4 {
+        &[data-width='1/#{$i}'] { width: calc(#{col(12 / $i)} - #{$gutter / $i * ($i - 1)}); }
+      }
     }
   }
 

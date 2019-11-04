@@ -14,7 +14,7 @@
 
     <div <?php FFP::paint() ?>>
       <?php snippet('components/form', [
-        'DO_NOT_PAINT' => true,
+        'PAINT' => false,
         'action' => 'api/login',
         'method' => 'POST',
         'form' => [
