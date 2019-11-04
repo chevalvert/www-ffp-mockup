@@ -27,13 +27,13 @@ const RENDERING_OPTIONS = Object.freeze({
 
 const ERODING_OPTIONS = Object.freeze({
   autoplay: false,
-  easing: 0.01,
+  easing: 0.05,
   noUpdateThreshold: 1,
   columnWidth: RENDERING_OPTIONS[0],
   snapToGrid: RENDERING_OPTIONS[0],
   round: false,
-  breaks: 2, // TODO: based on window.innerWidth ?
-  scaleFactor: 0.125
+  minimizeVisualBreaks: true,
+  scaleFactor: 0.25
 })
 
 let containers
@@ -67,6 +67,7 @@ function hydrate (container) {
 
     if (container.eroder) container.eroder.destroy()
     container.eroder = erode(container.landscape, Object.assign({}, ERODING_OPTIONS, {
+      breaks: window.innerWidth > 1280 ? 5 : 3,
       amplitude: [
         -(container.landscape.aabb.ymin) / 2,
         container.landscape.aabb.ymax / 4
@@ -76,6 +77,7 @@ function hydrate (container) {
 
   canvas.addEventListener('click', () => {
     container.eroder.rebuild()
+    console.log(container.eroder)
     container.eroder.play()
   })
 }
