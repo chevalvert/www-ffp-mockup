@@ -1,9 +1,9 @@
 export default (width, height, attributes = {}) => {
   const canvas = document.createElement('canvas')
-  canvas.width = window.innerWidth
-  canvas.height = 350
-  canvas.style.width = canvas.width + 'px'
-  canvas.style.height = canvas.height + 'px'
+  canvas.width = width
+  canvas.height = height
+  canvas.style.width = width + 'px'
+  canvas.style.height = height + 'px'
 
   Object.entries(attributes).forEach(([attribute, value]) => {
     canvas.setAttribute(attribute, value)

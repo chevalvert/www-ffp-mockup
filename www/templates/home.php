@@ -23,7 +23,7 @@
     ]) ?>
 
     <?php snippet('components/sponsor', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'name' => 'ID Verde',
       'url' => 'https://idverde.com/',
       'logo_url' => 'https://idverde.com/content/themes/idverdeFR/app/assets/images/logo.png',
@@ -58,7 +58,7 @@
 
     <?php snippet('components/pages--grid', [
       'title' => 'Observatoire des projets',
-      'link' => 'observatoire-des-projets',
+      'link' => 'projets-et-actions/observatoire-des-projets',
       // XXX: limit to 4 most recent articles
       'pages' => array_slice(mock('pages.actualites.articles'), 0, 4),
       'renderer' => 'components/preview--article',

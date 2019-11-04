@@ -28,7 +28,7 @@ $_GLOBALS['__dev.data'] = [
     'outre-mer' => 'Outre-Mer'
   ],
 
-  'menu' => ['la-ffp', 'actualites', 'annuaire', 'annonces', 'observatoire-des-projets', 'experiences-de-paysage'],
+  'menu' => ['la-ffp', 'actualites', 'paysagiste-concepteur', 'projets-et-actions', 'annuaire', 'annonces'],
 
   'pages' => [
     'la-ffp' => [
@@ -139,6 +139,17 @@ $_GLOBALS['__dev.data'] = [
         ['pubdate' => 1570622469, 'context' => 'Climat', 'title' => 'Mener la transition avec la nature en ville', 'cover_url' => 'https://picsum.photos/id/18/1600/1000'],
         ['pubdate' => 1570622469, 'context' => 'Juridique', 'title' => 'La loi ELAN est promulguée', 'cover_url' => 'https://picsum.photos/id/15/1600/1000'],
       ]
+    ],
+
+    'paysagiste-concepteur' => [
+      'title' => 'Paysagiste-concepteur'
+    ],
+
+    'projets-et-actions' => [
+      'title' => 'Projets &amp; actions',
+      'header' => <<<HTML
+        <p>Lorsque l'on parle des végétaliens, du végétalisme, la lexicomatisation autour de phylogomènes généralisés pousse à uniformiser les revenus dans ces prestances, mais oui.</p>
+      HTML
     ],
 
     'annuaire' => [

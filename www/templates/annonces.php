@@ -10,14 +10,14 @@
       HTML,
       'cta' => [
         'icon' => 'add',
-        'tooltip' => 'S’inscrire dans l’annuaire',
-        'url' => 'adhesion'
+        'tooltip' => 'Poster une annonce',
+        'url' => 'annonces/add'
       ]
     ]) ?>
 
     <div <?php FFP::paint() ?>>
       <?php snippet('components/form', [
-        'DO_NOT_PAINT' => true,
+        'PAINT' => false,
         'class' => 'form--filter',
         'action' => 'annonces?filtrer',
         'method' => 'GET',
@@ -41,7 +41,7 @@
     </div>
 
     <?php snippet('components/pages--list', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'pages' => mock('pages.annonces.pages'),
       'sortBy' => ['pubdate', 'ASC'],
       'sortable' => ['pubdate', 'type'],

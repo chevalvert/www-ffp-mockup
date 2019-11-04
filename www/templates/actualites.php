@@ -17,7 +17,7 @@
     ]) ?>
 
     <?php snippet('components/pages--grid', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'title' => 'Actualités',
       'pages' => mock('pages.actualites.articles'),
       'renderer' => 'components/preview--article',

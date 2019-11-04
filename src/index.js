@@ -1,7 +1,7 @@
 import barba from 'controllers/barba'
 import lazyload from 'controllers/lazyload'
+import fadeOnScroll from 'controllers/fade-on-scroll'
 import FFPLandscape from 'controllers/ffp-landscape'
-
 import menu from 'components/menu'
 
 import 'views/article'
@@ -18,12 +18,14 @@ barba({
   linkClicked: () => {
     document.body.classList.add('is-loading')
     document.body.removeAttribute('no-scroll')
+    FFPLandscape.destroy()
   },
 
   newPageReady: () => {
     menu()
     lazyload()
-    FFPLandscape()
+    fadeOnScroll()
+    FFPLandscape.build()
   },
 
   transitionCompleted: () => {

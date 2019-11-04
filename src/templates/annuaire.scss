@@ -3,8 +3,6 @@
     $annuaire__pagination--optical-v: -3px;
 
     z-index: 1;
-    position: sticky;
-    top: calc(#{$logo--height * 3} + 4px);
 
     height: $logo--height;
     padding:
@@ -13,6 +11,11 @@
       calc((#{$logo--height} - 1em) / 2 - #{$annuaire__pagination--optical-v});
 
     text-transform: uppercase;
+
+    @include desktop {
+      position: sticky;
+      top: calc(#{$logo--height * 3} + 4px);
+    }
   }
 
   &__pagination &__letters  {
@@ -22,11 +25,23 @@
 
   &__letter.is-active a {
     font-weight: bold;
-    // border-bottom: 1px solid;
   }
 
   &__letter.is-disabled {
     pointer-events: none;
     opacity: 0.3;
   }
+
+  @include mobile {
+    &__pagination { height: auto; }
+    &__letters { flex-wrap: wrap; }
+    &__letter {
+      text-align: center;
+      flex-basis: calc(100% / 13);
+    }
+  }
+}
+
+.menu--mobile.headroom--unpinned ~ .annuaire__pagination {
+  transform: translateY(-($logo--height + $gutter * 2));
 }

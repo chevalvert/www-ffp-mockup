@@ -10,6 +10,8 @@ export default ({
     galleryPIDs: false,
     allowPanToNext: false,
 
+    barsSize: { top: 0, bottom: 0 },
+
     captionEl: false,
     fullscreenEl: false,
     zoomEl: false,

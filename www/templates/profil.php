@@ -24,7 +24,7 @@
     ]) ?>
 
     <?php snippet('components/pages--grid', [
-      'NO_NEW_COLOR' => true,
+      'PAINT' => true,
       'title' => 'Projets',
       'pages' => array_slice(mock('pages.actualites.articles'), 0, 5),
       'renderer' => 'components/preview--article',

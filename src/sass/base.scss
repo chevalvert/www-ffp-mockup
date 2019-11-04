@@ -108,11 +108,9 @@ section {
   }
 }
 
-@for $i from 0 through 20 {
-  .barba-container > *:nth-child(#{$i}) > *:not([data-no-fade-in]) {
-    @include animation--fade-in;
-    animation-delay: #{$i * 100}ms;
-  }
+[js-wait-for-intersection] > *:not([data-no-fade-in]) { opacity: 0; }
+[js-wait-for-intersection].is-visible > *:not([data-no-fade-in]) {
+  @include animation--fade-in;
 }
 
 .js-landscape {
@@ -121,6 +119,7 @@ section {
   canvas {
     margin-top: $logo--height * 2;
     vertical-align: bottom;
+    cursor: pointer;
     &[data-rendered] { @include animation--fade-in; }
   }
 }

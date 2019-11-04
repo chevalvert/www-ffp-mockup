@@ -17,7 +17,7 @@
 
     <div <?php FFP::paint() ?>>
       <?php snippet('components/form', [
-        'DO_NOT_PAINT' => true,
+        'PAINT' => false,
         'class' => 'form--filter',
         'action' => 'annuaire?filtrer',
         'method' => 'GET',
@@ -50,7 +50,7 @@
     </div>
 
     <?php snippet('components/pages--list', [
-      'DO_NOT_PAINT' => true,
+      'PAINT' => false,
       'pages' => mock('pages.annuaire.pages'),
       'sortBy' => ['name', 'ASC'],
       'sortable' => ['name', 'agency'],
