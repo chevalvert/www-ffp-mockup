@@ -1,8 +1,8 @@
-# [Components](../www/snippets/components) [<img src="https://github.com/chevalvert.png?size=100" align="right">](http://chevalvert.fr/)
+# Components [<img src="https://github.com/chevalvert.png?size=100" align="right">](http://chevalvert.fr/)
 
 <br>
 
-## [`btn`](../www/snippets/components/btn.php)
+## [`btn`](btn.php)
 ```php
 snippet('components/btn',  [
   'action' => // required if no $url
@@ -12,7 +12,7 @@ snippet('components/btn',  [
 ])
 ```
 
-## [`cta`](../www/snippets/components/cta.php)
+## [`cta`](cta.php)
 ```php
 snippet('components/cta',  [
   'url' => // required
@@ -21,16 +21,15 @@ snippet('components/cta',  [
 ])
 ```
 
-## [`footer`](../www/snippets/components/footer.php)
+## [`footer`](footer.php)
 ```php
 snippet('components/footer')
 ```
 
-## [`form`](../www/snippets/components/form.php)
+## [`form`](form.php)
 ```php
 snippet('components/form', [
-  'PAINT' => true
-  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true // true|false|'same' ('same' will paint the component with the last used color)
 
   'action' => // required
   'method' => 'post'
@@ -59,11 +58,10 @@ snippet('components/form', [
  ])
 ```
 
-## [`header`](../www/snippets/components/header.php)
+## [`header`](header.php)
 ```php
 snippet('components/header',  [
-  'PAINT' => true
-  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true // true|false|'same' ('same' will paint the component with the last used color)
 
   'class' => ''
   
@@ -79,7 +77,7 @@ snippet('components/header',  [
 ])
 ```
 
-## [`menu--mobile`](../www/snippets/components/menu--mobile.php)
+## [`menu--mobile`](menu--mobile.php)
 ```php
 snippet('components/menu--mobile',  [
   'message' => null
@@ -87,12 +85,12 @@ snippet('components/menu--mobile',  [
 ])
 ```
 
-## [`menu--regions`](../www/snippets/components/menu--regions.php)
+## [`menu--regions`](menu--regions.php)
 ```php
 snippet('components/menu--regions')
 ```
 
-## [`menu`](../www/snippets/components/menu.php)
+## [`menu`](menu.php)
 ```php
 snippet('components/menu',  [
   'message' => null
@@ -100,11 +98,10 @@ snippet('components/menu',  [
 ])
 ```
 
-## [`pages--grid`](../www/snippets/components/pages--grid.php)
+## [`pages--grid`](pages--grid.php)
 ```php
 snippet('components/pages--grid',  [
-  'PAINT' => true
-  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true // true|false|'same' ('same' will paint the component with the last used color)
 
   'class' => ''
 
@@ -122,11 +119,10 @@ snippet('components/pages--grid',  [
 ])
 ```
 
-## [`pages--list`](../www/snippets/components/pages--list.php)
+## [`pages--list`](pages--list.php)
 ```php
 snippet('components/pages--list',  [
-  'PAINT' => true
-  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true // true|false|'same' ('same' will paint the component with the last used color)
 
   'class' => ''
 
@@ -152,12 +148,12 @@ snippet('components/pages--list',  [
 ])
 ```
 
-## [`photoswipe`](../www/snippets/components/photoswipe.php)
+## [`photoswipe`](photoswipe.php)
 ```php
 snippet('components/photoswipe')
 ```
 
-## [`preview--article`](../www/snippets/components/preview--article.php)
+## [`preview--article`](preview--article.php)
 ```php
 // NOTE: this should as a renderer with pages--grid
 snippet('components/preview--article',  [
@@ -172,7 +168,7 @@ snippet('components/preview--article',  [
 ])
 ```
 
-## [`preview--event`](../www/snippets/components/preview--event.php)
+## [`preview--event`](preview--event.php)
 ```php
 snippet('components/preview--event',  [
   'page' => // required
@@ -184,7 +180,7 @@ snippet('components/preview--event',  [
 ])
 ```
 
-## [`preview--people`](../www/snippets/components/preview--people.php)
+## [`preview--people`](preview--people.php)
 ```php
 snippet('components/preview--people',  [
   'page' => // required
@@ -194,11 +190,10 @@ snippet('components/preview--people',  [
 ])
 ```
 
-## [`section`](../www/snippets/components/section.php)
+## [`section`](section.php)
 ```php
 snippet('components/section',  [
-  'PAINT' => true
-  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true // true|false|'same' ('same' will paint the component with the last used color)
 
   'class' => ''
 
@@ -216,11 +211,10 @@ snippet('components/section',  [
 ])
 ```
 
-## [`sponsor`](../www/snippets/components/sponsor.php)
+## [`sponsor`](sponsor.php)
 ```php
 snippet('components/sponsor',  [
-  'PAINT' => true
-  'MATCH_PREVIOUS_COLOR' => false // TODO: avoid negation in bool
+  'PAINT' => true // true|false|'same' ('same' will paint the component with the last used color)
 
   'class' => ''
 
