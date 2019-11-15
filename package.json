@@ -9,7 +9,9 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint --ext .js ./config ./scripts ./src --cache",
     "lint:css": "stylelint ./src/**/*.scss ./src/**/*.css --cache",
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "preversion": "npm run build && git add **/bundle.*",
+    "postversion": "git push && git push --tags"
   },
   "aliases": {
     "abstractions": "src/abstractions",
