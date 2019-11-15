@@ -65,6 +65,7 @@
   "dependencies": {
     "barba.js": "1.0.0",
     "bowser": "^2.7.0",
+    "ffp-generate": "chevalvert/ffp-generate",
     "headroom.js": "^0.10.3",
     "intersection-observer": "^0.7.0",
     "lozad": "^1.14.0",
