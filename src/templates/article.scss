@@ -10,7 +10,7 @@
     @include font(article-body);
     font-family: 'Space Grotesk', serif;
 
-    max-width: col(5);
+    max-width: col(6);
     @include devices (mobile, tablet) { max-width: col(12); }
 
     ul { list-style-type: square; }
@@ -22,7 +22,7 @@
   }
 
   &__body &__sidebar {
-    margin-left: col(2);
+    margin-left: col(1);
     max-width: col(3);
 
     @include devices (mobile, tablet) {

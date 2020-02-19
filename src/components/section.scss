@@ -6,7 +6,7 @@
   }
 
   &__content {
-    max-width: col(5);
+    max-width: col(6);
     @include tablet { max-width: col(12); }
     @include mobile { max-width: col(12); }
   }
