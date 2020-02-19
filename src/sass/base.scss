@@ -78,6 +78,11 @@ a:not([href]):hover {
   border: 0;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid currentColor;
+}
+
 article a,
 table a,
 p a {
