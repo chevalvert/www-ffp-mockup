@@ -42,6 +42,35 @@
     font-weight: bold;
     display: block;
     margin-bottom: $gutter;
+
+    ol, ul {
+      counter-reset: ol;
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 1em;
+      }
+
+      li::before {
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    ul li::before { content: '\2013'; }
+    ol li::before {
+      content: counter(ol) '.';
+      font-size: smaller;
+      counter-increment: ol;
+      margin-top: 1px;
+    }
+
+    li, p {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
   }
 
   abbr {
