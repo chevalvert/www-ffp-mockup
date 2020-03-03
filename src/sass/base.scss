@@ -122,7 +122,7 @@ section {
   padding-bottom: 0;
   overflow-x: hidden;
   canvas {
-    margin-top: $logo--height * 2;
+    margin-top: $logo--height;
     vertical-align: bottom;
     cursor: pointer;
     &[data-rendered] { @include animation--fade-in; }
