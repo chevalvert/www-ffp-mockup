@@ -10,8 +10,8 @@
     @include font(article-body);
     font-family: 'Space Grotesk', serif;
 
-    max-width: col(6);
-    @include devices (mobile, tablet) { max-width: col(12); }
+    width: col(6);
+    @include devices (mobile, tablet) { width: col(12); }
 
     ol, ul {
       counter-reset: ol;
@@ -45,12 +45,12 @@
 
   &__body &__sidebar {
     margin-left: col(1);
-    max-width: col(3);
+    width: col(3);
 
     @include devices (mobile, tablet) {
       margin-top: $logo--height;
       margin-left: 0;
-      max-width: col(12);
+      width: col(12);
     }
   }
 

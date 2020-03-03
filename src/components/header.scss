@@ -11,8 +11,8 @@
     padding-top: $gutter;
     padding-bottom: $logo--height * 2;
 
-    max-width: col(6);
-    @include devices (mobile, tablet) { max-width: col(12); }
+    width: col(6);
+    @include devices (mobile, tablet) { width: col(12); }
   }
 
   &__cover {
