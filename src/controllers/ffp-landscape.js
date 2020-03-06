@@ -75,7 +75,9 @@ function hydrate (container) {
     }))
   })
 
-  window.requestIdleCallback(() => container.eroder.play())
+  window.requestIdleCallback(() => {
+    window.setTimeout(container.eroder.play, 300)
+  })
   canvas.addEventListener('click', () => {
     container.eroder.rebuild()
     container.eroder.play()
