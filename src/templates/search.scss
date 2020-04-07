@@ -8,6 +8,20 @@
   .search-form > .container {
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-wrap: wrap;
+      input {
+        font-size: 1em;
+        min-width: 100%;
+        border: 1px solid;
+        padding: 2px 1ch;
+      }
+      button {
+        margin-top: -1px;
+        width: 100%;
+      }
+    }
   }
 
   input[type='search'] {
@@ -16,6 +30,9 @@
 
     flex: 1;
     margin-right: $gutter;
+
+    // <input> has a default min-width: auto which wrecks the flex layout
+    min-width: 0;
 
     border-bottom: 1px solid;
     padding-bottom: 2px;
