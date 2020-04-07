@@ -1,6 +1,6 @@
 {
   "name": "www-ffp-mockup",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "",
   "scripts": {
     "start": "cross-env NODE_ENV=development node scripts/webpack-serve.js",
