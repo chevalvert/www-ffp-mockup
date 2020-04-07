@@ -68,7 +68,7 @@ $menu--optical-v: -2px;
 
   &__nav {
     @include font(ui);
-    @include invisible-scroll(x);
+    overflow: hidden;
     height: $logo--height;
 
     .container {
