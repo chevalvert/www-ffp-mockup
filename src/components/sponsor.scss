@@ -15,10 +15,12 @@
   &__logo {
     flex: none;
     width: calc(100% / 12 * 3 - #{$gutter});
+    max-width: 200px;
     margin-right: $gutter;
 
     @include devices (mobile, tablet) {
       width: 100%;
+      max-width: 100%;
       margin-right: 0;
     }
 
