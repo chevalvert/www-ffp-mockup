@@ -50,6 +50,7 @@
 
   td, th {
     padding: $gutter 0 $gutter $gutter;
+    min-width: 180px;
 
     @include devices (mobile, tablet) {
       display: block;
