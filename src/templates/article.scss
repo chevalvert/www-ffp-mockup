@@ -13,6 +13,11 @@
     width: col(6);
     @include devices (mobile, tablet) { width: col(12); }
 
+    img {
+      width: auto;
+      max-width: 100%;
+    }
+
     ol, ul {
       counter-reset: ol;
       list-style: none;
