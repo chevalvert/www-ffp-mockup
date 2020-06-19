@@ -1,7 +1,6 @@
 $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 
 .menu--regions {
-  @include easing(300ms, clip-path);
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -12,6 +11,7 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
   color: $white;
 
   will-change: clip-path;
+  display: none;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 
   & > .container {
@@ -53,4 +53,5 @@ $menu--regions__list--padding-left: 7.8rem + $gutter * 2;
 #toggleRegionsMenu:checked ~ .menu--regions {
   @include animation--menu-show;
   pointer-events: auto;
+  display: block;
 }

@@ -1,6 +1,8 @@
 .sponsor {
-  padding-top: $gutter;
-  padding-bottom: $gutter;
+  // padding-top: $gutter;
+  // padding-bottom: $gutter;
+  padding-top: 0;
+  padding-bottom: 0;
 
   .container {
     display: flex;
@@ -15,10 +17,12 @@
   &__logo {
     flex: none;
     width: calc(100% / 12 * 3 - #{$gutter});
+    max-width: 200px;
     margin-right: $gutter;
 
     @include devices (mobile, tablet) {
       width: 100%;
+      max-width: 100%;
       margin-right: 0;
     }
 

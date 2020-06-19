@@ -75,9 +75,11 @@ function hydrate (container) {
     }))
   })
 
+  window.requestIdleCallback(() => {
+    window.setTimeout(container.eroder.play, 300)
+  })
   canvas.addEventListener('click', () => {
     container.eroder.rebuild()
-    console.log(container.eroder)
     container.eroder.play()
   })
 }
@@ -104,7 +106,6 @@ function update () {
 export default {
   update,
 
-  // TODO: cache containers during barba navigation instead of destroying at each page change
   build: () => {
     prng.seed = window.location.hash.substring(1) || Date.now()
     containers = document.querySelectorAll('.js-landscape')

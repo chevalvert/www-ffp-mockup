@@ -10,7 +10,7 @@
   }
 
   &__tooltip {
-    @include easing(300ms, opacity);
+    @include easing(300ms);
     @include font(ui);
     @include no-select;
     pointer-events: none;
@@ -19,18 +19,19 @@
     top: 50%;
     left: 100%;
     margin-top: -0.5em;
-    padding-left: $gutter / 2;
+    margin-left: $gutter / 2;
 
     width: auto;
     white-space: nowrap;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
 
     opacity: 0;
   }
 
   &:focus &__tooltip,
   &:hover &__tooltip {
-    pointer-events: auto;
-    opacity: 1;
+    border-bottom-color: currentColor;
   }
 }
 
@@ -39,6 +40,13 @@
   header:hover .cta .cta__icon,
   section:hover .cta .cta__icon {
     @include animation--cta-show;
+  }
+
+  .cta:focus .cta__tooltip,
+  header:hover .cta .cta__tooltip,
+  section:hover .cta .cta__tooltip {
+    pointer-events: auto;
+    opacity: 1;
   }
 }
 

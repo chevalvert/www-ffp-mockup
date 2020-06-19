@@ -78,6 +78,11 @@ a:not([href]):hover {
   border: 0;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid currentColor;
+}
+
 article a,
 table a,
 p a {
@@ -117,14 +122,14 @@ section {
   padding-bottom: 0;
   overflow-x: hidden;
   canvas {
-    margin-top: $logo--height * 2;
+    margin-top: $logo--height;
     vertical-align: bottom;
     cursor: pointer;
     &[data-rendered] { @include animation--fade-in; }
   }
 }
 
-h1, h2, h3, h3, h4, h5, h6, p {
+h1, h2, h3, h3, h4, h5, h6, p, ul, ol {
   &:not(:last-child) {
     margin-bottom: 1em;
   }

@@ -42,12 +42,15 @@
     th[data-sortable][data-sort='DESC']::after { content: '\2193'; }
   }
 
+  tbody td:first-child a:not(:hover) { border: 0; }
+
   tr:not(:first-of-type) {
     border-top: 1px solid;
   }
 
   td, th {
     padding: $gutter 0 $gutter $gutter;
+    min-width: 180px;
 
     @include devices (mobile, tablet) {
       display: block;
