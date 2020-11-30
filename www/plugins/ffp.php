@@ -2,33 +2,95 @@
 
 class FFP {
   public const HUE_SHIFT_FACTOR = 1/60; // Shift one degree every 60 seconds
-  public const SWATCHES = [
-    59 => ['rgb(198,17,52)','rgb(223,20,42)','rgb(255,96,192)','rgb(255,122,141)','rgb(255,170,69)','rgb(255,199,148)'],
-    60 => ['rgb(202,47,203)','rgb(254,68,255)','rgb(181,73,255)','rgb(191,107,255)','rgb(255,244,155)','rgb(254,254,218)'],
-    61 => ['rgb(221,179,0)','rgb(254,218,0)','rgb(0,207,54)','rgb(1,252,1)','rgb(35,254,255)','rgb(219,255,255)'],
-    62 => ['rgb(108,58,254)','rgb(128,90,255)','rgb(118,170,191)','rgb(149,180,201)','rgb(82,253,121)','rgb(178,252,153)'],
-    63 => ['rgb(101,59,43)','rgb(137,115,101)','rgb(229,115,0)','rgb(255,139,0)','rgb(169,202,211)','rgb(200,220,231)'],
-    64 => ['rgb(0,119,89)','rgb(0,149,119)','rgb(150,125,255)','rgb(157,172,255)','rgb(114,244,208)','rgb(178,254,224)'],
-    65 => ['rgb(182,75,39)','rgb(202,91,12)','rgb(255,253,0)','rgb(255,248,87)','rgb(200,153,255)','rgb(210,201,254)'],
-    66 => ['rgb(77,130,162)','rgb(98,160,181)','rgb(255,24,24)','rgb(254,65,61)','rgb(255,166,166)','rgb(255,216,235)'],
-    67 => ['rgb(142,44,163)','rgb(172,50,193)','rgb(45,186,255)','rgb(0,220,255)','rgb(221,200,179)','rgb(236,219,199)'],
-    68 => ['rgb(11,114,33)','rgb(1,168,36)','rgb(0,179,149)','rgb(44,229,198)','rgb(180,206,255)','rgb(193,236,255)'],
-    69 => ['rgb(1,37,255)','rgb(0,125,254)','rgb(177,145,130)','rgb(211,180,159)','rgb(254,122,120)','rgb(255,191,191)'],
-
-    81 => ['rgb(41,20,1)','rgb(71,40,19)','rgb(108,58,254)','rgb(130,89,255)','rgb(255,96,194)','rgb(255,122,141)'],
-    82 => ['rgb(82,25,102)','rgb(111,37,132)','rgb(0,119,89)','rgb(43,121,107)','rgb(255,253,0)','rgb(255,248,87)'],
-    83 => ['rgb(76,129,160)','rgb(98,160,181)','rgb(255,166,166)','rgb(255,216,235)','rgb(0,6,92)','rgb(1,19,163)'],
-    84 => ['rgb(181,73,255)','rgb(191,107,255)','rgb(227,116,0)','rgb(255,140,1)','rgb(221,200,179)','rgb(235,220,199)'],
-    86 => ['rgb(177,145,130)','rgb(211,180,159)','rgb(180,206,255)','rgb(193,236,255)','rgb(202,47,203)','rgb(254,68,255)'],
-    87 => ['rgb(255,244,155)','rgb(254,254,218)','rgb(91,3,41)','rgb(152,11,63)','rgb(45,186,255)','rgb(0,220,255)'],
-    88 => ['rgb(170,200,210)','rgb(200,220,231)','rgb(38,74,0)','rgb(28,94,7)','rgb(183,76,40)','rgb(202,91,12)'],
-    89 => ['rgb(121,12,101)','rgb(163,31,153)','rgb(1,37,255)','rgb(0,125,254)','rgb(0,207,54)','rgb(1,252,0)'],
-    90 => ['rgb(255,170,67)','rgb(255,200,149)','rgb(142,44,163)','rgb(172,50,193)','rgb(0,179,147)','rgb(44,229,198)'],
-    91 => ['rgb(35,255,255)','rgb(219,255,255)','rgb(11,114,33)','rgb(1,168,36)','rgb(198,16,54)','rgb(223,20,42)'],
-    92 => ['rgb(222,180,0)','rgb(254,218,0)','rgb(255,121,118)','rgb(255,191,191)','rgb(28,61,92)','rgb(57,101,130)'],
-    93 => ['rgb(44,18,153)','rgb(84,37,203)','rgb(200,153,255)','rgb(210,201,255)','rgb(0,59,39)','rgb(0,89,59)'],
-    94 => ['rgb(82,253,121)','rgb(178,252,153)','rgb(101,47,81)','rgb(93,93,93)','rgb(101,59,43)','rgb(137,115,101)'],
-    95 => ['rgb(118,170,191)','rgb(93,93,93)','rgb(150,125,255)','rgb(157,172,255)','rgb(122,13,102)','rgb(163,31,153)'],
+  public const COLORS = [
+    'rgb(120, 0, 100)',
+    'rgb(160, 15, 150)',
+    'rgb(200, 30, 200)',
+    'rgb(250, 50, 255)',
+    'rgb(255, 90, 190)',
+    'rgb(255, 120, 140)',
+    'rgb(255, 165, 165)',
+    'rgb(255, 215, 235)',
+    'rgb(80, 20, 100)',
+    'rgb(110, 30, 130)',
+    'rgb(140, 35, 160)',
+    'rgb(170, 40, 190)',
+    'rgb(180, 60, 255)',
+    'rgb(190, 100, 255)',
+    'rgb(200, 150, 255)',
+    'rgb(210, 200, 255)',
+    'rgb(45, 0, 150)',
+    'rgb(85, 20, 200)',
+    'rgb(110, 40, 255)',
+    'rgb(130, 80, 255)',
+    'rgb(150, 120, 255)',
+    'rgb(160, 170, 255)',
+    'rgb(180, 205, 255)',
+    'rgb(195, 235, 255)',
+    'rgb(0, 0, 90)',
+    'rgb(0, 0, 160)',
+    'rgb(0, 0, 255)',
+    'rgb(0, 120, 255)',
+    'rgb(60, 185, 255)',
+    'rgb(0, 220, 255)',
+    'rgb(60, 255, 255)',
+    'rgb(220, 255, 255)',
+    'rgb(30, 60, 90)',
+    'rgb(60, 100, 130)',
+    'rgb(80, 130, 160)',
+    'rgb(100, 160, 180)',
+    'rgb(120, 170, 190)',
+    'rgb(150, 180, 200)',
+    'rgb(170, 200, 210)',
+    'rgb(200, 220, 230)',
+    'rgb(0, 60, 40)',
+    'rgb(0, 90, 60)',
+    'rgb(0, 120, 90)',
+    'rgb(0, 150, 120)',
+    'rgb(20, 180, 150)',
+    'rgb(60, 230, 200)',
+    'rgb(120, 245, 210)',
+    'rgb(180, 255, 255)',
+    'rgb(40, 75, 0)',
+    'rgb(30, 95, 20)',
+    'rgb(20, 115, 40)',
+    'rgb(10, 170, 50)',
+    'rgb(0, 210, 70)',
+    'rgb(0, 255, 50)',
+    'rgb(90, 255, 130)',
+    'rgb(180, 255, 160)',
+    'rgb(140, 115, 0)',
+    'rgb(180, 140, 0)',
+    'rgb(220, 180, 0)',
+    'rgb(255, 220, 0)',
+    'rgb(255, 255, 40)',
+    'rgb(255, 250, 100)',
+    'rgb(255, 245, 160)',
+    'rgb(255, 255, 200)',
+    'rgb(100, 45, 80)',
+    'rgb(140, 60, 60)',
+    'rgb(180, 75, 40)',
+    'rgb(200, 90, 20)',
+    'rgb(225, 115, 10)',
+    'rgb(255, 140, 0)',
+    'rgb(255, 170, 75)',
+    'rgb(255, 200, 150)',
+    'rgb(90, 0, 40)',
+    'rgb(150, 0, 60)',
+    'rgb(195, 0, 50)',
+    'rgb(220, 0, 40)',
+    'rgb(255, 0, 20)',
+    'rgb(255, 60, 60)',
+    'rgb(255, 120, 120)',
+    'rgb(250, 190, 190)',
+    'rgb(40, 20, 0)',
+    'rgb(70, 40, 20)',
+    'rgb(100, 60, 45)',
+    'rgb(135, 115, 100)',
+    'rgb(175, 145, 130)',
+    'rgb(210, 180, 160)',
+    'rgb(220, 200, 180)',
+    'rgb(235, 220, 200)'
   ];
 
   public static $current_swatch = NULL;
@@ -53,16 +115,43 @@ class FFP {
     echo "style='background-color:$backgroundColor; color:$color'";
   }
 
+  // Kept for retro-compatibility
   public static function getCurrentSwatchIndex () {
     if (FFP::$current_swatch == NULL) FFP::computeSwatch();
-    return array_search(FFP::$current_swatch, FFP::SWATCHES, true);
+    return -1;
   }
 
   public static function computeSwatch () {
     // Randomly pick one swatch, based on the specified $seed
-    // NOTE: One swatch is used for one day
-    $seed = date('d');
-    FFP::$current_swatch = FFP::random_of(FFP::SWATCHES, [], $seed);
+    // NOTE: Only one swatch is generated per day
+    $seed = date('ymd');
+    srand($seed);
+
+    // Group FFP::COLORS by HUE (every 8 colors) and take three random hues
+    $hues = array_slice(
+      FFP::shuffleArray(
+        array_chunk(FFP::COLORS, 8),
+        $seed
+      ),
+      0, 3
+    );
+
+    FFP::$current_swatch = [];
+
+    // Push the two darks colors
+    $i = rand(0, 1);
+    FFP::$current_swatch[] = $hues[0][$i++];
+    FFP::$current_swatch[] = $hues[0][$i++];
+
+    // Push the two medium colors
+    if ($i < 3) $i = rand(0, 1);
+    FFP::$current_swatch[] = $hues[1][$i++];
+    FFP::$current_swatch[] = $hues[1][$i++];
+
+    // Push the two bright colors
+    $i += rand(0, 1);
+    FFP::$current_swatch[] = $hues[2][$i++];
+    FFP::$current_swatch[] = $hues[2][$i++];
 
     // Shift the color's hue of $hueShift degrees
     FFP::$current_shifted_swatch = array_map(function ($rgbString) {
@@ -77,7 +166,7 @@ class FFP {
 
     // NOTE: no seed is specified here when picking a random color from the
     // swatch because it has already been assigned after computing the swatch
-    $color = FFP::random_of(FFP::$current_shifted_swatch, FFP::$previous_colors);
+    $color = FFP::randomOfArray(FFP::$current_shifted_swatch, FFP::$previous_colors);
 
     // Keep track of the used colors so that we can exclude them from the next pick
     return FFP::storeColor($color);
@@ -96,7 +185,19 @@ class FFP {
     return $color;
   }
 
-  private static function random_of ($array, $exclude = [], $seed = NULL) {
+  private static function shuffleArray ($array, $seed) {
+    srand($seed);
+    for ($i = count($array) - 1; $i > 0; $i--) {
+        $j = rand(0, $i);
+        $tmp = $array[$i];
+        $array[$i] = $array[$j];
+        $array[$j] = $tmp;
+    }
+
+    return $array;
+  }
+
+  private static function randomOfArray ($array, $exclude = [], $seed = NULL) {
     if ($seed) {
       // Make sure $seed is a number
       if (is_string($seed)) $seed = crc32($seed);
