@@ -125,7 +125,7 @@ class FFP {
   public static function computeSwatch () {
     // Randomly pick one swatch, based on the specified $seed
     // NOTE: Only one swatch is generated per day
-    $seed = date('ymd');
+    $seed = date('ymdH');
     srand($seed);
 
     // Group FFP::COLORS by HUE (every 8 colors) and take three random hues
