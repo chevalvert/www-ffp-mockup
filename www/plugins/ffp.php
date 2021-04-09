@@ -1,7 +1,8 @@
 <?php
 
 class FFP {
-  public const HUE_SHIFT_FACTOR = 1/60; // Shift one degree every 60 seconds
+  // This is disabled because the colors were ugly. Previously 1/60
+  public const HUE_SHIFT_FACTOR = 0;
   public const COLORS = [
     'rgb(120, 0, 100)',
     'rgb(160, 15, 150)',
@@ -154,10 +155,14 @@ class FFP {
     FFP::$current_swatch[] = $hues[2][$i++];
 
     // Shift the color's hue of $hueShift degrees
-    FFP::$current_shifted_swatch = array_map(function ($rgbString) {
-      $hueShift = ceil(time() * FFP::HUE_SHIFT_FACTOR);
-      return FFPColorHelpers::hueShift($rgbString, $hueShift);
-    }, FFP::$current_swatch);
+    FFP::$current_shifted_swatch = FFP::HUE_SHIFT_FACTOR == 0
+      ? FFP::$current_swatch
+      : (
+        array_map(function ($rgbString) {
+          $hueShift = ceil(time() * FFP::HUE_SHIFT_FACTOR);
+          return FFPColorHelpers::hueShift($rgbString, $hueShift);
+        }, FFP::$current_swatch)
+      );
   }
 
   private static function nextColor () {
