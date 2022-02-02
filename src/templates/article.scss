@@ -70,6 +70,11 @@
     @include font(ui);
     margin-bottom: 1em;
 
+    iframe {
+      width: 100%;
+      margin-top: $gutter;
+    }
+
     &::before {
       content: attr(data-label);
       display: block;
@@ -84,12 +89,16 @@
   &__gallery {
     @include clearfix;
     margin-top: $logo--height * 2;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__gallery-item {
     display: inline-block;
     float: left;
     margin-bottom: $gutter;
+
+    a { border: 0; }
 
     @include desktop { @include grid(3); }
     @include tablet { @include grid(2); }
