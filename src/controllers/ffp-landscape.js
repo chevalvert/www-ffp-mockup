@@ -1,10 +1,10 @@
 import 'nodelist-foreach'
 import 'requestidlecallback-polyfill'
 import { debounce } from 'tiny-throttle'
-import { generate, prng, erode } from 'ffp-generate'
+import { generate, prng, erode } from 'ffp-generate/dist/ffp-generate.js'
 import createCanvas from 'utils/dom-create-canvas'
 
-const HEIGHT = 450
+const DEFAULT_HEIGHT = 450
 
 const RENDERING_OPTIONS = Object.freeze({
   units: [8, 16],
@@ -41,7 +41,7 @@ let containers
 function hydrate (container) {
   const canvas = container.landscape
     ? container.landscape.canvas
-    : createCanvas(window.innerWidth, HEIGHT, { 'data-no-fade-in': true })
+    : createCanvas(window.innerWidth, parseInt(Math.max(container.dataset.height, 100) || DEFAULT_HEIGHT), { 'data-no-fade-in': true })
 
   // NOTE: appending the canvas to its container before rendering to avoid
   // layout shift
